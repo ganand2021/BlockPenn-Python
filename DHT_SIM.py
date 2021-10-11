@@ -59,13 +59,13 @@ if __name__ == "__main__":
     d = []
     while True:
         try:
-            d[0] = time.time()
+            time_samp = time.time()
             
             temperature = temp_sensor.read
             humidity = hum_sensor.read
 
-            print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(d[0], 0, 0, temperature, humidity))
-            print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(d[0]).strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity))
+            print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(time_samp, 0, 0, temperature, humidity))
+            print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(time_samp.strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity))
 
             print("Temp: ", temperature, "c Humidity: ", humidity,"%")
             DBSETUP.ganacheLogger(float(temperature), "Temperature", "C", "MAC_Address_lior_t", "unit_descrip", "DHT22", "Aosong Electronics Co.")	
