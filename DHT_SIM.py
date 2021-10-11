@@ -22,7 +22,7 @@ class sim_sensor:
         if (sensor_type == "humidity"):
             self.sensor_std = 4
         else:
-            logging.error("get_sim_value: unknown sensor type (",sensor_type,")")
+            logging.error("get_sim_value: unknown sensor type (",str(sensor_type),")")
 
     def read(self):
         cur_time = time.time()
@@ -31,8 +31,7 @@ class sim_sensor:
         read_val = self.cur_val + self.velocity * time_dif/3600
         self.velocity += random.normalvariate(0, self.sensor_std)*time_dif/600
         # set new values
-        return (self._timestamp, self._gpio, self._status,
-                self._temperature, self._humidity)
+        return read_val
 
 if __name__ == "__main__":
     import sys
@@ -61,8 +60,8 @@ if __name__ == "__main__":
         try:
             time_samp = time.time()
             
-            temperature = temp_sensor.read
-            humidity = hum_sensor.read
+            temperature = temp_sensor.read()
+            humidity = hum_sensor.read()
 
             print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(time_samp, 0, "0", temperature, humidity))
             print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(time_samp).strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity))
