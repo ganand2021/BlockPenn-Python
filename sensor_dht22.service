@@ -1,0 +1,15 @@
+[Unit]
+Description=DHT22 Sensor Reading
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=30
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=ubuntu
+ExecStart=/usr/bin/env python3 /home/ubuntu/blockpenn-python/DHT.py
+
+[Install]
+WantedBy=multi-user.target
