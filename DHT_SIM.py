@@ -49,7 +49,7 @@ if __name__ == "__main__":
     ap.add_argument("-c", "--gpiochip", help="gpiochip device number",
                     type=int, default=0)
 
-    ap.add_argument("gpio", nargs="+", type=int)
+    ap.add_argument("-io", "--gpio", help="IO pin (default is 4)" , type=int, default=4)
 
     args = ap.parse_args()
 
