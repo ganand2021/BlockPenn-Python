@@ -270,8 +270,7 @@ if __name__ == "__main__":
                 temperature = d[3]
                 humidity = d[4]
 
-#                print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".
-#                      format(d[0], d[1], d[2], temperature, humidity))
+                print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(d[0], d[1], d[2], temperature, humidity))
 #                print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(
 #                    d[0]).strftime('%Y-%m-%d %H:%M:%S'), d[3], d[4]))
 

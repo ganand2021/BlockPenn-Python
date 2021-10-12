@@ -77,7 +77,7 @@ if __name__ == "__main__":
             temperature = temp_sensor.read()
             humidity = hum_sensor.read()
 
-            # print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(time_samp, 0, "0", temperature, humidity))
+            print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(time_samp, 0, "0", temperature, humidity))
             # print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(time_samp).strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity))
 
             # print("Temp: ", temperature, "c Humidity: ", humidity,"%")
