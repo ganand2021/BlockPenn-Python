@@ -11,4 +11,4 @@ RestartSec=5
 ExecStart=/usr/bin/python3 /home/ubuntu/blockpenn-python/DHT.py
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
