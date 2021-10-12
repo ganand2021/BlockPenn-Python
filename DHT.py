@@ -222,6 +222,10 @@ if __name__ == "__main__":
     import atexit
 
     def handle_exit(*err_msg):
+#        sbc.gpiochip_close(chip)
+#        chip = sbc.gpiochip_open(args.gpiochip)
+#        led1.set_led(0)
+        sbc.gpiochip_close(chip)
         if err_msg: 
             print("Terminated: code("+str(err_msg[0])+")")
             print("Error message:", err_msg[1])
