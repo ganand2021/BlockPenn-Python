@@ -8,8 +8,7 @@ StartLimitIntervalSec=30
 Type=simple
 Restart=always
 RestartSec=5
-User=ubuntu
-ExecStart=/usr/bin/env python3 /home/ubuntu/blockpenn-python/DHT.py
+ExecStart=/usr/bin/python3 /home/ubuntu/blockpenn-python/DHT.py
 
 [Install]
 WantedBy=multi-user.target
