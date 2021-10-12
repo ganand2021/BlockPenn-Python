@@ -221,12 +221,14 @@ if __name__ == "__main__":
     import signal
     import atexit
 
-    def handle_exit():
-#        sbc.gpiochip_close(chip)
-#        chip = sbc.gpiochip_open(args.gpiochip)
-#        led1.set_led(0)
-        sbc.gpiochip_close(chip)
-        print("DHT terminated. GPIO closed.")
+    def handle_exit(*err_msg):
+        if err_msg: 
+            print("Terminated: code("+str(err_msg[0])+")")
+            print("Error message:", err_msg[1])
+            exit(err_msg)
+        else:
+            print("DHT terminated. GPIO closed.")
+            exit(0)
 
     ap = argparse.ArgumentParser()
 

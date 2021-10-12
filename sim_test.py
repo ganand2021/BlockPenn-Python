@@ -14,8 +14,8 @@ import random
 class sim_sensor:
     def __init__(self, sensor_type = "temp", initial_val = "23.0", initial_velocity = "1"):
         self.sensor_type = sensor_type
-        self.cur_val = initial_val
         self.initial_val = initial_val
+        self.cur_val = initial_val
         self.velocity = initial_velocity
         self.prev_time = time.time()
         if (sensor_type == "temp"):
@@ -25,8 +25,8 @@ class sim_sensor:
         else:
             logging.error("get_sim_value: unknown sensor type ("+str(sensor_type)+")")
 
-    def read(self):
-        cur_time = time.time()
+    def read(self, time_set):
+        cur_time = time_set
         time_dif = int(cur_time - self.prev_time)
         self.prev_time = cur_time
         read_val = self.cur_val + self.velocity * time_dif/3600
@@ -38,8 +38,7 @@ class sim_sensor:
 if __name__ == "__main__":
     import sys
     import argparse
-    import DHT_SIM
-    import DBSETUP  # import the db setup
+    import sim_test as DHT_SIM
     import datetime
     import signal
     import atexit
@@ -57,33 +56,21 @@ if __name__ == "__main__":
     signal.signal(signal.SIGTERM, handle_exit)
     signal.signal(signal.SIGINT, handle_exit)
 
-    ap = argparse.ArgumentParser()
-
-    ap.add_argument("-c", "--gpiochip", help="gpiochip device number",
-                    type=int, default=0)
-
-    ap.add_argument("-io", "--gpio", help="IO pin (default is 4)" , type=int, default=4)
-
-    args = ap.parse_args()
-
-    print("Simulated readings")
+    time_now = time.time()
+    time_future = time.time()+60*1200
     temp_sensor = DHT_SIM.sim_sensor("temp", 22.0, 0)
-    hum_sensor = DHT_SIM.sim_sensor("humidity", 50.0, 0)
-    d = []
-    while True:
-        try:
-            time_samp = time.time()
-            
-            temperature = temp_sensor.read()
-            humidity = hum_sensor.read()
+    print("{:s}".format(datetime.datetime.fromtimestamp(time_now).strftime('%Y-%m-%d %H:%M:%S')))
+    print("{:s}".format(datetime.datetime.fromtimestamp(time_future).strftime('%Y-%m-%d %H:%M:%S')))
+    time_delta = int(time_future-time_now)
+    for x in range(0 ,time_delta, 600):
+        time_cur = time_now + x
+        temperature = temp_sensor.read(time_set = time_cur)
+        print("{:s} t={:3.3f}".format(datetime.datetime.fromtimestamp(time_cur).strftime('%Y-%m-%d %H:%M:%S'), temperature))
 
-            print("{:.3f} g={:2d} s={} t={:3.1f} rh={:3.1f}".format(time_samp, 0, "0", temperature, humidity))
-            print("{:s} t={:3.1f} rh={:3.1f}".format(datetime.datetime.fromtimestamp(time_samp).strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity))
+    # while True:
+    #     try:
+    #         time.sleep(5)
+    #     except KeyboardInterrupt:
+    #         print("Keyboard interrup")
+    #         break
 
-            print("Temp: ", temperature, "c Humidity: ", humidity,"%")
-            DBSETUP.ganacheLogger(float(temperature), "Temperature", "C", "MAC_Address_lior_t", "unit_descrip", "DHT22", "Aosong Electronics Co.")	
-            DBSETUP.ganacheLogger(float(humidity), "Humidity", "%", "MAC_Address_lior_h", "unit_descrip", "DHT22", "Aosong Electronics Co.")
-
-            time.sleep(60)
-        except KeyboardInterrupt:
-            break
