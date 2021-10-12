@@ -242,17 +242,19 @@ if __name__ == "__main__":
 
     # Set the led
 #    led1 = DHT.led(chip)
-    print("Chip info", sbc.gpio_get_chip_info(chip))
-    print("Line info", sbc.gpio_get_line_info(chip, 4))
-    sbc.gpio_free(chip, 4)
+##    print("Chip info", sbc.gpio_get_chip_info(chip))
+##    print("Line info", sbc.gpio_get_line_info(chip, 4))
+##    sbc.gpio_free(chip, 4)
     atexit.register(handle_exit)
     signal.signal(signal.SIGTERM, handle_exit)
     signal.signal(signal.SIGINT, handle_exit)
 
     S = []
-    for g in args.gpio:
-        s = DHT.sensor(chip, g)
-        S.append(s)  # save class
+    s = DHT.sensor(chip, args.gpio)
+    S.append(s)  # save class
+##    for g in args.gpio:
+##        s = DHT.sensor(chip, g)
+##        S.append(s)  # save class
 
     while True:
         try:
