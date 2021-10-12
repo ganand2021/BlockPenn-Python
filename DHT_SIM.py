@@ -12,7 +12,7 @@ import random
 # Velocity is in units/hour
 # Will work well if called at least once per hour
 class sim_sensor:
-    def __init__(self, sensor_type = "temp", initial_val = "23", initial_velocity = "1"):
+    def __init__(self, sensor_type = "temp", initial_val = "23.0", initial_velocity = "1"):
         self.sensor_type = sensor_type
         self.cur_val = initial_val
         self.velocity = initial_velocity
@@ -53,8 +53,8 @@ if __name__ == "__main__":
     args = ap.parse_args()
 
     print("Simulated readings")
-    temp_sensor = DHT_SIM.sim_sensor("temp", 22, 0)
-    hum_sensor = DHT_SIM.sim_sensor("humidity", 50, 0)
+    temp_sensor = DHT_SIM.sim_sensor("temp", 22.0, 0)
+    hum_sensor = DHT_SIM.sim_sensor("humidity", 50.0, 0)
     d = []
     while True:
         try:
