@@ -9,6 +9,7 @@ Type=simple
 Restart=always
 RestartSec=5
 ExecStart=/usr/bin/python3 /home/ubuntu/blockpenn-python/DHT.py
+RemainAfterExit=true
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
