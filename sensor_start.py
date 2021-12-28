@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import time
+import math, struct, array, time, io, fcntl
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
@@ -9,6 +9,70 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 import subprocess
+
+# T6713 start
+bus = 1
+addressT6713 = 0x15
+I2C_SLAVE=0x0703
+
+class i2c(object):
+	def __init__(self, device, bus):
+
+		self.fr = io.open("/dev/i2c-"+str(bus), "rb", buffering=0)
+		self.fw = io.open("/dev/i2c-"+str(bus), "wb", buffering=0)
+
+		# set device address
+
+		fcntl.ioctl(self.fr, I2C_SLAVE, device)
+		fcntl.ioctl(self.fw, I2C_SLAVE, device)
+
+	def write(self, bytes):
+		self.fw.write(bytes)
+
+	def read(self, bytes):
+		return self.fr.read(bytes)
+
+	def close(self):
+		self.fw.close()
+		self.fr.close()
+
+class T6713(object):
+	def __init__(self):
+		self.dev = i2c(addressT6713, bus)
+
+	def status(self):
+		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		return buffer[2]*256+buffer[3]
+
+	def gasPPM(self):
+		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		return buffer[2]*256+buffer[3]
+
+	def checkABC(self):
+		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		return buffer[2]*256+buffer[3]
+
+	def calibrate(self):
+		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(5)
+		buffer = array.array('B', data)
+		return buffer[3]*256+buffer[3]
+
+# T6713 end
 
 # Raspberry Pi pin configuration:
 RST = None     # on the PiOLED this pin isnt used
@@ -45,8 +109,12 @@ x = 0
 # Load default font.
 font = ImageFont.load_default()
 
+# Connect SHTC3
 i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
+
+# Connect T6713
+obj = T6713()
 
 PANEL_NUM = 2
 
@@ -64,7 +132,8 @@ def showPanel(panel_id):
         draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
         draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
         draw.text((x, top+8*5), "T6713",  font=font, fill=255)
-        draw.text((x, top+8*6), "?????",  font=font, fill=255)
+        draw.text((x, top+8*6), str("PPM:", obj.gasPPM()),  font=font, fill=255)
+        draw.text((x, top+8*6), str("ABC State:", obj.checkABC()),  font=font, fill=255)
 
         # draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
         # draw.text((x, top+8*1),    str(CPU.decode('utf-8')), font=font, fill=255)
