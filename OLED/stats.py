@@ -119,10 +119,10 @@ while True:
 
     # Write two lines of text.
 
-    draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
-    draw.text((x, top+8),     str(CPU), font=font, fill=255)
-    draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
-    draw.text((x, top+25),    str(Disk),  font=font, fill=255)
+    draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
+    draw.text((x, top+8),     str(CPU.decode('utf-8')), font=font, fill=255)
+    draw.text((x, top+16),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
+    draw.text((x, top+25),    str(Disk.decode('utf-8')),  font=font, fill=255)
 
     # Display image.
     disp.image(image)
