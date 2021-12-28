@@ -132,8 +132,8 @@ def showPanel(panel_id):
         draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
         draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
         draw.text((x, top+8*5), "T6713",  font=font, fill=255)
-        draw.text((x, top+8*6), str("PPM: "+obj.gasPPM()),  font=font, fill=255)
-        draw.text((x, top+8*6), str("ABC State: "+obj.checkABC()),  font=font, fill=255)
+        draw.text((x, top+8*6), str("PPM: "+str(obj.gasPPM())),  font=font, fill=255)
+        draw.text((x, top+8*6), str("ABC State: "+str(obj.checkABC())),  font=font, fill=255)
 
         # draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
         # draw.text((x, top+8*1),    str(CPU.decode('utf-8')), font=font, fill=255)
