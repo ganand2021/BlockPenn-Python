@@ -7,7 +7,7 @@ Python code for the RPi sensors
 - [x] Create main script
 - [x] Rotate the display between panels
 - [ ] Validate CO2 readings
-- [ ] Write sensors to InfluxDB
+- [ ] Write sensor data to InfluxDB
 - [ ] Connect controls: button
 - [ ] Connect controls: leds
 - [ ] Add plug load monitoring
