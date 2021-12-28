@@ -76,6 +76,6 @@ class T6713(object):
 
 if __name__ == "__main__":
 	obj = T6713()
-	print "Status: ", bin(obj.status())
-	print "PPM: ", obj.gasPPM()
-	print "ABC State: ", obj.checkABC()
+	print("Status: ", bin(obj.status()))
+	print("PPM: ", obj.gasPPM())
+	print("ABC State: ", obj.checkABC())
