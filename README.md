@@ -1,6 +1,24 @@
 # BlockPenn-Python
 Python code for the RPi sensors
 
+## How to run
+### Setting up the environment
+```sh
+git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+sudo python3 setup.py install
+cd examples
+sudo apt install -y python3-pil
+sudo apt install -y python3-rpi.gpio
+git clone https://github.com/adafruit/Adafruit_CircuitPython_SHTC3
+cd Adafruit_CircuitPython_SHTC3
+sudo pip3 install adafruit-circuitpython-shtc3
+sudo python3 setup.py install
+```
+
+### Main script
+Run `sensor_start.py`
+
+## Open items
 - [x] OLED support
 - [x] SHTC3 support
 - [x] T6713 support
