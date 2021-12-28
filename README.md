@@ -2,9 +2,14 @@
 Python code for the RPi sensors
 
 - [x] OLED support
-- [ ] SHTC3
-- [ ] T6713
-
+- [x] SHTC3 support
+- [x] T6713 support
+- [x] Create main script
+- [x] Rotate the display between panels
+- [ ] Validate CO2 readings
+- [ ] Write sensors to InfluxDB
+- [ ] Connect controls: button
+- [ ] Connect controls: leds
 
 ## Links
 Usefule I2C commands: https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_I2C

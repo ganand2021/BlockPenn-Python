@@ -48,6 +48,35 @@ font = ImageFont.load_default()
 i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
 
+PANEL_NUM = 2
+
+# Configure the display panel
+def showPanel(panel_id):
+    if (panel_id == 0):
+        draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
+        draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
+        draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
+        draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
+        draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
+    if (panel_id == 1):
+        draw.text((x, top+8*1), "SENSORS",  font=font, fill=255)
+        draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
+        draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
+        draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+        draw.text((x, top+8*5), "T6713",  font=font, fill=255)
+        draw.text((x, top+8*6), "?????",  font=font, fill=255)
+
+        # draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
+        # draw.text((x, top+8*1),    str(CPU.decode('utf-8')), font=font, fill=255)
+        # draw.text((x, top+8*2),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
+        # draw.text((x, top+8*3),    str(Disk.decode('utf-8')),  font=font, fill=255)
+        # draw.text((x, top+8*4),    str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
+        # draw.text((x, top+8*5),    str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+
+cur_panel = 1
+PANEL_DELAY = 5 # In seconds
+panel_start = time.time()
+
 while True:
 
     # Draw a black filled box to clear the image.
@@ -65,15 +94,10 @@ while True:
 
     # Get measurements
     temperature, relative_humidity = sht.measurements
-
-    # Write two lines of text.
-
-    draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
-    draw.text((x, top+8*1),     str(CPU.decode('utf-8')), font=font, fill=255)
-    draw.text((x, top+8*2),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
-    draw.text((x, top+8*3),    str(Disk.decode('utf-8')),  font=font, fill=255)
-    draw.text((x, top+8*4),    str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
-    draw.text((x, top+8*5),    str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+    if (time.time()-panel_start > PANEL_DELAY):
+        cur_panel = (cur_panel+1) % PANEL_NUM
+        panel_start = time.time()
+    showPanel(cur_panel)
 
     # Display image.
     disp.image(image)
