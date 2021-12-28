@@ -15,7 +15,7 @@ bus = 1
 addressT6713 = 0x15
 I2C_SLAVE=0x0703
 
-class i2c(object):
+class i2c_6713(object):
 	def __init__(self, device, bus):
 
 		self.fr = io.open("/dev/i2c-"+str(bus), "rb", buffering=0)
@@ -38,7 +38,7 @@ class i2c(object):
 
 class T6713(object):
 	def __init__(self):
-		self.dev = i2c(addressT6713, bus)
+		self.dev = i2c_6713(addressT6713, bus)
 
 	def status(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
@@ -114,8 +114,7 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
 
 # Connect T6713
-if __name__ == "__main__":
-    obj = T6713()
+obj = T6713()
 
 PANEL_NUM = 2
 
