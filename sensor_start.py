@@ -10,6 +10,10 @@ from PIL import ImageFont
 
 import subprocess
 
+# Panels
+PANEL_NUM = 2
+PANEL_DELAY = 10 # In seconds
+
 # T6713 start
 bus = 1
 addressT6713 = 0x15
@@ -116,10 +120,9 @@ sht = adafruit_shtc3.SHTC3(i2c)
 # Connect T6713
 obj = T6713()
 
-PANEL_NUM = 2
-
 # Configure the display panel
 def showPanel(panel_id):
+    draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
     if (panel_id == 0):
         draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
         draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
@@ -135,15 +138,7 @@ def showPanel(panel_id):
         draw.text((x, top+8*6), str("PPM: "+str(obj.gasPPM())),  font=font, fill=255)
         draw.text((x, top+8*7), str("ABC State: "+str(obj.checkABC())),  font=font, fill=255)
 
-        # draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
-        # draw.text((x, top+8*1),    str(CPU.decode('utf-8')), font=font, fill=255)
-        # draw.text((x, top+8*2),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
-        # draw.text((x, top+8*3),    str(Disk.decode('utf-8')),  font=font, fill=255)
-        # draw.text((x, top+8*4),    str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
-        # draw.text((x, top+8*5),    str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
-
 cur_panel = 1
-PANEL_DELAY = 5 # In seconds
 panel_start = time.time()
 
 while True:
