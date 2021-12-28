@@ -114,7 +114,8 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
 
 # Connect T6713
-obj = T6713()
+if __name__ == "__main__":
+    obj = T6713()
 
 PANEL_NUM = 2
 
