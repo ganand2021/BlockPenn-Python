@@ -3,10 +3,10 @@
 
 import time
 
-import smbus2 as SMBus
+import smbus2 #as SMBus
 import sys
 
-bus = SMBus(1)
+#bus = SMBus(1)
 
 #Write the read sensor command
 bus.write_byte_data(0x45, 0x24, 0x00)
