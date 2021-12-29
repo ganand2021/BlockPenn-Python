@@ -55,7 +55,7 @@ class T6713(object):
 	def reset(self):
 		buffer = array.array('B', [0x04, 0x03, 0xe8, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		data = self.dev.read(5)
 		buffer = array.array('B', data)
 		cmd_result = 1
