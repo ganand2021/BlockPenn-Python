@@ -58,7 +58,8 @@ class T6713(object):
 		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
-		return buffer[2]*256+buffer[3]
+		return int((((buffer[2] & 0x3F) << 8) | buffer[3]))
+        #return buffer[2]*256+buffer[3]
 
 	def checkABC(self):
 		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
