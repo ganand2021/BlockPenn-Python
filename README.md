@@ -39,3 +39,6 @@ Run `sensor_start.py`
 - T6713 digikey page: https://www.digikey.com/en/products/detail/amphenol-advanced-sensors/T6713/5027891
 - I2C UM10204: https://www.nxp.com/docs/en/user-guide/UM10204.pdf
 - Connectd guide to reading SHTC3: https://blog.dbrgn.ch/2018/8/20/read-shtc3-sensor-from-linux-raspberry-pi/
+
+## Side notes
+- Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
