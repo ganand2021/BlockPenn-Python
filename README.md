@@ -24,7 +24,7 @@ Run `sensor_start.py`
 - [x] T6713 support
 - [x] Create main script
 - [x] Rotate the display between panels
-- [ ] Validate CO2 readings
+- [ ] Validate CO2 readings: the sensor readings and reset doesn't make sense
 - [ ] Write sensor data to InfluxDB
 - [ ] Connect controls: button
 - [ ] Connect controls: leds
