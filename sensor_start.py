@@ -55,7 +55,7 @@ class T6713(object):
 	def gasPPM(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return buffer[2]*256+buffer[3]
