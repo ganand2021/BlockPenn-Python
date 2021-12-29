@@ -31,6 +31,7 @@ Run `sensor_start.py`
 - [ ] Add plug load monitoring
 - [ ] Add case
 - [ ] Add air quality sensor
+- [ ] Consider decreasing T6713 delays (can be 10 miliseconds per application notes)
 
 ## Links
 - Useful I2C commands: https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_I2C
