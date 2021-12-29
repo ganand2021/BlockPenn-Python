@@ -60,7 +60,7 @@ class T6713(object):
 		buffer = array.array('B', data)
 		cmd_result = 1
 		if ((buffer[2] == 0xe8) & (buffer[3] == 0xff) & (buffer[4] == 0x00)): cmd_result = 0 
-		return cmd_result
+		return buffer
 
 	def gasPPM(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
@@ -130,7 +130,9 @@ sht = adafruit_shtc3.SHTC3(i2c)
 
 # Connect T6713
 obj = T6713()
-print("T6713 reset returned:", obj.reset())
+t6713_reset = obj.reset()
+print("T6713 reset returned:")
+print(','.join(format(x, '02x') for x in t6713_reset))
 
 # Configure the display panel
 def showPanel(panel_id):
