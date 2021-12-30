@@ -74,6 +74,14 @@ class T6713(object):
 		buffer = array.array('B', data)
 		return buffer[3]*256+buffer[3]
 
+	def send_cmd(self, cmd):
+		buffer = array.array('B', cmd)
+		self.dev.write(buffer)
+		time.sleep(0.01)
+		data = self.dev.read(5)
+		buffer = array.array('B', data)
+		return buffer
+
 if __name__ == "__main__":
 	obj = T6713()
 	print("Status: ", bin(obj.status()))
