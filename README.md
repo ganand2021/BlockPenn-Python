@@ -15,7 +15,7 @@ sudo pip3 install adafruit-circuitpython-shtc3
 sudo python3 setup.py install
 ```
 
-`python3 -m pip3 install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 # VENV
 Set up venv:
@@ -57,4 +57,4 @@ Run `sensor_start.py`
 
 ## Side notes
 - Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
-- Create the requirements.txt: `python3 -m pip3 freeze > requirements.txt`
+- Create the requirements.txt: `pip3 freeze > requirements.txt`
