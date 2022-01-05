@@ -47,7 +47,7 @@ class T6713(object):
 	def status(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return buffer[2]*256+buffer[3]
@@ -73,7 +73,7 @@ class T6713(object):
 	def gasPPM(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return int((((buffer[2] & 0x3F) << 8) | buffer[3]))
@@ -82,7 +82,7 @@ class T6713(object):
 	def checkABC(self):
 		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return buffer[2]*256+buffer[3]
@@ -90,7 +90,7 @@ class T6713(object):
 	def calibrate(self):
 		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
 		self.dev.write(buffer)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		data = self.dev.read(5)
 		buffer = array.array('B', data)
 		return buffer[3]*256+buffer[3]
