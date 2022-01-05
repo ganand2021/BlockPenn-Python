@@ -15,6 +15,16 @@ sudo pip3 install adafruit-circuitpython-shtc3
 sudo python3 setup.py install
 ```
 
+`python3 -m pip3 install -r requirements.txt`
+
+# VENV
+Set up venv:
+`python3 -m venv .`
+Activate venv:
+`source ./bin/activate`
+Deactivate venv:
+`deactivate`
+
 ### Main script
 Run `sensor_start.py`
 
@@ -24,15 +34,18 @@ Run `sensor_start.py`
 - [x] T6713 support
 - [x] Create main script
 - [x] Rotate the display between panels
-- [ ] Check the readings from the CO2 sensor (return the full buffer to see it's correct)
-- [ ] Validate CO2 readings: the sensor readings and reset doesn't make sense
+- [x] Check the readings from the CO2 sensor (return the full buffer to see it's correct)
+- [x] Validate CO2 readings: the sensor readings and reset doesn't make sense
+- [ ] Consider decreasing T6713 delays (can be 10 miliseconds per application notes)
+- [ ] Add VENV
+- [ ] Create requirements.txt
 - [ ] Write sensor data to InfluxDB
 - [ ] Connect controls: button
 - [ ] Connect controls: leds
 - [ ] Add plug load monitoring
 - [ ] Add case
 - [ ] Add air quality sensor
-- [ ] Consider decreasing T6713 delays (can be 10 miliseconds per application notes)
+- [ ] Add integration with Kasa API
 
 ## Links
 - Useful I2C commands: https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_I2C
@@ -44,3 +57,4 @@ Run `sensor_start.py`
 
 ## Side notes
 - Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
+- Create the requirements.txt: `python3 -m pip3 freeze > requirements.txt`
