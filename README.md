@@ -14,8 +14,9 @@ cd Adafruit_CircuitPython_SHTC3
 sudo pip3 install adafruit-circuitpython-shtc3
 sudo python3 setup.py install
 ```
-
-`pip3 install -r requirements.txt`
+## Main app
+`sensor_start.py`: this is the I2C code with all 2 sensors (CO2, Humidity & Temp) and OLED display.
+`sensor_set.py`: this is the I2C code without the display, but it doesn't require any additional packages.
 
 # VENV
 Set up venv:
@@ -47,6 +48,9 @@ Run `sensor_start.py`
 - [ ] Add case
 - [ ] Add air quality sensor
 - [ ] Add integration with Kasa API
+
+## Future features
+`pip3 install -r requirements.txt`
 
 ## Links
 - Useful I2C commands: https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_I2C
