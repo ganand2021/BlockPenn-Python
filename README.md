@@ -2,7 +2,9 @@
 Python code for the RPi sensors
 
 ## How to run
-### Setting up the environment
+### sensor_start
+`sensor_start.py`: this is the I2C code with all 2 sensors (CO2, Humidity & Temp) and OLED display.
+#### Setting up the environment
 ```sh
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 sudo python3 setup.py install
@@ -14,9 +16,8 @@ cd Adafruit_CircuitPython_SHTC3
 sudo pip3 install adafruit-circuitpython-shtc3
 sudo python3 setup.py install
 ```
-## Main app
-`sensor_start.py`: this is the I2C code with all 2 sensors (CO2, Humidity & Temp) and OLED display.
-`sensor_set.py`: this is the I2C code without the display, but it doesn't require any additional packages.
+### sensor_set
+`sensor_set.py`: this is the I2C code without the OLED display, but it doesn't require any additional packages.
 
 # VENV
 Set up venv:
