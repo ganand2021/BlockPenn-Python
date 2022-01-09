@@ -73,7 +73,7 @@ class T6713(object):
 	def gasPPM(self):
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return int((((buffer[2] & 0x3F) << 8) | buffer[3]))
@@ -82,7 +82,7 @@ class T6713(object):
 	def checkABC(self):
 		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return buffer[2]*256+buffer[3]
@@ -90,7 +90,7 @@ class T6713(object):
 	def calibrate(self):
 		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.1)
 		data = self.dev.read(5)
 		buffer = array.array('B', data)
 		return buffer[3]*256+buffer[3]
@@ -138,9 +138,10 @@ sht = adafruit_shtc3.SHTC3(i2c)
 
 # Connect T6713
 obj = T6713()
-t6713_reset = obj.reset()
-print("T6713 reset returned:")
-print(','.join(format(x, '02x') for x in t6713_reset))
+# If Reset needed - uncomment
+# t6713_reset = obj.reset()
+# print("T6713 reset returned:")
+# print(','.join(format(x, '02x') for x in t6713_reset))
 
 # Configure the display panel
 def showPanel(panel_id):
