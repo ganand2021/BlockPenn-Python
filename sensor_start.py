@@ -60,6 +60,7 @@ class T6713(object):
 		self.dev = i2c_6713(addressT6713, bus)
 
 	def status(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.01)
@@ -76,6 +77,7 @@ class T6713(object):
 		return buffer
 
 	def reset(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x03, 0xe8, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.01)
@@ -86,18 +88,19 @@ class T6713(object):
 		return buffer
 
 	def gasPPM(self):
-		logging.debug('Running '+inspect.stack()[0][3])
+		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		ret_value = int((((buffer[2] & 0x3F) << 8) | buffer[3]))
-		logging.debug("Read gasPPM ("+str(ret_value)+")")
+		logging.info("Read gasPPM ("+str(ret_value)+")")
 		return ret_value
         #return buffer[2]*256+buffer[3]
 
 	def checkABC(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.1)
@@ -106,6 +109,7 @@ class T6713(object):
 		return buffer[2]*256+buffer[3]
 
 	def calibrate(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
 		self.dev.write(buffer)
 		time.sleep(0.1)
@@ -186,29 +190,32 @@ def showPanel(panel_id):
 cur_panel = 1
 panel_start = time.time()
 
-while True:
+try:
+	while True:
+		# Draw a black filled box to clear the image.
+		draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
+		# Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
+		cmd = "hostname -I | cut -d\' \' -f1"
+		IP = subprocess.check_output(cmd, shell = True )
+		cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+		CPU = subprocess.check_output(cmd, shell = True )
+		cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+		MemUsage = subprocess.check_output(cmd, shell = True )
+		cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+		Disk = subprocess.check_output(cmd, shell = True )
 
-    # Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
-    cmd = "hostname -I | cut -d\' \' -f1"
-    IP = subprocess.check_output(cmd, shell = True )
-    cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
-    CPU = subprocess.check_output(cmd, shell = True )
-    cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
-    MemUsage = subprocess.check_output(cmd, shell = True )
-    cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
-    Disk = subprocess.check_output(cmd, shell = True )
+		# Get measurements
+		temperature, relative_humidity = sht.measurements
+		if (time.time()-panel_start > PANEL_DELAY):
+			cur_panel = (cur_panel+1) % PANEL_NUM
+			panel_start = time.time()
+		showPanel(cur_panel)
 
-    # Get measurements
-    temperature, relative_humidity = sht.measurements
-    if (time.time()-panel_start > PANEL_DELAY):
-        cur_panel = (cur_panel+1) % PANEL_NUM
-        panel_start = time.time()
-    showPanel(cur_panel)
-
-    # Display image.
-    disp.image(image)
-    disp.display()
-    time.sleep(.1)
+		# Display image.
+		disp.image(image)
+		disp.display()
+		time.sleep(.1)
+		disp.begin()
+except Exception as e:
+	logging.exception("Main crashed. Error: %s", e)
