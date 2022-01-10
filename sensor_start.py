@@ -60,7 +60,7 @@ class T6713(object):
 		self.dev = i2c_6713(addressT6713, bus)
 
 	def status(self):
-		logging.debug('Running function:'+inspect.stack()[0][3])
+#		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.01)
@@ -88,7 +88,7 @@ class T6713(object):
 		return buffer
 
 	def gasPPM(self):
-		logging.debug('Running function:'+inspect.stack()[0][3])
+#		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.1)
@@ -100,7 +100,7 @@ class T6713(object):
         #return buffer[2]*256+buffer[3]
 
 	def checkABC(self):
-		logging.debug('Running function:'+inspect.stack()[0][3])
+#		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.1)
