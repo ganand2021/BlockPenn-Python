@@ -95,7 +95,7 @@ class T6713(object):
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		ret_value = int((((buffer[2] & 0x3F) << 8) | buffer[3]))
-		logging.info("Read gasPPM ("+str(ret_value)+")")
+#		logging.info("Read gasPPM ("+str(ret_value)+")")
 		return ret_value
         #return buffer[2]*256+buffer[3]
 
