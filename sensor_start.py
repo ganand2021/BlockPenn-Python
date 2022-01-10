@@ -125,10 +125,11 @@ RST = None     # on the PiOLED this pin isnt used
 # 128x64 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
 # Initialize library.
-try:
-	disp.begin()
-except Exception as e:
-	logging.exception("Main crashed. Error: %s", e)
+disp.begin()
+# try:
+# 	disp.begin()
+# except Exception as e:
+# 	logging.exception("Main crashed. Error: %s", e)
 	  
 # Clear display.
 disp.clear()
