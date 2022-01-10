@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import math, struct, array, time, io, fcntl
-import logging, os, inspect
+# import logging, os, inspect
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
@@ -12,14 +12,14 @@ from PIL import ImageFont
 import subprocess
 
 # Start logging
-log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
-log_level = logging.INFO
-logging.basicConfig(
-	filename=log_fname,
-    format='%(asctime)s [%(levelname)-8s] %(message)s',
-    level=log_level,
-    datefmt='%Y-%m-%d %H:%M:%S')
-logging.debug('Script started')
+# log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
+# log_level = logging.INFO
+# logging.basicConfig(
+# 	filename=log_fname,
+#     format='%(asctime)s [%(levelname)-8s] %(message)s',
+#     level=log_level,
+#     datefmt='%Y-%m-%d %H:%M:%S')
+# logging.debug('Script started')
 ## logging.debug('This message should go to the log file')
 # logging.info('So should this')
 # logging.warning('And this, too')
@@ -77,7 +77,7 @@ class T6713(object):
 		return buffer
 
 	def reset(self):
-		logging.debug('Running function:'+inspect.stack()[0][3])
+#		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x03, 0xe8, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.01)
@@ -109,7 +109,7 @@ class T6713(object):
 		return buffer[2]*256+buffer[3]
 
 	def calibrate(self):
-		logging.debug('Running function:'+inspect.stack()[0][3])
+#		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
 		self.dev.write(buffer)
 		time.sleep(0.1)
@@ -120,7 +120,7 @@ class T6713(object):
 # T6713 end
 
 # Raspberry Pi pin configuration:
-logging.debug('OLED set up')
+#logging.debug('OLED set up')
 RST = None     # on the PiOLED this pin isnt used
 # 128x64 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
