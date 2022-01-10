@@ -40,6 +40,9 @@ Run `sensor_start.py`
 - [x] Validate CO2 readings: the sensor readings and reset doesn't make sense
 - [x] Consider decreasing T6713 delays (can be 10 miliseconds per application notes)
 - [x] Read directly from I2C for SHTC3
+- [x] Add logging to sensor_start
+- [ ] Add logging to sensor_set
+- [ ] Limit log size / rotate files
 - [ ] Add VENV
 - [ ] Create requirements.txt
 - [ ] Write sensor data to InfluxDB
