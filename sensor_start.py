@@ -13,7 +13,7 @@ import subprocess
 
 # Start logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
-log_level = logging.DEBUG
+log_level = logging.INFO
 logging.basicConfig(
 	filename=log_fname,
     format='%(asctime)s [%(levelname)-8s] %(message)s',
