@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import math, struct, array, time, io, fcntl
+import logging, os, inspect
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
@@ -9,6 +10,16 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 import subprocess
+
+# Start logging
+log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
+log_level = logging.DEBUG
+logging.basicConfig(filename=log_fname, encoding='utf-8', level=log_level)
+logging.debug('Script started')
+# logging.debug('This message should go to the log file')
+# logging.info('So should this')
+# logging.warning('And this, too')
+# logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
 
 # Panels
 PANEL_NUM = 2
@@ -71,12 +82,15 @@ class T6713(object):
 		return buffer
 
 	def gasPPM(self):
+		logging.debug('Running '+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
 		self.dev.write(buffer)
 		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
-		return int((((buffer[2] & 0x3F) << 8) | buffer[3]))
+		ret_value = int((((buffer[2] & 0x3F) << 8) | buffer[3]))
+		logging.debug("Read gasPPM ("+str(ret_value)+")")
+		return ret_value
         #return buffer[2]*256+buffer[3]
 
 	def checkABC(self):
@@ -98,6 +112,7 @@ class T6713(object):
 # T6713 end
 
 # Raspberry Pi pin configuration:
+logging.debug('OLED set up')
 RST = None     # on the PiOLED this pin isnt used
 # 128x64 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
