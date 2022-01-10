@@ -16,7 +16,7 @@ log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
 log_level = logging.DEBUG
 logging.basicConfig(filename=log_fname, encoding='utf-8', level=log_level)
 logging.debug('Script started')
-# logging.debug('This message should go to the log file')
+## logging.debug('This message should go to the log file')
 # logging.info('So should this')
 # logging.warning('And this, too')
 # logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
