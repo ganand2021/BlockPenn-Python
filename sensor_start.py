@@ -190,8 +190,8 @@ def showPanel(panel_id):
 cur_panel = 1
 panel_start = time.time()
 
-try:
-	while True:
+while True:
+	try:
 		# Draw a black filled box to clear the image.
 		draw.rectangle((0,0,width,height), outline=0, fill=0)
 
@@ -217,5 +217,5 @@ try:
 		disp.display()
 		time.sleep(.1)
 		disp.begin()
-except Exception as e:
-	logging.exception("Main crashed. Error: %s", e)
+	except Exception as e:
+		logging.exception("Main crashed. Error: %s", e)
