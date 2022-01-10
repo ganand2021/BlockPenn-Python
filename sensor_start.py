@@ -190,32 +190,29 @@ def showPanel(panel_id):
 cur_panel = 1
 panel_start = time.time()
 
-while True:
-	try:
-		# Draw a black filled box to clear the image.
-		draw.rectangle((0,0,width,height), outline=0, fill=0)
+try:
+	# Draw a black filled box to clear the image.
+	draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-		# Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
-		cmd = "hostname -I | cut -d\' \' -f1"
-		IP = subprocess.check_output(cmd, shell = True )
-		cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
-		CPU = subprocess.check_output(cmd, shell = True )
-		cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
-		MemUsage = subprocess.check_output(cmd, shell = True )
-		cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
-		Disk = subprocess.check_output(cmd, shell = True )
+	# Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
+	cmd = "hostname -I | cut -d\' \' -f1"
+	IP = subprocess.check_output(cmd, shell = True )
+	cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+	CPU = subprocess.check_output(cmd, shell = True )
+	cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+	MemUsage = subprocess.check_output(cmd, shell = True )
+	cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+	Disk = subprocess.check_output(cmd, shell = True )
 
-		# Get measurements
-		temperature, relative_humidity = sht.measurements
-		if (time.time()-panel_start > PANEL_DELAY):
-			cur_panel = (cur_panel+1) % PANEL_NUM
-			panel_start = time.time()
-		showPanel(cur_panel)
+	# Get measurements
+	temperature, relative_humidity = sht.measurements
+	if (time.time()-panel_start > PANEL_DELAY):
+		cur_panel = (cur_panel+1) % PANEL_NUM
+		panel_start = time.time()
+	showPanel(cur_panel)
 
-		# Display image.
-		disp.image(image)
-		disp.display()
-		time.sleep(.1)
-		disp.begin()
-	except Exception as e:
-		logging.exception("Main crashed. Error: %s", e)
+	# Display image.
+	disp.image(image)
+	disp.display()
+	time.sleep(.1)
+	disp.begin()
