@@ -16,7 +16,7 @@ log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
 log_level = logging.DEBUG
 logging.basicConfig(
 	filename=log_fname,
-    format='%(asctime)s %(levelname)-8s %(message)s',
+    format='%(asctime)s [%(levelname)-8s] %(message)s',
     level=log_level,
     datefmt='%Y-%m-%d %H:%M:%S')
 logging.debug('Script started')
