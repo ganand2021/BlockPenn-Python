@@ -78,12 +78,6 @@ class SPS30():
     def __init__(self, port):
         self.bus = SMBus(port)
 
-    def __enter__(self):
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.bus.close()
-
     def read_article_code(self):
         result = []
         article_code = []
@@ -131,9 +125,10 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
-
+        sleep(1)
         read = i2c_msg.read(self.SPS_ADDR, 6)
         self.bus.i2c_rdwr(read)
+        sleep(1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -157,6 +152,7 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
+        sleep(1)
 
     def start_fan_cleaning(self):
         write = i2c_msg.write(self.SPS_ADDR, self.START_CLN)
