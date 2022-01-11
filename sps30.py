@@ -5,7 +5,7 @@ from smbus2 import SMBus, i2c_msg
 import struct
 from time import sleep
 
-SLEEP_READ = 1 # in sec
+SLEEP_READ = 0.2 # in sec
 
 def calculateCRC(input):
     crc = 0xFF
