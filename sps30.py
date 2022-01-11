@@ -258,24 +258,25 @@ if __name__ == "__main__":
 
     sps.start_measurement()
 
-    while not sps.read_data_ready_flag():
-        sleep(0.25)
-        if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
-            raise Exception("DATA-READY FLAG CRC ERROR!")
+    while True:
+        while not sps.read_data_ready_flag():
+            sleep(0.25)
+            if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
+                raise Exception("DATA-READY FLAG CRC ERROR!")
 
-    if sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
-        raise Exception("MEASURED VALUES CRC ERROR!")
-    else:
-        print ("PM1.0 Value in µg/m3: " + str(sps.dict_values['pm1p0']))
-        print ("PM2.5 Value in µg/m3: " + str(sps.dict_values['pm2p5']))
-        print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
-        print ("PM10.0 Value in µg/m3: " + str(sps.dict_values['pm10p0']))
-        print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
-        print ("NC1.0 Value in 1/cm3: " + str(sps.dict_values['nc1p0']))
-        print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
-        print ("NC4.0 Value in 1/cm3: " + str(sps.dict_values['nc4p0']))
-        print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
-        print ("Typical Particle Size in µm: " + str(sps.dict_values['typical']))	
+        if sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
+            raise Exception("MEASURED VALUES CRC ERROR!")
+        else:
+            print ("PM1.0 Value in µg/m3: " + str(sps.dict_values['pm1p0']))
+            print ("PM2.5 Value in µg/m3: " + str(sps.dict_values['pm2p5']))
+            print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
+            print ("PM10.0 Value in µg/m3: " + str(sps.dict_values['pm10p0']))
+            print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
+            print ("NC1.0 Value in 1/cm3: " + str(sps.dict_values['nc1p0']))
+            print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
+            print ("NC4.0 Value in 1/cm3: " + str(sps.dict_values['nc4p0']))
+            print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
+            print ("Typical Particle Size in µm: " + str(sps.dict_values['typical']))	
 
     sps.stop_measurement()
 
