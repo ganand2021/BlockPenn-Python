@@ -86,9 +86,11 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_ARTICLE_CD)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
         read = i2c_msg.read(self.SPS_ADDR, 48)
         self.bus.i2c_rdwr(read)
+        sleep(SLEEP_READ)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -107,9 +109,11 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_SERIAL_NUM)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
         read = i2c_msg.read(self.SPS_ADDR, 48)
         self.bus.i2c_rdwr(read)
+        sleep(SLEEP_READ)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -159,6 +163,7 @@ class SPS30():
     def start_fan_cleaning(self):
         write = i2c_msg.write(self.SPS_ADDR, self.START_CLN)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
     def start_measurement(self):
         self.START_MEAS.append(0x03)
@@ -174,6 +179,7 @@ class SPS30():
     def stop_measurement(self):
         write = i2c_msg.write(self.SPS_ADDR, self.STOP_MEAS)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
     def read_data_ready_flag(self):
         result = []
@@ -198,9 +204,11 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_VALUES)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
         read = i2c_msg.read(self.SPS_ADDR, 60)
         self.bus.i2c_rdwr(read)
+        sleep(SLEEP_READ)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
