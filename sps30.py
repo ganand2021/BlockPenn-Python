@@ -84,11 +84,9 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_ARTICLE_CD)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
         read = i2c_msg.read(self.SPS_ADDR, 48)
         self.bus.i2c_rdwr(read)
-        sleep(0.1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -107,11 +105,9 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_SERIAL_NUM)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
         read = i2c_msg.read(self.SPS_ADDR, 48)
         self.bus.i2c_rdwr(read)
-        sleep(0.1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -129,11 +125,9 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
         read = i2c_msg.read(self.SPS_ADDR, 6)
         self.bus.i2c_rdwr(read)
-        sleep(0.1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -157,12 +151,10 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
     def start_fan_cleaning(self):
         write = i2c_msg.write(self.SPS_ADDR, self.START_CLN)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
     def start_measurement(self):
         self.START_MEAS.append(0x03)
@@ -173,22 +165,19 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.START_MEAS)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
     def stop_measurement(self):
         write = i2c_msg.write(self.SPS_ADDR, self.STOP_MEAS)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
 
     def read_data_ready_flag(self):
         result = []
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_DATA_RDY)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
+
         read = i2c_msg.read(self.SPS_ADDR, 3)
         self.bus.i2c_rdwr(read)
-        sleep(0.1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -203,10 +192,9 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_VALUES)
         self.bus.i2c_rdwr(write)
-        sleep(0.1)
+
         read = i2c_msg.read(self.SPS_ADDR, 60)
         self.bus.i2c_rdwr(read)
-        sleep(0.1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -245,14 +233,14 @@ if __name__ == "__main__":
     else:
         print("DEVICE SERIAL: " + str(sps.read_device_serial()))
 
-    # sps.set_auto_cleaning_interval(10) # default 604800, set 0 to disable auto-cleaning
+    sps.set_auto_cleaning_interval(10) # default 604800, set 0 to disable auto-cleaning
 
-    # sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
+    sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
 
-    # if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
-    #     raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
-    # else:
-    #     print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+    if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
+        raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
+    else:
+        print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
 
     sps.start_measurement()
 
