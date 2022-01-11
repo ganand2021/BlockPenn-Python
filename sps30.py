@@ -78,6 +78,12 @@ class SPS30():
     def __init__(self, port):
         self.bus = SMBus(port)
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.bus.close()
+
     def read_article_code(self):
         result = []
         article_code = []
