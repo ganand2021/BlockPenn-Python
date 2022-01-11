@@ -169,6 +169,7 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.START_MEAS)
         self.bus.i2c_rdwr(write)
+        sleep(SLEEP_READ)
 
     def stop_measurement(self):
         write = i2c_msg.write(self.SPS_ADDR, self.STOP_MEAS)
