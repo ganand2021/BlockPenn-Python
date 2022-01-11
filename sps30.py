@@ -233,14 +233,14 @@ if __name__ == "__main__":
     else:
         print("DEVICE SERIAL: " + str(sps.read_device_serial()))
 
-    sps.set_auto_cleaning_interval(10) # default 604800, set 0 to disable auto-cleaning
+    # sps.set_auto_cleaning_interval(10) # default 604800, set 0 to disable auto-cleaning
 
-    sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
+    # sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
 
-    if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
-        raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
-    else:
-        print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+    # if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
+    #     raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
+    # else:
+    #     print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
 
     sps.start_measurement()
 
