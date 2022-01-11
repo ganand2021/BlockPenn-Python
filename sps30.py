@@ -5,6 +5,8 @@ from smbus2 import SMBus, i2c_msg
 import struct
 from time import sleep
 
+SLEEP_READ = 1 # in sec
+
 def calculateCRC(input):
     crc = 0xFF
     for i in range (0, 2):
@@ -125,10 +127,10 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
-        sleep(1)
+        sleep(SLEEP_READ)
         read = i2c_msg.read(self.SPS_ADDR, 6)
         self.bus.i2c_rdwr(read)
-        sleep(1)
+        sleep(SLEEP_READ)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
@@ -152,7 +154,7 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.RW_AUTO_CLN)
         self.bus.i2c_rdwr(write)
-        sleep(1)
+        sleep(SLEEP_READ)
 
     def start_fan_cleaning(self):
         write = i2c_msg.write(self.SPS_ADDR, self.START_CLN)
@@ -177,10 +179,10 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_DATA_RDY)
         self.bus.i2c_rdwr(write)
-        sleep(1)
+        sleep(SLEEP_READ)
         read = i2c_msg.read(self.SPS_ADDR, 3)
         self.bus.i2c_rdwr(read)
-        sleep(1)
+        sleep(SLEEP_READ)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
