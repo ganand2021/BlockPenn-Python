@@ -177,9 +177,10 @@ class SPS30():
 
         write = i2c_msg.write(self.SPS_ADDR, self.R_DATA_RDY)
         self.bus.i2c_rdwr(write)
-
+        sleep(1)
         read = i2c_msg.read(self.SPS_ADDR, 3)
         self.bus.i2c_rdwr(read)
+        sleep(1)
 
         for i in range(read.len):
             result.append(bytes_to_int(read.buf[i]))
