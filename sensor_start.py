@@ -4,6 +4,7 @@ import logging, os, inspect
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
+import sps30
 
 from PIL import Image
 from PIL import ImageDraw
@@ -26,7 +27,7 @@ logging.debug('Script started')
 # logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
 
 # Panels
-PANEL_NUM = 2
+PANEL_NUM = 3
 PANEL_DELAY = 10 # In seconds
 
 # T6713 start
@@ -169,6 +170,29 @@ obj = T6713()
 # print("T6713 reset returned:")
 # print(','.join(format(x, '02x') for x in t6713_reset))
 
+# Prep the air quality sensor
+sps = sps30.SPS30(1)
+if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
+	raise Exception("ARTICLE CODE CRC ERROR!")
+else:
+	print("ARTICLE CODE: " + str(sps.read_article_code()))
+
+if sps.read_device_serial() == sps.SERIAL_NUMBER_ERROR:
+	raise Exception("SERIAL NUMBER CRC ERROR!")
+else:
+	print("DEVICE SERIAL: " + str(sps.read_device_serial()))
+
+sps.set_auto_cleaning_interval(604800) # default 604800, set 0 to disable auto-cleaning
+
+sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
+
+if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
+	raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
+else:
+	print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+
+sps.start_measurement()
+
 # Configure the display panel
 def showPanel(panel_id):
     draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
@@ -179,13 +203,26 @@ def showPanel(panel_id):
         draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
         draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
     if (panel_id == 1):
-        draw.text((x, top+8*1), "SENSORS",  font=font, fill=255)
+        draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
         draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
         draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
         draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
         draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj.status())+")"),  font=font, fill=255)
         draw.text((x, top+8*6), str("PPM: "+str(obj.gasPPM())),  font=font, fill=255)
         draw.text((x, top+8*7), str("ABC State: "+str(obj.checkABC())),  font=font, fill=255)
+    if (panel_id == 2):
+        draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
+        draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
+        draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5']),  font=font, fill=255)
+        draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0']),  font=font, fill=255)
+        draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0']),  font=font, fill=255)
+        draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
+        draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
+
+#		print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
+#		print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
+#		print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
+#		print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
 
 cur_panel = 1
 panel_start = time.time()
@@ -206,6 +243,16 @@ while True:
 
 	# Get measurements
 	temperature, relative_humidity = sht.measurements
+
+	while not sps.read_data_ready_flag():
+		time.sleep(0.25)
+		if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
+			raise Exception("DATA-READY FLAG CRC ERROR!")
+
+	if sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
+		raise Exception("MEASURED VALUES CRC ERROR!")
+
+	# Set display
 	if (time.time()-panel_start > PANEL_DELAY):
 		cur_panel = (cur_panel+1) % PANEL_NUM
 		panel_start = time.time()
