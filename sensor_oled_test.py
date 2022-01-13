@@ -194,7 +194,7 @@ else:
 sps.start_measurement()
 
 # Random graph
-randGraph = array.array(int, [1,2,3,4,4,3,3,1,3,5,6,6,5])
+randGraph = [1,2,3,4,4,3,3,1,3,5,6,6,5]
 
 def drawRandomGraph():
     g_x = 0
