@@ -15,3 +15,4 @@ pip3 install requests
 # Links
 - API: https://realpython.com/api-integration-in-python/
 - Kasa API: https://github.com/arallsopp/tp-link-smart-switch-web-client-/blob/master/script.js
+- Python Kasa: https://python-kasa.readthedocs.io/en/latest/smartplug.html
