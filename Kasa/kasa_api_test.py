@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import requests, secrets
+import requests, secrets, json
 
 api_url = "https://wap.tplinkcloud.com"
 
@@ -91,8 +91,15 @@ if (err_code == 0): print("Set has no errors")
 if (response_code == 200): print("Set success!")
 if (err_code == 0): print("Set has no errors")
 
-print("json_resp", json_resp['result']['responseData']['emeter'](0))
-
+dev_ma = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['current_ma']
+dev_mv = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['current_mv']
+dev_mw = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['current_mw']
+dev_wh = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['current_wh']
+dev_e_err = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['err_code']
+print('dev_ma:',dev_ma)
+print('dev_mv:',dev_mv)
+print('dev_mw:',dev_mw)
+print('dev_wh:',dev_wh)
 #  {'error_code': 0, 
 #  'result': 
 #     {'responseData': 
