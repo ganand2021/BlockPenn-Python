@@ -91,6 +91,7 @@ if (err_code == 0): print("Set has no errors")
 if (response_code == 200): print("Set success!")
 if (err_code == 0): print("Set has no errors")
 
+dev_emtr = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']
 dev_ma = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['current_ma']
 dev_mv = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['voltage_mv']
 dev_mw = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['power_mw']
@@ -98,7 +99,7 @@ dev_wh = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime
 dev_e_err = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['err_code']
 print('dev_ma:',dev_ma)
 #str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
-print(str("dev_mv: %0.1f V" % (dev_mv/1000)))
+print(str("dev_mv: %0.1f V" % (dev_emtr.dict_values['voltage_mv']/1000)))
 print('dev_mw:',dev_mw)
 print('dev_wh:',dev_wh)
 #  {'error_code': 0, 
