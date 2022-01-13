@@ -91,4 +91,11 @@ if (err_code == 0): print("Set has no errors")
 if (response_code == 200): print("Set success!")
 if (err_code == 0): print("Set has no errors")
 
-print("json_resp", json_resp)
+print("json_resp", json_resp['result']['emeter'])
+
+#  {'error_code': 0, 
+#  'result': 
+#     {'responseData': 
+#         '{"system":
+#             {"get_sysinfo":
+#                 {"sw_ver":"1.0.18 Build 210910 Rel.141202","hw_ver":"1.0","model":"KP115(US)","deviceId":"8006623D62F030B75853E090A889843E1EDA9D79","oemId":"9FDE0C9E37EDF4495F681216FEFB0CFB","hwId":"3E2B9A976B98DCFC5C83D11C8CEF7510","rssi":-35,"latitude_i":399615,"longitude_i":-751772,"alias":"Lab1","status":"configured","obd_src":"tplink","mic_type":"IOT.SMARTPLUGSWITCH","feature":"TIM:ENE","mac":"10:27:F5:8A:36:C6","updating":0,"led_off":0,"relay_state":1,"on_time":0,"icon_hash":"","dev_name":"Smart Wi-Fi Plug Mini","active_mode":"none","next_action":{"type":-1},"ntc_state":0,"err_code":0}},"emeter":{"get_realtime":{"current_ma":0,"voltage_mv":120338,"power_mw":0,"total_wh":0,"err_code":0}}}'}}
