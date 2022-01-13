@@ -91,7 +91,7 @@ if (err_code == 0): print("Set has no errors")
 if (response_code == 200): print("Set success!")
 if (err_code == 0): print("Set has no errors")
 
-print("json_resp", json_resp['result']['responseData']['emeter'])
+print("json_resp", str(json_resp['result']['responseData']['emeter']))
 
 #  {'error_code': 0, 
 #  'result': 
