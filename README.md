@@ -68,3 +68,4 @@ Run `sensor_start.py`
 ## Side notes
 - Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
 - Create the requirements.txt: `pip3 freeze > requirements.txt`
+- Good diagram of particles types (p. 13): https://cdn-learn.adafruit.com/downloads/pdf/pm25-air-quality-sensor.pdf
