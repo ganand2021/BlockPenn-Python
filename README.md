@@ -64,6 +64,8 @@ Run `sensor_start.py`
 - I2C UM10204: https://www.nxp.com/docs/en/user-guide/UM10204.pdf
 - Connectd guide to reading SHTC3: https://blog.dbrgn.ch/2018/8/20/read-shtc3-sensor-from-linux-raspberry-pi/
 - Python Kasa: https://python-kasa.readthedocs.io/en/latest/smartplug.html
+- SPS30 datasheet: https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.6_Particulate_Matter/Datasheets/Sensirion_PM_Sensors_Datasheet_SPS30.pdf
+- SPS30 page: https://www.sensirion.com/en/environmental-sensors/particulate-matter-sensors-pm25/
 
 ## Side notes
 - Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
