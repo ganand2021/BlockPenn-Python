@@ -96,13 +96,10 @@ dev_mv = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime
 dev_mw = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['power_mw']
 dev_wh = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['total_wh']
 dev_e_err = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['err_code']
-print('dev_ma:',dev_ma)
-print(str("dev_ma: %0.1f A" % (dev_ma/1000)))
-print(str("dev_mv: %0.1f V" % (dev_mv/1000)))
-print(str("dev_mw: %0.1f W" % (dev_mw/1000)))
-print(str("dev_wh: %0.1f W/H" % (dev_wh/1000)))
-print('dev_mw:',dev_mw)
-print('dev_wh:',dev_wh)
+print(str("dev_ma: %0.2f A" % (dev_ma/1000)))
+print(str("dev_mv: %0.2f V" % (dev_mv/1000)))
+print(str("dev_mw: %0.2f W" % (dev_mw/1000)))
+print(str("dev_wh: %0.2f W/H" % (dev_wh/1000)))
 #  {'error_code': 0, 
 #  'result': 
 #     {'responseData': 
