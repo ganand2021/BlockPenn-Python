@@ -97,7 +97,7 @@ dev_mw = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime
 dev_wh = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['total_wh']
 dev_e_err = json.loads(json_resp['result']['responseData'])['emeter']['get_realtime']['err_code']
 print('dev_ma:',dev_ma)
-print('dev_mv:',dev_mv)
+print(str("dev_mv: %0.1f V" % dev_mv/1000))
 print('dev_mw:',dev_mw)
 print('dev_wh:',dev_wh)
 #  {'error_code': 0, 
