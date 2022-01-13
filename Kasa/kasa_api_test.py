@@ -55,6 +55,16 @@ def set_dev_state(token, sel_device_id, sel_device_state):
     response = requests.post(api_url+"?token="+token, json=set_obj)
     return response.status_code, response.json()["error_code"]
 
+def set_dev_state_emeter(token, sel_device_id):
+    set_obj = {
+        "method": "passthrough", "params": {
+            "deviceId": sel_device_id,
+            "requestData": "{\"system\":{\"get_sysinfo\":null},\"emeter\":{\"get_realtime\":null}}"
+        }
+    }
+    response = requests.post(api_url+"?token="+token, json=set_obj)
+    return response.status_code, response.json()["error_code"], response.json()
+
 # Authenticate and get token
 uuid = create_random_uuid()
 print("uuid:",uuid)
@@ -72,7 +82,13 @@ print("Identified # of devices:",len(dev_list))
 sel_device = dev_list[0]
 print("sel_device", sel_device["deviceId"])
 sel_device_id = sel_device["deviceId"]
-sel_device_state = 0
+sel_device_state = 1
 [response_code, err_code] = set_dev_state(kasa_token, sel_device_id, sel_device_state)
 if (response_code == 200): print("Set success!")
 if (err_code == 0): print("Set has no errors")
+
+[response_code, err_code, json_resp] = set_dev_state_emeter(kasa_token, sel_device_id)
+if (response_code == 200): print("Set success!")
+if (err_code == 0): print("Set has no errors")
+
+print("json_resp", json_resp)
