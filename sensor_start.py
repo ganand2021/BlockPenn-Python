@@ -243,7 +243,7 @@ while True:
 
 	# Get measurements
 	temperature, relative_humidity = sht.measurements
-
+	logging.debug('Reading SPS30 data')
 	if not sps.read_data_ready_flag():
 		if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
 			raise Exception("DATA-READY FLAG CRC ERROR!")
