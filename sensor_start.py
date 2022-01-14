@@ -244,12 +244,10 @@ while True:
 	# Get measurements
 	temperature, relative_humidity = sht.measurements
 
-	while not sps.read_data_ready_flag():
-		time.sleep(0.25)
+	if not sps.read_data_ready_flag():
 		if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
 			raise Exception("DATA-READY FLAG CRC ERROR!")
-
-	if sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
+	elif sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
 		raise Exception("MEASURED VALUES CRC ERROR!")
 
 	# Set display
