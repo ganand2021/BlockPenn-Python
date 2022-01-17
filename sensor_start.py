@@ -224,39 +224,48 @@ def showPanel(panel_id):
 #		print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
 #		print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
 
-cur_panel = 1
-panel_start = time.time()
+def main():
+	cur_panel = 1
+	panel_start = time.time()
+	while True:
+		# Draw a black filled box to clear the image.
+		draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-while True:
-	# Draw a black filled box to clear the image.
-	draw.rectangle((0,0,width,height), outline=0, fill=0)
+		# Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
+		cmd = "hostname -I | cut -d\' \' -f1"
+		IP = subprocess.check_output(cmd, shell = True )
+		cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+		CPU = subprocess.check_output(cmd, shell = True )
+		cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+		MemUsage = subprocess.check_output(cmd, shell = True )
+		cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+		Disk = subprocess.check_output(cmd, shell = True )
 
-	# Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
-	cmd = "hostname -I | cut -d\' \' -f1"
-	IP = subprocess.check_output(cmd, shell = True )
-	cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
-	CPU = subprocess.check_output(cmd, shell = True )
-	cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
-	MemUsage = subprocess.check_output(cmd, shell = True )
-	cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
-	Disk = subprocess.check_output(cmd, shell = True )
+		# Get measurements
+		temperature, relative_humidity = sht.measurements
+		logging.debug('Reading SPS30 data')
+		try: 
+			if not sps.read_data_ready_flag():
+				if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
+					raise Exception("DATA-READY FLAG CRC ERROR!")
+			elif sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
+				raise Exception("MEASURED VALUES CRC ERROR!")
+		except Exception as e:
+			raise Exception("SPS30: read_data_ready_flag raised exception: %s", e)		
 
-	# Get measurements
-	temperature, relative_humidity = sht.measurements
-	logging.debug('Reading SPS30 data')
-	if not sps.read_data_ready_flag():
-		if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
-			raise Exception("DATA-READY FLAG CRC ERROR!")
-	elif sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
-		raise Exception("MEASURED VALUES CRC ERROR!")
+		# Set display
+		if (time.time()-panel_start > PANEL_DELAY):
+			cur_panel = (cur_panel+1) % PANEL_NUM
+			panel_start = time.time()
+		showPanel(cur_panel)
 
-	# Set display
-	if (time.time()-panel_start > PANEL_DELAY):
-		cur_panel = (cur_panel+1) % PANEL_NUM
-		panel_start = time.time()
-	showPanel(cur_panel)
+		# Display image.
+		disp.image(image)
+		disp.display()
+		time.sleep(.1)
 
-	# Display image.
-	disp.image(image)
-	disp.display()
-	time.sleep(.1)
+if __name__ == "__main__":
+   try:
+      main()
+   except Exception as e:
+      logging.exception("main crashed. Error: %s", e)
