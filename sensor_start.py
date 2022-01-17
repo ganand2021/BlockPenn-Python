@@ -164,7 +164,7 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
 
 # Connect T6713
-obj = T6713()
+obj_6713 = T6713()
 # If Reset needed - uncomment
 # t6713_reset = obj.reset()
 # print("T6713 reset returned:")
@@ -207,9 +207,9 @@ def showPanel(panel_id):
         draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
         draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
         draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
-        draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj.status())+")"),  font=font, fill=255)
-        draw.text((x, top+8*6), str("PPM: "+str(obj.gasPPM())),  font=font, fill=255)
-        draw.text((x, top+8*7), str("ABC State: "+str(obj.checkABC())),  font=font, fill=255)
+        draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
+        draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
+        draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
     if (panel_id == 2):
         draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
         draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
@@ -224,7 +224,19 @@ def showPanel(panel_id):
 #		print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
 #		print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
 
+# Global vars
+cmd = "hostname -I | cut -d\' \' -f1"
+IP = subprocess.check_output(cmd, shell = True )
+cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+CPU = subprocess.check_output(cmd, shell = True )
+cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+MemUsage = subprocess.check_output(cmd, shell = True )
+cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+Disk = subprocess.check_output(cmd, shell = True )
+temperature, relative_humidity = sht.measurements
+
 def main():
+	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps
 	cur_panel = 1
 	panel_start = time.time()
 	while True:
