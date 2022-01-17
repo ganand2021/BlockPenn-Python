@@ -25,6 +25,10 @@ log_handler = logging.handlers.RotatingFileHandler(
 	backupCount=5)
 logger.addHandler(log_handler)
 
+logging.basicConfig(
+    format='%(asctime)s [%(levelname)-8s] %(message)s',
+    level=log_level,
+    datefmt='%Y-%m-%d %H:%M:%S')
 # logging.basicConfig(
 # 	filename=log_fname,
 #     format='%(asctime)s [%(levelname)-8s] %(message)s',
