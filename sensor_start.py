@@ -64,7 +64,7 @@ class T6713(object):
 		logging.debug('Running function:'+inspect.stack()[0][3])
 		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.1)
 		data = self.dev.read(4)
 		buffer = array.array('B', data)
 		return buffer[2]*256+buffer[3]
@@ -72,7 +72,7 @@ class T6713(object):
 	def send_cmd(self, cmd):
 		buffer = array.array('B', cmd)
 		self.dev.write(buffer)
-		time.sleep(0.01)
+		time.sleep(0.01) # Technically minimum delay is 10ms 
 		data = self.dev.read(5)
 		buffer = array.array('B', data)
 		return buffer
@@ -274,7 +274,7 @@ def main():
 		# Display image.
 		disp.image(image)
 		disp.display()
-		time.sleep(.1)
+		time.sleep(1)
 
 if __name__ == "__main__":
    try:
