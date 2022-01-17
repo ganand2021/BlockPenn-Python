@@ -42,7 +42,7 @@ Run `sensor_start.py`
 - [x] Read directly from I2C for SHTC3
 - [x] Add logging to sensor_start
 - [ ] Add logging to sensor_set
-- [ ] Limit log size / rotate files
+- [x] Limit log size / rotate files
 - [ ] Add VENV
 - [ ] Create requirements.txt
 - [ ] Write sensor data to InfluxDB
@@ -50,8 +50,8 @@ Run `sensor_start.py`
 - [ ] Connect controls: leds
 - [ ] Add plug load monitoring
 - [ ] Add case
-- [ ] Add air quality sensor
-- [ ] Add integration with Kasa API
+- [x] Add air quality sensor
+- [x] Add integration with Kasa API
 
 ## Future features
 `pip3 install -r requirements.txt`
