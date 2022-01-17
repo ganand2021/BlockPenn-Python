@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import math, struct, array, time, io, fcntl
-import logging, os, inspect
+import logging, os, inspect, logging.handlers
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
@@ -15,12 +15,22 @@ import subprocess
 # Start logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
 log_level = logging.DEBUG
-logging.basicConfig(
-	filename=log_fname,
-    format='%(asctime)s [%(levelname)-8s] %(message)s',
-    level=log_level,
-    datefmt='%Y-%m-%d %H:%M:%S')
-logging.debug('Script started')
+
+logger = logging.getLogger('MyLogger')
+logger.setLevel(log_level)
+# Adding rotating log
+log_handler = logging.handlers.RotatingFileHandler(
+	log_fname,
+	maxBytes=200000, 
+	backupCount=5)
+logger.addHandler(log_handler)
+
+# logging.basicConfig(
+# 	filename=log_fname,
+#     format='%(asctime)s [%(levelname)-8s] %(message)s',
+#     level=log_level,
+#     datefmt='%Y-%m-%d %H:%M:%S')
+logger.debug('Script started')
 ## logging.debug('This message should go to the log file')
 # logging.info('So should this')
 # logging.warning('And this, too')
