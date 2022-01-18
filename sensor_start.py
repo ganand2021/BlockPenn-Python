@@ -245,6 +245,8 @@ def main():
 	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps
 	cur_panel = 1
 	panel_start = time.time()
+	str_panel_start = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(panel_start))
+	print(str_panel_start+": main started")
 	while True:
 		# Draw a black filled box to clear the image.
 		draw.rectangle((0,0,width,height), outline=0, fill=0)
