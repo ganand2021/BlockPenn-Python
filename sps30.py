@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Source: https://raw.githubusercontent.com/feyzikesim/sps30/master/sps30/sps30.py
+# https://github.com/feyzikesim/sps30
 
 from smbus2 import SMBus, i2c_msg
 import struct

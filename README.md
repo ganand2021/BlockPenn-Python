@@ -1,21 +1,32 @@
 # BlockPenn-Python
-Python code for the RPi sensors
-
+Python code for the RPi sensors.
 ## How to run
+Usage: deploy after the docker image of blockpenn has been deployed on the RPi. 
+
 ### sensor_start
 `sensor_start.py`: this is the I2C code with all 2 sensors (CO2, Humidity & Temp) and OLED display.
 #### Setting up the environment
+Adafruit_Python_SSD1306:
 ```sh
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+cd Adafruit_Python_SSD1306
 sudo python3 setup.py install
 cd examples
 sudo apt install -y python3-pil
 sudo apt install -y python3-rpi.gpio
+```
+Adafruit_CircuitPython_SHTC3:
+```sh
 git clone https://github.com/adafruit/Adafruit_CircuitPython_SHTC3
 cd Adafruit_CircuitPython_SHTC3
 sudo pip3 install adafruit-circuitpython-shtc3
 sudo python3 setup.py install
 ```
+SPS30
+```sh
+pip3 install sps30
+```
+
 ### sensor_set
 `sensor_set.py`: this is the I2C code without the OLED display, but it doesn't require any additional packages.
 
@@ -40,18 +51,21 @@ Run `sensor_start.py`
 - [x] Validate CO2 readings: the sensor readings and reset doesn't make sense
 - [x] Consider decreasing T6713 delays (can be 10 miliseconds per application notes)
 - [x] Read directly from I2C for SHTC3
-- [x] Add logging to sensor_start
-- [ ] Add logging to sensor_set
-- [x] Limit log size / rotate files
-- [ ] Add VENV
-- [ ] Create requirements.txt
-- [ ] Write sensor data to InfluxDB
-- [ ] Connect controls: button
-- [ ] Connect controls: leds
-- [ ] Add plug load monitoring
-- [ ] Add case
 - [x] Add air quality sensor
 - [x] Add integration with Kasa API
+- [x] Add logging to sensor_start
+- [x] Limit log size / rotate files
+- Features:
+- [ ] Write sensor data to InfluxDB
+- [ ] Add logging to sensor_set
+- Environment/setup:
+- [ ] Add VENV
+- [ ] Create requirements.txt
+- Functionality:
+- [ ] Connect controls: button
+- [ ] Connect controls: leds
+- [ ] Add plug load monitoring to sensor_set and sensor_start
+- [ ] Add case
 
 ## Future features
 `pip3 install -r requirements.txt`
