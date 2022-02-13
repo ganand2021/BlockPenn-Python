@@ -5,6 +5,7 @@ import board
 import adafruit_shtc3
 import Adafruit_SSD1306
 import sps30
+import DBSETUP  # import the db setup
 
 from PIL import Image
 from PIL import ImageDraw
@@ -229,6 +230,22 @@ def showPanel(panel_id):
 #		print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
 #		print ("NC2.5 Value in 1/cm3: " + str(sps.dict_values['nc2p5']))
 #		print ("NC10.0 Value in 1/cm3: " + str(sps.dict_values['nc10p0']))
+
+def saveResults():
+	DBSETUP.ganacheLogger(float(temperature), "Temperature", "C", "MAC_T", "unit_descrip", "SHTC3", "Sensirion")	
+	DBSETUP.ganacheLogger(float(relative_humidity), "Relative Humidity", "%", "MAC_H", "unit_descrip", "SHTC3", "Sensirion")
+	DBSETUP.ganacheLogger(float(obj_6713.gasPPM()), "CO2 Concentration", "PPM", "MAC_CO2", "unit_descrip", "T6713", "Amphenol Advanced Sensors")
+	DBSETUP.ganacheLogger(float(obj_6713.checkABC()), "CO2 ABC State", " ", "MAC_CO2_ABC", "unit_descrip", "T6713", "Amphenol Advanced Sensors")
+	DBSETUP.ganacheLogger(float(sps.dict_values['pm1p0']), "AQ_PM1.0", "µg/m3", "MAC_AQ_1", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['pm2p5']), "AQ_PM2.5", "µg/m3", "MAC_AQ_2", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['pm4p0']), "AQ_PM4", "µg/m3", "MAC_AQ_3", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['pm10p0']), "AQ_PM10", "µg/m3", "MAC_AQ_4", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['nc0p5']), "AQ_NC0_5", "1/cm3", "MAC_AQ_5", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['nc1p0']), "AQ_NC1", "1/cm3", "MAC_AQ_6", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['nc2p5']), "AQ_NC2_5", "1/cm3", "MAC_AQ_7", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['nc4p0']), "AQ_NC4", "1/cm3", "MAC_AQ_8", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['nc10p0']), "AQ_NC10", "1/cm3", "MAC_AQ_9", "unit_descrip", "SPS30", "Sensirion")
+	DBSETUP.ganacheLogger(float(sps.dict_values['typical']), "AQ_NC0_TYPICAL", "µm", "MAC_AQ_10", "unit_descrip", "SPS30", "Sensirion")
 
 # Global vars
 cmd = "hostname -I | cut -d\' \' -f1"
