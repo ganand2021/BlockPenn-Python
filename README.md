@@ -62,6 +62,7 @@ Run `sensor_start.py`
 - [ ] Add VENV
 - [ ] Create requirements.txt
 - Functionality:
+- [ ] Seperate the sampling into its own function in the sensor_start
 - [ ] Connect controls: button
 - [ ] Connect controls: leds
 - [ ] Add plug load monitoring to sensor_set and sensor_start
