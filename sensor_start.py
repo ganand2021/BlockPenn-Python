@@ -236,7 +236,7 @@ def showPanel(panel_id):
 
 def saveResults():
 	DBSETUP.ganacheLogger(float(temperature), "Temperature", "C", "MAC_T", "unit_descrip", "SHTC3", "Sensirion")	
-	DBSETUP.ganacheLogger(float(relative_humidity), "Relative Humidity", "%", "MAC_H", "unit_descrip", "SHTC3", "Sensirion")
+	DBSETUP.ganacheLogger(float(relative_humidity), "Humidity", "%", "MAC_H", "unit_descrip", "SHTC3", "Sensirion")
 	DBSETUP.ganacheLogger(float(obj_6713.gasPPM()), "CO2 Concentration", "PPM", "MAC_CO2", "unit_descrip", "T6713", "Amphenol Advanced Sensors")
 	DBSETUP.ganacheLogger(float(obj_6713.checkABC()), "CO2 ABC State", " ", "MAC_CO2_ABC", "unit_descrip", "T6713", "Amphenol Advanced Sensors")
 	DBSETUP.ganacheLogger(float(sps.dict_values['pm1p0']), "AQ_PM1.0", "µg/m3", "MAC_AQ_1", "unit_descrip", "SPS30", "Sensirion")
@@ -301,6 +301,9 @@ def main():
 		showPanel(cur_panel)
 
 		# Write measurements to the DB
+		print("db_sample_start",db_sample_start)
+		print("DB_SAMPLE_PERIOD", DB_SAMPLE_PERIOD)
+		print("time.time()", time.time())
 		if (time.time()-db_sample_start > DB_SAMPLE_PERIOD):
 			logging.debug('Writing samples to the DB')
 			saveResults()
