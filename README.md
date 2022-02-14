@@ -6,6 +6,11 @@ Usage: deploy after the docker image of blockpenn has been deployed on the RPi.
 ### sensor_start
 `sensor_start.py`: this is the I2C code with all 2 sensors (CO2, Humidity & Temp) and OLED display.
 #### Setting up the environment
+General:
+```sh
+pip3 install influxdb
+```
+
 Adafruit_Python_SSD1306:
 ```sh
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
