@@ -37,6 +37,9 @@ logger.debug('Script started')
 PANEL_NUM = 3
 PANEL_DELAY = 10 # In seconds
 
+# DB
+DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD seconds
+
 # T6713 start
 bus = 1
 addressT6713 = 0x15
@@ -261,6 +264,7 @@ temperature, relative_humidity = sht.measurements
 def main():
 	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps
 	cur_panel = 1
+	db_sample_start = time.time()
 	panel_start = time.time()
 	str_panel_start = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(panel_start))
 	print(str_panel_start+": main started")
@@ -296,6 +300,12 @@ def main():
 			panel_start = time.time()
 		showPanel(cur_panel)
 
+		# Write measurements to the DB
+		if (time.time()-db_sample_start > DB_SAMPLE_PERIOD):
+			logging.debug('Writing samples to the DB')
+			saveResults()
+			db_sample_start = time.time()
+		
 		# Display image.
 		disp.image(image)
 		disp.display()
