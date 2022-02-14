@@ -301,9 +301,6 @@ def main():
 		showPanel(cur_panel)
 
 		# Write measurements to the DB
-		print("db_sample_start",db_sample_start)
-		print("DB_SAMPLE_PERIOD", DB_SAMPLE_PERIOD)
-		print("time.time()", time.time())
 		if (time.time()-db_sample_start > DB_SAMPLE_PERIOD):
 			logging.debug('Writing samples to the DB')
 			saveResults()

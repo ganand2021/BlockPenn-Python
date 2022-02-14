@@ -1,5 +1,6 @@
 from influxdb import InfluxDBClient
 from datetime import datetime
+import logging
 #import time
 
 # DB Variables
@@ -45,4 +46,4 @@ def ganacheLogger(data, Measurement, Unit, MAC_Address, unit_descrip, sensor_nam
         }
     )
     client.write_points(json_body)
-    print("Wrote data point for:", Measurement, " as: ", data)
+#    print("Wrote data point for:", Measurement, " as: ", data)
