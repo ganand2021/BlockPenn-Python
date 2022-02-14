@@ -6,6 +6,7 @@ StartLimitIntervalSec=30
 
 [Service]
 Type=simple
+User=root
 Restart=always
 RestartSec=5
 ExecStart=/usr/bin/python3 /home/ubuntu/blockpenn-python/sensor_start.py
