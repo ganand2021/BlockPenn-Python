@@ -8,7 +8,7 @@ Usage: deploy after the docker image of blockpenn has been deployed on the RPi.
 #### Setting up the environment
 General:
 ```sh
-pip3 install influxdb
+sudo pip3 install influxdb
 ```
 
 Adafruit_Python_SSD1306:
