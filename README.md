@@ -61,7 +61,7 @@ Run `sensor_start.py`
 - [x] Add logging to sensor_start
 - [x] Limit log size / rotate files
 - Features:
-- [ ] Write sensor data to InfluxDB
+- [x] Write sensor data to InfluxDB
 - [ ] Add logging to sensor_set
 - Environment/setup:
 - [ ] Add VENV
