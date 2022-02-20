@@ -77,7 +77,7 @@ class btn:
 
 # Start the lgpio
 GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setmode(GPIO.BCM) # Use physical pin numbering
 
 def button_callback(channel):
     print("Button was pushed!")
