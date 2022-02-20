@@ -72,7 +72,7 @@ while True:
         for s in S:
             d = s.set_led(led_state)
             print("Changed led to ",led_state)
-        time.sleep(60)
+        time.sleep(10)
         led_state = 0 if (led_state) else 1
     except KeyboardInterrupt:
         break
