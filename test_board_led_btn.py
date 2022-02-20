@@ -72,8 +72,8 @@ while test_cnt<2:
     try:
         led1.set_led(led_state)
         led2.set_led(led_state)
-        print("btn1 is ", btn1.sts_btn)
-        print("btn2 is ", btn2.sts_btn)
+        print("btn1 is ", btn1.sts_btn())
+        print("btn2 is ", btn2.sts_btn())
         time.sleep(10)
         led_state = 0 if (led_state) else 1
         test_cnt = test_cnt + 1
