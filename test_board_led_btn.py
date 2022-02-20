@@ -14,7 +14,7 @@ import atexit
 LED1_PIN = 22
 LED2_PIN = 23
 
-BTN1_PIN = 17
+BTN1_PIN = 4
 BTN2_PIN = 27
 
 """
