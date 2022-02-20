@@ -8,7 +8,7 @@ import Adafruit_SSD1306
 #import sps30
 ## SPS - uncomment end
 import DBSETUP  # import the db setup
-# import RPi.GPIO as GPIO # Import RPi.GPIO library
+import RPi.GPIO as GPIO # Import RPi.GPIO library
 
 from PIL import Image
 from PIL import ImageDraw
