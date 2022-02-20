@@ -66,14 +66,16 @@ S.append(led(chip, LED1_PIN, 0))
 S.append(led(chip, LED2_PIN, 0))  
 
 led_state = 1
+test_cnt = 0
 
-while True:
+while test_cnt<2:
     try:
         for s in S:
             d = s.set_led(led_state)
             print("Changed led to ",led_state)
         time.sleep(10)
         led_state = 0 if (led_state) else 1
+        test_cnt = test_cnt + 1
     except KeyboardInterrupt:
         break
 
