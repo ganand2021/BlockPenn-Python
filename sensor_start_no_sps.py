@@ -8,6 +8,7 @@ import Adafruit_SSD1306
 #import sps30
 ## SPS - uncomment end
 import DBSETUP  # import the db setup
+# import RPi.GPIO as GPIO # Import RPi.GPIO library
 
 from PIL import Image
 from PIL import ImageDraw
@@ -18,8 +19,8 @@ import subprocess
 # for the leds and buttons
 import lgpio as sbc
 
-LED1_PIN = 22 # green 
-LED2_PIN = 23 # red
+LED1_PIN = 22 # red 
+LED2_PIN = 23 # green
 
 BTN1_PIN = 4 # Bottom, pull-down
 BTN2_PIN = 27 # Into the center of the PCB, pull-down
@@ -72,11 +73,15 @@ class btn:
         return sbc.gpio_read(self.chip, self.btn_pin)
 
 # Start the lgpio
+# GPIO.setwarnings(False) # Ignore warning for now
+# GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+# GPIO.setup(LED1_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+
 chip = sbc.gpiochip_open(0)
 # Set the leds & btns
 logging.info('Setting leds and buttons')
-green_led = led(chip, LED1_PIN, 0)
-red_led = led(chip, LED2_PIN, 0)
+red_led = led(chip, LED1_PIN, 0)
+green_led = led(chip, LED2_PIN, 0)
 l_btn = btn(chip, BTN1_PIN)
 r_btn = btn(chip, BTN2_PIN)
 logging.info('Completed setting leds and buttons')
