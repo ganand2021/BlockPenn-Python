@@ -62,8 +62,8 @@ signal.signal(signal.SIGINT, handle_exit)
 
 S = []
 
-S.append(led(chip, LED1_PIN, args.gpio))  
-S.append(led(chip, LED2_PIN, args.gpio))  
+S.append(led(chip, LED1_PIN, 0))  
+S.append(led(chip, LED2_PIN, 0))  
 
 led_state = 1
 
