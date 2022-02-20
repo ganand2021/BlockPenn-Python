@@ -81,3 +81,5 @@ while test_cnt<2:
 
 for s in S:
     s.cancel()
+
+sbc.gpiochip_close(chip)
