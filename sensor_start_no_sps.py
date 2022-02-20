@@ -17,7 +17,7 @@ from PIL import ImageFont
 import subprocess
 
 # for the leds and buttons
-import lgpio as sbc
+#import lgpio as sbc
 
 LED1_PIN = 22 # red 
 LED2_PIN = 23 # green
@@ -55,13 +55,14 @@ DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD secon
 # GPIO classes: led & btn
 class led:
     def __init__(self, chip, led_pin, callback=None):
-        sbc.gpio_claim_output(chip, led_pin)
-        sbc.gpio_write(chip, led_pin, 1)
+        # sbc.gpio_claim_output(chip, led_pin)
+        # sbc.gpio_write(chip, led_pin, 1)
         self.chip = chip
         self.led_pin = led_pin
 
     def set_led(self, state):
-        sbc.gpio_write(self.chip, self.led_pin, state)
+        return 0
+        # sbc.gpio_write(self.chip, self.led_pin, state)
 
 class btn:
     def __init__(self, chip, btn_pin, callback=None):
@@ -72,7 +73,7 @@ class btn:
         self.btn_pin = btn_pin
 
     def sts_btn(self):
-        return sbc.gpio_read(self.chip, self.btn_pin)
+        return 0 #sbc.gpio_read(self.chip, self.btn_pin)
 
 # Start the lgpio
 GPIO.setwarnings(False) # Ignore warning for now
@@ -81,7 +82,7 @@ GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
 def button_callback(channel):
     print("Button was pushed!")
 
-chip = sbc.gpiochip_open(0)
+#chip = sbc.gpiochip_open(0)
 # Set the leds & btns
 logging.info('Setting leds and buttons')
 red_led = led(chip, LED1_PIN, 0)
