@@ -5,9 +5,7 @@ Simple app to test the blockpenn v1 board leds and button
 
 import time
 import lgpio as sbc
-import sys
-import argparse
-import datetime
+#import sys
 
 LED1_PIN = 22 # green 
 LED2_PIN = 23 # red
@@ -40,7 +38,7 @@ class btn:
 chip = sbc.gpiochip_open(0)
 # Instantiate a class for each GPIO
 
-# Set the led
+# Set the leds & btns
 led1 = led(chip, LED1_PIN, 0)
 led2 = led(chip, LED2_PIN, 0)
 btn1 = btn(chip, BTN1_PIN)
