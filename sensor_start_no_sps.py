@@ -65,7 +65,9 @@ class led:
 
 class btn:
     def __init__(self, chip, btn_pin, callback=None):
-        sbc.gpio_claim_input(chip, btn_pin)
+        GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+        GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
+#        sbc.gpio_claim_input(chip, btn_pin)
         self.chip = chip
         self.btn_pin = btn_pin
 
@@ -73,17 +75,19 @@ class btn:
         return sbc.gpio_read(self.chip, self.btn_pin)
 
 # Start the lgpio
-# GPIO.setwarnings(False) # Ignore warning for now
-# GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-# GPIO.setup(LED1_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.setwarnings(False) # Ignore warning for now
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+
+def button_callback(channel):
+    print("Button was pushed!")
 
 chip = sbc.gpiochip_open(0)
 # Set the leds & btns
 logging.info('Setting leds and buttons')
 red_led = led(chip, LED1_PIN, 0)
 green_led = led(chip, LED2_PIN, 0)
-l_btn = btn(chip, BTN1_PIN)
-r_btn = btn(chip, BTN2_PIN)
+l_btn = btn(chip, BTN1_PIN, callback=button_callback)
+r_btn = btn(chip, BTN2_PIN, callback=button_callback)
 logging.info('Completed setting leds and buttons')
 green_led.set_led(1)
 
@@ -375,4 +379,5 @@ if __name__ == "__main__":
         main()
     except Exception as e:
         green_led.set_led(0)
+        GPIO.cleanup()
         logging.exception("main crashed. Error: %s", e)
