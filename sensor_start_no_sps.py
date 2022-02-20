@@ -17,7 +17,7 @@ from PIL import ImageFont
 import subprocess
 
 # for the leds and buttons
-#import lgpio as sbc
+import lgpio as sbc
 
 LED1_PIN = 22 # red 
 LED2_PIN = 23 # green
@@ -82,7 +82,7 @@ GPIO.setmode(GPIO.BCM) # Use physical pin numbering
 def button_callback(channel):
     print("Button was pushed!")
 
-#chip = sbc.gpiochip_open(0)
+chip = sbc.gpiochip_open(0)
 # Set the leds & btns
 logging.info('Setting leds and buttons')
 red_led = led(chip, LED1_PIN, 0)
