@@ -78,7 +78,7 @@ def button_callback(channel):
 	logging.info("Button was pushed!"+str(channel))
 	if (channel == LBTN_PIN) : 
 		if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
-		else : cur_panel = PANEL_NUM
+		else : cur_panel = PANEL_NUM - 1
 	if channel == RBTN_PIN: cur_panel = (cur_panel+1) % PANEL_NUM
 
 # Set the leds & btns
@@ -331,7 +331,7 @@ def main():
 	while True:
 		# Blink the green led
 		green_led.set_led(green_led_status)
-		green_led_status = 0 if green_led_status else 0 
+		green_led_status = 0 if green_led_status else 1 
 		
 		# Draw a black filled box to clear the image.
 		draw.rectangle((0,0,width,height), outline=0, fill=0)
