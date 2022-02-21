@@ -8,7 +8,6 @@ import Adafruit_SSD1306
 #import sps30
 ## SPS - uncomment end
 import DBSETUP  # import the db setup
-import RPi.GPIO as GPIO # Import RPi.GPIO library
 
 from PIL import Image
 from PIL import ImageDraw
@@ -17,7 +16,7 @@ from PIL import ImageFont
 import subprocess
 
 # for the leds and buttons
-import lgpio as sbc
+import RPi.GPIO as GPIO # Import RPi.GPIO library
 
 LED1_PIN = 22 # red 
 LED2_PIN = 23 # green
@@ -54,41 +53,33 @@ DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD secon
 
 # GPIO classes: led & btn
 class led:
-    def __init__(self, chip, led_pin, callback=None):
-        # sbc.gpio_claim_output(chip, led_pin)
-        # sbc.gpio_write(chip, led_pin, 1)
-        self.chip = chip
+    def __init__(self, led_pin, callback=None):
+        GPIO.setup(led_pin, GPIO.OUT)
         self.led_pin = led_pin
 
     def set_led(self, state):
-        return 0
-        # sbc.gpio_write(self.chip, self.led_pin, state)
+        GPIO.output(self.led_pin, state)
 
 class btn:
-    def __init__(self, chip, btn_pin, callback=None):
+    def __init__(self, btn_pin, callback=None):
         GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
         GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
-#        sbc.gpio_claim_input(chip, btn_pin)
-        self.chip = chip
         self.btn_pin = btn_pin
-
-    def sts_btn(self):
-        return 0 #sbc.gpio_read(self.chip, self.btn_pin)
 
 # Start the lgpio
 GPIO.setwarnings(False) # Ignore warning for now
 GPIO.setmode(GPIO.BCM) # Use physical pin numbering
+cur_panel = 1
 
 def button_callback(channel):
-    print("Button was pushed!")
+    print("Button was pushed!", channel)
 
-chip = sbc.gpiochip_open(0)
 # Set the leds & btns
 logging.info('Setting leds and buttons')
-red_led = led(chip, LED1_PIN, 0)
-green_led = led(chip, LED2_PIN, 0)
-l_btn = btn(chip, BTN1_PIN, callback=button_callback)
-r_btn = btn(chip, BTN2_PIN, callback=button_callback)
+red_led = led(LED1_PIN, 0)
+green_led = led(LED2_PIN, 0)
+l_btn = btn(BTN1_PIN, callback=button_callback)
+r_btn = btn(BTN2_PIN, callback=button_callback)
 logging.info('Completed setting leds and buttons')
 green_led.set_led(1)
 
@@ -324,8 +315,7 @@ Disk = subprocess.check_output(cmd, shell = True )
 temperature, relative_humidity = sht.measurements
 
 def main():
-	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps
-	cur_panel = 1
+	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
 	db_sample_start = time.time()
 	panel_start = time.time()
 	str_panel_start = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(panel_start))
