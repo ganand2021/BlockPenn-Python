@@ -30,6 +30,7 @@ log_level = logging.DEBUG
 
 logger = logging.getLogger('MyLogger')
 logger.setLevel(log_level)
+
 # Adding rotating log
 log_handler = logging.handlers.RotatingFileHandler(
 	log_fname,
@@ -47,6 +48,7 @@ logger.debug('Script started')
 # Panels
 PANEL_NUM = 3
 PANEL_DELAY = 10 # In seconds
+cur_panel = 1
 
 # DB
 DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD seconds
@@ -70,10 +72,9 @@ class btn:
 GPIO.setwarnings(False) # Ignore warning (TBD)
 GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
-cur_panel = 1
-
 def button_callback(channel):
     print("Button was pushed!", channel)
+    logging.info("Button was pushed!"+str(channel))
     if (channel == LBTN_PIN) : 
         if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
         else : cur_panel = PANEL_NUM
