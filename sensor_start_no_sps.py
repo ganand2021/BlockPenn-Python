@@ -260,31 +260,36 @@ obj_6713 = T6713()
 
 # Configure the display panel
 def showPanel(panel_id):
-	draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
-	if (panel_id == 0):
-		draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
-		draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
-		draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
-		draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
-		draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
-	if (panel_id == 1):
-		draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
-		draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
-		draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
-		draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
-		draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
-		draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
-		draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
-	if (panel_id == 2):
-		draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
+	try:
+		draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
+		if (panel_id == 0):
+			draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
+			draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
+			draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
+			draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
+			draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
+		if (panel_id == 1):
+			draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
+			draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
+			draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
+			draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+			draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
+			draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
+			draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
+		if (panel_id == 2):
+			draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
 ## SPS - uncomment below - start
-		# draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
-		# draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5']),  font=font, fill=255)
-		# draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0']),  font=font, fill=255)
-		# draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0']),  font=font, fill=255)
-		# draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
-		# draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
+			# draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
+			# draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5']),  font=font, fill=255)
+			# draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0']),  font=font, fill=255)
+			# draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0']),  font=font, fill=255)
+			# draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
+			# draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
 ## SPS - uncomment end
+		except Exception as e:
+			green_led.set_led(0)
+			GPIO.cleanup()
+			logging.exception("main crashed. Error: %s", e)
 
 #		print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
 #		print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
