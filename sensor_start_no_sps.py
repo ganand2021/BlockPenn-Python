@@ -74,8 +74,7 @@ GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 def button_callback(channel):
 	global cur_panel
-	print("Button was pushed!", channel)
-	logging.info("Button was pushed!"+str(channel))
+	logging.info("Button was pushed! (GPIO "+str(channel)+")")
 	if (channel == LBTN_PIN) : 
 		if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
 		else : cur_panel = PANEL_NUM - 1
