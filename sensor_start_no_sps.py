@@ -73,6 +73,7 @@ GPIO.setwarnings(False) # Ignore warning (TBD)
 GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 def button_callback(channel):
+    global cur_panel
     print("Button was pushed!", channel)
     logging.info("Button was pushed!"+str(channel))
     if (channel == LBTN_PIN) : 
@@ -322,11 +323,16 @@ temperature, relative_humidity = sht.measurements
 
 def main():
 	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
-	db_sample_start = time.time()
+	green_led_status = 1
+    db_sample_start = time.time()
 	panel_start = time.time()
 	str_panel_start = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(panel_start))
 	print(str_panel_start+": main started")
 	while True:
+        # Blink the green led
+        green_led.set_led(green_led_status)
+        green_led_status = 0 if green_led_status else 0 
+        
 		# Draw a black filled box to clear the image.
 		draw.rectangle((0,0,width,height), outline=0, fill=0)
 
