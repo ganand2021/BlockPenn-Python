@@ -47,7 +47,7 @@ logger.debug('Script started')
 
 # Panels
 PANEL_NUM = 3
-PANEL_DELAY = 10 # In seconds
+PANEL_DELAY = 30 # In seconds
 cur_panel = 1
 
 # DB
