@@ -21,8 +21,8 @@ import RPi.GPIO as GPIO # Import RPi.GPIO library
 LED1_PIN = 22 # red 
 LED2_PIN = 23 # green
 
-BTN1_PIN = 4 # Bottom, pull-down
-BTN2_PIN = 27 # Into the center of the PCB, pull-down
+LBTN_PIN = 4 # Bottom, pull-down
+RBTN_PIN = 27 # Into the center of the PCB, pull-down
 
 # Start logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
@@ -67,19 +67,24 @@ class btn:
         self.btn_pin = btn_pin
 
 # Start the lgpio
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BCM) # Use physical pin numbering
+GPIO.setwarnings(False) # Ignore warning (TBD)
+GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
+
 cur_panel = 1
 
 def button_callback(channel):
     print("Button was pushed!", channel)
+    if (channel == LBTN_PIN) : 
+        if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
+        else : cur_panel = PANEL_NUM
+    if channel == RBTN_PIN: cur_panel = (cur_panel+1) % PANEL_NUM
 
 # Set the leds & btns
 logging.info('Setting leds and buttons')
 red_led = led(LED1_PIN, 0)
 green_led = led(LED2_PIN, 0)
-l_btn = btn(BTN1_PIN, callback=button_callback)
-r_btn = btn(BTN2_PIN, callback=button_callback)
+l_btn = btn(LBTN_PIN, callback=button_callback)
+r_btn = btn(RBTN_PIN, callback=button_callback)
 logging.info('Completed setting leds and buttons')
 green_led.set_led(1)
 
