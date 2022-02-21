@@ -13,4 +13,4 @@ sudo apt install -y python3-setuptools
 sudo apt install -y python3-dev
 ```
 
-
+Source: https://github.com/adafruit/Adafruit_Python_SSD1306

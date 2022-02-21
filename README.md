@@ -60,16 +60,19 @@ Run `sensor_start.py`
 - [x] Add integration with Kasa API
 - [x] Add logging to sensor_start
 - [x] Limit log size / rotate files
+- [x] Switch to GPIO
+- [ ] Re-enable SPS30
 - Features:
 - [x] Write sensor data to InfluxDB
-- [ ] Add logging to sensor_set
 - Environment/setup:
 - [ ] Add VENV
 - [ ] Create requirements.txt
 - Functionality:
 - [ ] Seperate the sampling into its own function in the sensor_start
-- [ ] Connect controls: button
-- [ ] Connect controls: leds
+- [x] Connect controls: button
+- [x] Connect controls: leds
+- [x] Add functionality to buttons via events
+- [x] Add blinking ok led
 - [ ] Add plug load monitoring to sensor_set and sensor_start
 - [ ] Add case
 
