@@ -322,7 +322,7 @@ Disk = subprocess.check_output(cmd, shell = True )
 temperature, relative_humidity = sht.measurements
 
 def main():
-	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
+    global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
     green_led_status = 1
     db_sample_start = time.time()
 	panel_start = time.time()
