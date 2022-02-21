@@ -286,10 +286,10 @@ def showPanel(panel_id):
 			# draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
 			# draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
 ## SPS - uncomment end
-		except Exception as e:
-			green_led.set_led(0)
-			GPIO.cleanup()
-			logging.exception("main crashed. Error: %s", e)
+	except Exception as e:
+		green_led.set_led(0)
+		GPIO.cleanup()
+		logging.exception("main crashed. Error: %s", e)
 
 #		print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
 #		print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
