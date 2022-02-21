@@ -40,9 +40,9 @@ logger.addHandler(log_handler)
 
 logging.basicConfig(
 	handlers=[log_handler],
-    format='%(asctime)s [%(levelname)-8s] %(message)s',
-    level=log_level,
-    datefmt='%Y-%m-%d %H:%M:%S')
+	format='%(asctime)s [%(levelname)-8s] %(message)s',
+	level=log_level,
+	datefmt='%Y-%m-%d %H:%M:%S')
 logger.debug('Script started')
 
 # Panels
@@ -55,31 +55,31 @@ DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD secon
 
 # GPIO classes: led & btn
 class led:
-    def __init__(self, led_pin, callback=None):
-        GPIO.setup(led_pin, GPIO.OUT)
-        self.led_pin = led_pin
+	def __init__(self, led_pin, callback=None):
+		GPIO.setup(led_pin, GPIO.OUT)
+		self.led_pin = led_pin
 
-    def set_led(self, state):
-        GPIO.output(self.led_pin, state)
+	def set_led(self, state):
+		GPIO.output(self.led_pin, state)
 
 class btn:
-    def __init__(self, btn_pin, callback=None):
-        GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
-        GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
-        self.btn_pin = btn_pin
+	def __init__(self, btn_pin, callback=None):
+		GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+		GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
+		self.btn_pin = btn_pin
 
 # Start the lgpio
 GPIO.setwarnings(False) # Ignore warning (TBD)
 GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 def button_callback(channel):
-    global cur_panel
-    print("Button was pushed!", channel)
-    logging.info("Button was pushed!"+str(channel))
-    if (channel == LBTN_PIN) : 
-        if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
-        else : cur_panel = PANEL_NUM
-    if channel == RBTN_PIN: cur_panel = (cur_panel+1) % PANEL_NUM
+	global cur_panel
+	print("Button was pushed!", channel)
+	logging.info("Button was pushed!"+str(channel))
+	if (channel == LBTN_PIN) : 
+		if (cur_panel > 0): cur_panel = (cur_panel-1) % PANEL_NUM
+		else : cur_panel = PANEL_NUM
+	if channel == RBTN_PIN: cur_panel = (cur_panel+1) % PANEL_NUM
 
 # Set the leds & btns
 logging.info('Setting leds and buttons')
@@ -162,7 +162,7 @@ class T6713(object):
 		ret_value = int((((buffer[2] & 0x3F) << 8) | buffer[3]))
 		logging.info("Read gasPPM ("+str(ret_value)+")")
 		return ret_value
-        #return buffer[2]*256+buffer[3]
+		#return buffer[2]*256+buffer[3]
 
 	def checkABC(self):
 		logging.debug('Running function:'+inspect.stack()[0][3])
@@ -261,30 +261,30 @@ obj_6713 = T6713()
 
 # Configure the display panel
 def showPanel(panel_id):
-    draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
-    if (panel_id == 0):
-        draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
-        draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
-        draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
-        draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
-        draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
-    if (panel_id == 1):
-        draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
-        draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
-        draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
-        draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
-        draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
-        draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
-        draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
-    if (panel_id == 2):
-        draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
+	draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
+	if (panel_id == 0):
+		draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
+		draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
+		draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
+		draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
+		draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
+	if (panel_id == 1):
+		draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
+		draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
+		draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
+		draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+		draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
+		draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
+		draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
+	if (panel_id == 2):
+		draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
 ## SPS - uncomment below - start
-        # draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
-        # draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5']),  font=font, fill=255)
-        # draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0']),  font=font, fill=255)
-        # draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0']),  font=font, fill=255)
-        # draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
-        # draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
+		# draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0']),  font=font, fill=255)
+		# draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5']),  font=font, fill=255)
+		# draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0']),  font=font, fill=255)
+		# draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0']),  font=font, fill=255)
+		# draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0']),  font=font, fill=255)
+		# draw.text((x, top+8*7), str("Typical Particle: %0.1f µm" % sps.dict_values['typical']),  font=font, fill=255)
 ## SPS - uncomment end
 
 #		print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
@@ -322,17 +322,17 @@ Disk = subprocess.check_output(cmd, shell = True )
 temperature, relative_humidity = sht.measurements
 
 def main():
-    global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
-    green_led_status = 1
-    db_sample_start = time.time()
+	global IP, CPU, MemUsage, Disk, temperature, relative_humidity, obj_6713, sps, cur_panel
+	green_led_status = 1
+	db_sample_start = time.time()
 	panel_start = time.time()
 	str_panel_start = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(panel_start))
 	print(str_panel_start+": main started")
 	while True:
-        # Blink the green led
-        green_led.set_led(green_led_status)
-        green_led_status = 0 if green_led_status else 0 
-        
+		# Blink the green led
+		green_led.set_led(green_led_status)
+		green_led_status = 0 if green_led_status else 0 
+		
 		# Draw a black filled box to clear the image.
 		draw.rectangle((0,0,width,height), outline=0, fill=0)
 
@@ -378,9 +378,9 @@ def main():
 		time.sleep(1)
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        green_led.set_led(0)
-        GPIO.cleanup()
-        logging.exception("main crashed. Error: %s", e)
+	try:
+		main()
+	except Exception as e:
+		green_led.set_led(0)
+		GPIO.cleanup()
+		logging.exception("main crashed. Error: %s", e)
