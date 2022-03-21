@@ -21,7 +21,6 @@ sudo pip3 install Adafruit_Python_SSD1306
 sudo python3 setup.py install
 cd ..
 sudo pip3 install adafruit-circuitpython-shtc3
-sudo pip3 install sps30
 ```
 
 ### sensor_start
@@ -44,6 +43,7 @@ sudo python3 setup.py install
 cd ..
 sudo pip3 install adafruit-circuitpython-shtc3
 sudo pip3 install sps30
+sudo pip3 install smbus2
 ```
 
 ### Setting up specific libraries
