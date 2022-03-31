@@ -233,26 +233,32 @@ obj_6713 = T6713()
 
 # Prep the air quality sensor
 sps = sps30.SPS30(1)
-if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
-	raise Exception("ARTICLE CODE CRC ERROR!")
-else:
-	print("ARTICLE CODE: " + str(sps.read_article_code()))
+try:
+	if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
+		raise Exception("ARTICLE CODE CRC ERROR!")
+	else:
+		print("ARTICLE CODE: " + str(sps.read_article_code()))
 
-if sps.read_device_serial() == sps.SERIAL_NUMBER_ERROR:
-	raise Exception("SERIAL NUMBER CRC ERROR!")
-else:
-	print("DEVICE SERIAL: " + str(sps.read_device_serial()))
+	if sps.read_device_serial() == sps.SERIAL_NUMBER_ERROR:
+		raise Exception("SERIAL NUMBER CRC ERROR!")
+	else:
+		print("DEVICE SERIAL: " + str(sps.read_device_serial()))
 
-sps.set_auto_cleaning_interval(604800) # default 604800, set 0 to disable auto-cleaning
+	sps.set_auto_cleaning_interval(604800) # default 604800, set 0 to disable auto-cleaning
 
-sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
+	sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
 
-if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
-	raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
-else:
-	print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+	if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
+		raise Exception("AUTO-CLEANING INTERVAL CRC ERROR!")
+	else:
+		print("AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
 
-sps.start_measurement()
+	sps.start_measurement()
+
+except Exception as e:
+	green_led.set_led(0)
+	GPIO.cleanup()
+	logging.exception("main crashed. Error: %s", e)
 
 # Configure the display panel
 def showPanel(panel_id):

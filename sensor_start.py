@@ -182,7 +182,13 @@ obj_6713 = T6713()
 
 # Prep the air quality sensor
 sps = sps30.SPS30(1)
-if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
+spsResult = None
+try:
+	spsResult = sps.read_article_code()
+except Exception as e:
+			raise Exception("SPS30: read_data_ready_flag raised exception: %s", e)
+
+if spsResult == sps.ARTICLE_CODE_ERROR:
 	raise Exception("ARTICLE CODE CRC ERROR!")
 else:
 	print("ARTICLE CODE: " + str(sps.read_article_code()))
