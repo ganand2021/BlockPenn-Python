@@ -2,6 +2,9 @@
 
 echo "Setting up RPi Python scripts environment for the first time"
 
+read -p "Password: " -s szPassword
+printf "%s\n" "$szPassword" | sudo --stdin mount -t cifs //192.168.1.1/home /media/$USER/home -o username=$USER,password="$szPassword"
+
 sudo -u ubuntu apt install python3-pip
 sudo -u ubuntu apt install python3-lgpio
 sudo -u ubuntu apt-get install libgpiod2
