@@ -332,6 +332,7 @@ def main():
 	print(str_panel_start+": main started")
 	while True:
 		# Blink the green led
+		logging.debug('green_led_status'+str(green_led_status))
 		green_led.set_led(green_led_status)
 		green_led_status = 0 if green_led_status else 1 
 		
