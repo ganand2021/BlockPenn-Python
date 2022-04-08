@@ -190,7 +190,7 @@ disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
 try:
 	disp.begin()
 except Exception as e:
-	logging.exception("Main crashed. Error: %s", e)
+	logging.exception("Main crashed during OLED setup. Error: %s", e)
 	  
 # Clear display.
 disp.clear()
@@ -258,7 +258,7 @@ try:
 except Exception as e:
 	green_led.set_led(0)
 	GPIO.cleanup()
-	logging.exception("main crashed. Error: %s", e)
+	logging.exception("main crashed during SPS30 readout. Error: %s", e)
 
 # Configure the display panel
 def showPanel(panel_id):
@@ -289,7 +289,7 @@ def showPanel(panel_id):
 	except Exception as e:
 		green_led.set_led(0)
 		GPIO.cleanup()
-		logging.exception("main crashed. Error: %s", e)
+		logging.exception("main crashed during panel display. Error: %s", e)
 
 #		print ("PM4.0 Value in µg/m3: " + str(sps.dict_values['pm4p0']))
 #		print ("NC0.5 Value in 1/cm3: " + str(sps.dict_values['nc0p5']))    # NC: Number of Concentration 
