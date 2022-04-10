@@ -387,6 +387,6 @@ if __name__ == "__main__":
 			# red_led.set_led(1)
 			# GPIO.cleanup()
 			logging.exception("main crashed. Error: %s", e)
-			wait(15)
+			wait(10)
 	green_led.set_led(0)
- 	GPIO.cleanup()
+	GPIO.cleanup()
