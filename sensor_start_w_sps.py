@@ -379,10 +379,13 @@ def main():
 		time.sleep(1)
 
 if __name__ == "__main__":
-	try:
-		main()
-	except Exception as e:
-		green_led.set_led(0)
-		red_led.set_led(1)
-		GPIO.cleanup()
-		logging.exception("main crashed. Error: %s", e)
+	while True:
+		try:
+			main()
+		except Exception as e:
+			# green_led.set_led(0)
+			# red_led.set_led(1)
+			# GPIO.cleanup()
+			logging.exception("main crashed. Error: %s", e)
+	green_led.set_led(0)
+	GPIO.cleanup()
