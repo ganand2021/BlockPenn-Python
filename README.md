@@ -7,7 +7,8 @@ Python code for the RPi sensors.
 3. Set up crontab to auto start the script in reboot
 
 ### sensor_start_w_sps
-`sensor_start.py`: this is the I2C code with all sensors (Air quality, CO2, Humidity & Temp) and OLED display.
+This is the Python code with all sensors (Air quality, CO2, Humidity & Temp) and OLED display.
+
 #### Setting up the environment
 General:
 ```sh
