@@ -69,8 +69,7 @@ Test by rebooting.
 - [x] Connect controls: leds
 - [x] Add functionality to buttons via events
 - [x] Add blinking ok led
-- [ ] Add plug load monitoring to sensor_set and sensor_start
-- [ ] Add case
+- [ ] Add plug load monitoring to the script
 
 ## Future features
 `pip3 install -r requirements.txt`
