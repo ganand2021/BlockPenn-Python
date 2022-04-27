@@ -9,7 +9,13 @@ Python code for the RPi sensors.
 ### sensor_start_w_sps
 This is the Python code with all sensors (Air quality, CO2, Humidity & Temp) and OLED display.
 
-#### Setting up the environment
+#### Setting up the environment (Script)
+```sh
+sudo sh setup_pkg.sh
+sh setup_env.sh
+```
+
+#### Setting up the environment (Manual)
 General:
 ```sh
 sudo python3 -m venv .
