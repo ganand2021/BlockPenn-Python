@@ -10,7 +10,10 @@ Install libraries:
 pip3 install python-kasa
 pip3 install asyncio
 pip3 install requests
+pip3 install python-dotenv
 ```
+
+Make sure you update `kasa.env` to include the password and username.
 
 # Links
 - API: https://realpython.com/api-integration-in-python/

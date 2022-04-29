@@ -7,10 +7,6 @@ config = dotenv_values("kasa.env")  # config = {"USER": "foo", "EMAIL": "foo@exa
 api_url = config["API_URL"]
 username = config["USERNAME"]
 password = config["PASSWORD"]
-#api_url = "https://wap.tplinkcloud.com"
-
-#username = "wm@limerigg.com"
-#password = "snippet4trick6puttee6detect"
 
 def create_random_uuid():
     uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
