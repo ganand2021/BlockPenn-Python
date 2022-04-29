@@ -13,7 +13,7 @@ pip3 install requests
 pip3 install python-dotenv
 ```
 
-Make sure you update `kasa.env` to include the password and username.
+Make sure you update `kasa.env` to include the password and username for TP-Link Cloud.
 
 # Links
 - API: https://realpython.com/api-integration-in-python/
