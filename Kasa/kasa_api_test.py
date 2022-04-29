@@ -1,10 +1,16 @@
 #!/usr/bin/python
 import requests, secrets, json
+from dotenv import dotenv_values
 
-api_url = "https://wap.tplinkcloud.com"
+config = dotenv_values("kasa.env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
 
-username = "wm@limerigg.com"
-password = "snippet4trick6puttee6detect"
+api_url = config["API_URL"]
+username = config["USERNAME"]
+password = config["PASSWORD"]
+#api_url = "https://wap.tplinkcloud.com"
+
+#username = "wm@limerigg.com"
+#password = "snippet4trick6puttee6detect"
 
 def create_random_uuid():
     uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
