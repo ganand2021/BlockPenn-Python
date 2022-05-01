@@ -66,5 +66,5 @@ Test by rebooting.
 - SPS30 page: https://www.sensirion.com/en/environmental-sensors/particulate-matter-sensors-pm25/
 - Good diagram of particles types (p. 13): https://cdn-learn.adafruit.com/downloads/pdf/pm25-air-quality-sensor.pdf
 
-## Documentation
-Awesome documentation was created using [docsify](https://docsify.js.org/#/)
+## Documentation Website
+Our [awesome documentation website](https://liogl.github.io/BlockPenn-Python) was created using [docsify](https://docsify.js.org/#/)
