@@ -69,15 +69,14 @@ Test by rebooting.
 - Features:
 - [x] Write sensor data to InfluxDB
 - Environment/setup:
-- [ ] Add VENV
-- [ ] Create requirements.txt
+- [x] Add a script for setup
 - Functionality:
-- [ ] Seperate the sampling into its own function in the sensor_start
 - [x] Connect controls: button
 - [x] Connect controls: leds
 - [x] Add functionality to buttons via events
 - [x] Add blinking ok led
-- [ ] Add plug load monitoring to the script
+- [x] Add plug load monitoring
+- [x] Add documentation
 
 ## Future features
 `pip3 install -r requirements.txt`
@@ -152,3 +151,5 @@ Activate venv:
 Deactivate venv:
 `deactivate`
 
+## Documentation
+Awesome documentation was created using [docsify](https://docsify.js.org/#/)
