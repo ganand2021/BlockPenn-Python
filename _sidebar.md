@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-* [Home](/)
+* [Start Here](/)
 * [Development Roadmap](roadmap.md)
 * [Other](notes.md)
