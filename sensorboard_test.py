@@ -2,7 +2,7 @@
 # Aimed to test new boards w/o any sensors and oled
 import math, struct, array, time, io, fcntl
 import logging, os, inspect, logging.handlers
-import board
+#import board
 
 import subprocess
 
