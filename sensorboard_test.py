@@ -65,9 +65,9 @@ def button_callback(channel):
 	if (channel == LBTN_PIN) : 
 		LED_L = (1 if LED_L == 0 else 0) 
 	if (channel == MBTN_PIN) :
-        LED_M = 1 if LED_M == 0 else LED_M = 0 
+        LED_M = (1 if LED_M == 0 else 0)
 	if (channel == RBTN_PIN) :
-        LED_R = 1 if LED_R == 0 else LED_R = 0 
+        LED_R = (1 if LED_R == 0 else 0)
 
 # Set the leds & btns
 logging.info('Setting leds and buttons')
