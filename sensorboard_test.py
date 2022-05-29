@@ -12,7 +12,7 @@ import RPi.GPIO as GPIO # Import RPi.GPIO library
 LED1_PIN = 23 # red 
 LED2_PIN = 22 # green
 
-LBTN_PIN = 27 # pull-down
+LBTN_PIN = 27 # pull-down - Not working. Design connects it ground the RPI GPIO.
 MBTN_PIN = 17 # pull-down
 RBTN_PIN = 4  # pull-down
 
