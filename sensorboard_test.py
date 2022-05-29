@@ -9,8 +9,8 @@ import subprocess
 # for the leds and buttons
 import RPi.GPIO as GPIO # Import RPi.GPIO library
 
-LED1_PIN = 22 # red 
-LED2_PIN = 23 # green
+LED1_PIN = 23 # red 
+LED2_PIN = 22 # green
 
 LBTN_PIN = 4 # pull-down
 MBTN_PIN = 17 # pull-down
@@ -61,7 +61,7 @@ GPIO.setwarnings(False) # Ignore warning (TBD)
 GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 def button_callback(channel):
-	global cur_panel
+	global LED_L, LED_M, LED_R
 	logging.info("Button was pushed! (GPIO "+str(channel)+")")
 	if (channel == LBTN_PIN) : 
 		LED_L = (1 if LED_L == 0 else 0) 

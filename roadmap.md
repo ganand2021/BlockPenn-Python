@@ -29,6 +29,8 @@
 - [x] Add blinking ok led
 - [x] Add plug load monitoring
 - [x] Add documentation
+V2
+- [ ] Add 3rd button support, switch leds pins
 
 ## Future potential features
 - Implement requirements.txt: `pip3 install -r requirements.txt`
