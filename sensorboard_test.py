@@ -17,6 +17,7 @@ MBTN_PIN = 17 # pull-down
 RBTN_PIN = 27 # pull-down
 
 LED_R = 0
+LED_M = 0
 LED_L = 0
 
 # Start logging
