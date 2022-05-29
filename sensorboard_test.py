@@ -65,9 +65,9 @@ def button_callback(channel):
 	if (channel == LBTN_PIN) : 
 		LED_L = (1 if LED_L == 0 else 0) 
 	if (channel == MBTN_PIN) :
-        LED_M = (1 if LED_M == 0 else 0)
+		LED_M = (1 if LED_M == 0 else 0)
 	if (channel == RBTN_PIN) :
-        LED_R = (1 if LED_R == 0 else 0)
+		LED_R = (1 if LED_R == 0 else 0)
 
 # Set the leds & btns
 logging.info('Setting leds and buttons')
@@ -93,7 +93,7 @@ def main():
 		logging.debug('green_led_status'+str(green_led_status))
 		green_led.set_led(green_led_status)
 		green_led_status = 0 if green_led_status else 1 
-        red_led.set_led(LED_L or LED_R or LED_M)
+		red_led.set_led(LED_L or LED_R or LED_M)
 		time.sleep(1)
 
 if __name__ == "__main__":
