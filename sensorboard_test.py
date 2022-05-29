@@ -12,9 +12,9 @@ import RPi.GPIO as GPIO # Import RPi.GPIO library
 LED1_PIN = 23 # red 
 LED2_PIN = 22 # green
 
-LBTN_PIN = 4 # pull-down
+LBTN_PIN = 27 # pull-down
 MBTN_PIN = 17 # pull-down
-RBTN_PIN = 27 # pull-down
+RBTN_PIN = 4  # pull-down
 
 LED_R = 0
 LED_M = 0
