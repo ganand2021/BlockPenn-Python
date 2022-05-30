@@ -58,6 +58,7 @@ GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 # GPIO classes: led & btn
 class led:
+    global GPIO
 	def __init__(self, led_pin, callback=None):
 		GPIO.setup(led_pin, GPIO.OUT)
 		self.led_pin = led_pin
@@ -66,6 +67,7 @@ class led:
 		GPIO.output(self.led_pin, state)
 
 class btn:
+    global GPIO
 	def __init__(self, btn_pin, callback=None):
 		GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 		GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
