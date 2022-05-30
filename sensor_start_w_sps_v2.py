@@ -52,6 +52,10 @@ cur_panel = 1
 # DB
 DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD seconds
 
+# Start the lgpio
+GPIO.setwarnings(False) # Ignore warning (TBD)
+GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
+
 # GPIO classes: led & btn
 class led:
 	def __init__(self, led_pin, callback=None):
@@ -67,9 +71,6 @@ class btn:
 		GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
 		self.btn_pin = btn_pin
 
-# Start the lgpio
-GPIO.setwarnings(False) # Ignore warning (TBD)
-GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
 def button_callback(channel):
 	global cur_panel
