@@ -34,7 +34,7 @@ sudo apt install -y python3-rpi.gpio
 sudo apt install -y python3-pil
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
-sudo pip3 install Adafruit_Python_SSD1306
+sudo pip3 install Adafruit_SSD1306
 sudo python3 setup.py install
 cd ..
 sudo pip3 install adafruit-circuitpython-shtc3
