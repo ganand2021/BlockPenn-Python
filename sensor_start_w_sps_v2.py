@@ -64,6 +64,8 @@ class led:
 		self.led_pin = led_pin
 
 	def set_led(self, state):
+		logging.debug('green_led_status'+str(state))
+		print(GPIO)
 		GPIO.output(self.led_pin, state)
 
 class btn:
