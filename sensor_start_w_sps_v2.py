@@ -64,8 +64,6 @@ class led:
 		self.led_pin = led_pin
 
 	def set_led(self, state):
-		logging.debug('green_led_status'+str(state))
-		print(GPIO)
 		GPIO.output(self.led_pin, state)
 
 class btn:
@@ -340,6 +338,7 @@ def main():
 		# Blink the green led
 		logging.debug('green_led_status'+str(green_led_status))
 		green_led.set_led(green_led_status)
+		logging.debug('green_led_status11'+str(green_led_status))
 		green_led_status = 0 if green_led_status else 1 
 		
 		# Draw a black filled box to clear the image.
