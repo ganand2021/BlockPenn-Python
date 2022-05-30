@@ -90,6 +90,7 @@ l_btn = btn(LBTN_PIN, callback=button_callback)
 r_btn = btn(RBTN_PIN, callback=button_callback)
 logging.info('Completed setting leds and buttons')
 green_led.set_led(1)
+green_led.set_led(0)
 
 red_led.set_led(1)
 time.sleep(1)
@@ -338,7 +339,6 @@ def main():
 		# Blink the green led
 		logging.debug('green_led_status'+str(green_led_status))
 		green_led.set_led(green_led_status)
-		logging.debug('green_led_status11'+str(green_led_status))
 		green_led_status = 0 if green_led_status else 1 
 		
 		# Draw a black filled box to clear the image.
