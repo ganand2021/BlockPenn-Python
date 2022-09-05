@@ -21,6 +21,17 @@ There are two ways to set up the environment:
 sudo sh setup_pkg.sh
 sh setup_env.sh
 ```
+Then run:
+```sh
+cd Adafruit_Python_SSD1306
+sudo pip3 install Adafruit_SSD1306
+sudo python3 setup.py install
+cd ..
+sudo pip3 install adafruit-circuitpython-shtc3
+sudo pip3 install smbus2
+sudo pip3 install influxdb
+```
+
 
 #### Setting up the environment (Manual)
 This is only needed if you didn't run the script to set up the environment.
