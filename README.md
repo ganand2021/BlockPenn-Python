@@ -4,6 +4,7 @@ Python code for the RPi sensors.
 See our [Documentation Website](https://liogl.github.io/BlockPenn-Python).
 
 ## Installation
+Requires Ubuntu 22.04 LTS Server 64 bit. 
 1. Complete deploying the docker image of blockpenn on the RPi. 
 2. Follow the steps to set up for `sensor_start_w_sps`
 3. Set up crontab to auto start the script in reboot
