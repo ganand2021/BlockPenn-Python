@@ -1,4 +1,4 @@
-# BlockPenn-Python
+# Blockpenn-python
 Python code for the RPi sensors.
 
 See our [Documentation Website](https://liogl.github.io/BlockPenn-Python).
