@@ -10,5 +10,6 @@ cd /home/ubuntu/Blockpenn-Python
 while true
 do
     sudo python3 sensor_start_w_sps_v2.py
+    sleep 5
     echo "Restarting code..."
 done
