@@ -62,7 +62,7 @@ sudo crontab -e
 ```
 Pick your preferred editor and add the following line to the crontab file:
 ```
-@reboot sh /home/ubuntu/BlockPenn-Python/run_sensor_script.sh >> /var/log/sensor_script.log 2>&1
+@reboot sh /home/ubuntu/blockpenn-python/run_sensor_script.sh >> /var/log/sensor_script.log 2>&1
 ```
 
 Test by rebooting.
