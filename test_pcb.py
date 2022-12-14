@@ -91,7 +91,7 @@ def test(comp_test):
             test_shtc3()
             res_test = True
         except: res_test = False
-    if comp_test == "SPS30":
+    elif comp_test == "SPS30":
         print("Testing SPS30")
         try: 
             print("Running SPS30")
