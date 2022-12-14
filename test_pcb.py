@@ -129,13 +129,16 @@ def test_sps30():
     sps.set_auto_cleaning_interval(604800) # default 604800, set 0 to disable auto-cleaning
 
     sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
-
     if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
         raise Exception("SPS30: AUTO-CLEANING INTERVAL CRC ERROR!")
     else:
         print("SPS30: AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
 
+    time.sleep(1)
     sps.start_measurement()
+    time.sleep(1)
+
+    print("Measuring")
     sps30_pm1 = str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
     sps30_pm2p5 = str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5'])
     sps30_pm10 = str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0'])
