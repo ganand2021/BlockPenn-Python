@@ -1,10 +1,11 @@
 # This is a code aimed to test the PCB
-# Requires: python3 -m pip install simple-term-menu
+# Requires: sudo python3 -m pip install simple-term-menu
 
 #!/usr/bin/env python3
 
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
+import RPi.GPIO as GPIO # Import RPi.GPIO library
 
 # GPIO setup: un/comment based on PCB version 
 # PCB V2
@@ -53,7 +54,7 @@ class bcolors:
 # Start the lgpio
 def gpio_start():
     # for the leds and buttons
-    global import RPi.GPIO as GPIO # Import RPi.GPIO library
+    global GPIO 
     GPIO.setwarnings(False) # Ignore warning (TBD)
     GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
 
