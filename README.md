@@ -1,12 +1,14 @@
-# BlockPenn-Python
+# Blockpenn-python
 Python code for the RPi sensors.
 
 See our [Documentation Website](https://liogl.github.io/BlockPenn-Python).
 
 ## Installation
+Tested with Ubuntu 22.04 LTS Server 64 bit. 
 1. Complete deploying the docker image of blockpenn on the RPi. 
-2. Follow the steps to set up for `sensor_start_w_sps`
-3. Set up crontab to auto start the script in reboot
+2. Set up the environment.
+3. Run `sensor_start_w_sps` manually to test the setup.
+4. Set up crontab to auto start the script in reboot.
 
 ### sensor_start_w_sps
 This is the Python code with all sensors (Air quality, CO2, Humidity & Temp) and OLED display.
@@ -19,6 +21,17 @@ There are two ways to set up the environment:
 sudo sh setup_pkg.sh
 sh setup_env.sh
 ```
+Then run:
+```sh
+cd Adafruit_Python_SSD1306
+sudo pip3 install Adafruit_SSD1306
+sudo python3 setup.py install
+cd ..
+sudo pip3 install adafruit-circuitpython-shtc3
+sudo pip3 install smbus2
+sudo pip3 install influxdb
+```
+
 
 #### Setting up the environment (Manual)
 This is only needed if you didn't run the script to set up the environment.
