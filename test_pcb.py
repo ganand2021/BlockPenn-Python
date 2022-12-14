@@ -57,7 +57,8 @@ def gpio_start():
     global GPIO 
     GPIO.setwarnings(False) # Ignore warning (TBD)
     GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
-    global i2c = board.I2C()  # uses board.SCL and board.SDA
+    global i2c 
+    i2c = board.I2C()  # uses board.SCL and board.SDA
 
 # GPIO classes: led & btn
 class led:
