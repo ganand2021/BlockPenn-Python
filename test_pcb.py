@@ -94,7 +94,9 @@ def test_shtc3():
     # Connect SHTC3
     import adafruit_shtc3
     sht = adafruit_shtc3.SHTC3(i2c)
-    print(f"Read SHTC3: {str("Temperature: %0.1f C" % temperature)}, {str("Humidity: %0.1f %%" % relative_humidity)})
+    sh_temp = str("Temperature: %0.1f C" % temperature)
+    sh_humi = str("Humidity: %0.1f %%" % relative_humidity)
+    print(f"Read SHTC3: {sh_temp}, {sh_humi}")
 
 def main():
     # Warm up GPIO
