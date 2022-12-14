@@ -41,6 +41,7 @@ sudo python3 -m venv .
 source ./bin/activate
 sudo apt install python3-pip
 sudo pip3 install influxdb
+sudo python3 -m pip install simple-term-menu
 sudo apt install python3-lgpio
 sudo apt-get install libgpiod2
 sudo apt install -y python3-rpi.gpio
