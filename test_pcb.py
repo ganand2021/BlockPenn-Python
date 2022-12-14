@@ -3,6 +3,11 @@
 
 #!/usr/bin/env python3
 
+#TODO: 
+# T6713
+# OLED
+# Clean old code
+
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
 import math, struct, array, time, io, fcntl
@@ -139,12 +144,12 @@ def test_sps30():
     sps.start_measurement()
     time.sleep(5)
 
-    print("Measuring")
+    print("SPS30: Measuring")
     if not sps.read_data_ready_flag():
         if sps.read_data_ready_flag() == sps.DATA_READY_FLAG_ERROR:
-            raise Exception("DATA-READY FLAG CRC ERROR!")
+            raise Exception("SPS30: DATA-READY FLAG CRC ERROR!")
     elif sps.read_measured_values() == sps.MEASURED_VALUES_ERROR:
-        raise Exception("MEASURED VALUES CRC ERROR!")
+        raise Exception("SPS30: MEASURED VALUES CRC ERROR!")
     sps30_pm1 = str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
     sps30_pm2p5 = str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5'])
     sps30_pm10 = str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0'])
