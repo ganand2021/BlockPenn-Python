@@ -91,6 +91,13 @@ def test(comp_test):
             test_shtc3()
             res_test = True
         except: res_test = False
+    if comp_test == "SPS30":
+        print("Testing SPS30")
+        try: 
+            print("Running SPS30")
+            test_sps30()
+            res_test = True
+        except: res_test = False
     else:
         print("Error: could not find component function")
 
@@ -105,7 +112,43 @@ def test_shtc3():
     sh_humi = str("Humidity: %0.1f %%" % relative_humidity)
     print(f"Read SHTC3: {sh_temp}, {sh_humi}")
 
-def test_():
+def test_sps30():
+    import sps30
+    global sps
+    sps = sps30.SPS30(1)
+    if sps.read_article_code() == sps.ARTICLE_CODE_ERROR:
+        raise Exception("SPS30: ARTICLE CODE CRC ERROR!")
+    else:
+        print("SPS30: ARTICLE CODE: " + str(sps.read_article_code()))
+
+    if sps.read_device_serial() == sps.SERIAL_NUMBER_ERROR:
+        raise Exception("SPS30: SERIAL NUMBER CRC ERROR!")
+    else:
+        print("SPS30: DEVICE SERIAL: " + str(sps.read_device_serial()))
+
+    sps.set_auto_cleaning_interval(604800) # default 604800, set 0 to disable auto-cleaning
+
+    sps.device_reset() # device has to be powered-down or reset to check new auto-cleaning interval
+
+    if sps.read_auto_cleaning_interval() == sps.AUTO_CLN_INTERVAL_ERROR: # or returns the interval in seconds
+        raise Exception("SPS30: AUTO-CLEANING INTERVAL CRC ERROR!")
+    else:
+        print("SPS30: AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
+
+    sps.start_measurement()
+    sps30_pm1 = str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
+    sps30_pm2p5 = str("PM2.5: %0.1f µg/m3" % sps.dict_values['pm2p5'])
+    sps30_pm10 = str("PM10 : %0.1f µg/m3" % sps.dict_values['pm10p0'])
+    sps30_nc1 = str("NC1.0: %0.1f 1/cm3" % sps.dict_values['nc1p0'])
+    sps30_nc4 = str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0'])
+    sps30_typ = str("Typical Particle: %0.1f µm" % sps.dict_values['typical'])
+    print(f"SPS30 readouts:")
+    print(sps30_pm1)
+    print(sps30_pm2p5)
+    print(sps30_pm10)
+    print(sps30_nc1)
+    print(sps30_nc4)
+    print(sps30_typ)
 
 def main():
     # Warm up GPIO
