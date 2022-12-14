@@ -5,6 +5,7 @@
 
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
+import math, struct, array, time, io, fcntl
 import RPi.GPIO as GPIO # Import RPi.GPIO library
 import board
 
@@ -136,9 +137,9 @@ def test_sps30():
 
     print("1")
 
-    time.sleep(20)
+    time.sleep(30)
     sps.start_measurement()
-    time.sleep(20)
+    time.sleep(30)
 
     print("Measuring")
     sps30_pm1 = str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
@@ -176,7 +177,6 @@ if __name__ == "__main__":
 
 exit(0)
 #!/usr/bin/python
-import math, struct, array, time, io, fcntl
 import board
 import adafruit_shtc3
 import Adafruit_SSD1306
