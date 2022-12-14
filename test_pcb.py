@@ -83,7 +83,7 @@ def test(comp_test):
 
     if comp_test == "SHTC3":
             print("SHTC3")
-        elif:
+        else:
             print("Error: could not find component function")
 
     return res_test
