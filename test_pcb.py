@@ -6,6 +6,7 @@
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
 import RPi.GPIO as GPIO # Import RPi.GPIO library
+import board
 
 # GPIO setup: un/comment based on PCB version 
 # PCB V2
