@@ -85,7 +85,9 @@ def test(comp_test):
     res_test = False
 
     if comp_test == "SHTC3":
+        print("Testing SHTC3")
         try: 
+            print("Running SHTC3")
             test_shtc3()
             res_test = True
         except: res_test = False
