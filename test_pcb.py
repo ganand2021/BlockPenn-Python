@@ -81,10 +81,9 @@ def button_callback(channel):
 def test(comp_test):
     res_test = False
 
-    match comp_test:
-        case "SHTC3":
+    if comp_test == "SHTC3":
             print("SHTC3")
-        case _:
+        elif:
             print("Error: could not find component function")
 
     return res_test
