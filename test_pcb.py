@@ -136,7 +136,7 @@ def test_sps30():
 
     print("1")
 
-    time.sleep(5)
+    time.sleep(10)
     sps.start_measurement()
     time.sleep(5)
 
