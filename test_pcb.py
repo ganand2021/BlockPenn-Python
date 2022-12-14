@@ -79,7 +79,15 @@ def button_callback(channel):
 	print("Button was pushed! (GPIO "+str(channel)+")")
 
 def test(comp_test):
-    return False
+    res_test = False
+
+    match comp_test:
+        case "SHTC3":
+            print("SHTC3")
+        case _:
+            print("Error: could not find component function")
+
+    return res_test
 
 def main():
     # Warm up GPIO
@@ -87,7 +95,7 @@ def main():
     print(f"Starting {bcolors.HIGH}GPIO{bcolors.TEXT}: {bcolors.PASS}PASS{bcolors.TEXT}")
     # Start menu
     exit_sel = False
-    options = ["entry 1", "entry 2", "entry 3","exit"]
+    options = ["SHTC3", "SPS30", "T6713", "OLED", "exit"]
     terminal_menu = TerminalMenu(options)
     while not (exit_sel):
         menu_entry_index = terminal_menu.show()
