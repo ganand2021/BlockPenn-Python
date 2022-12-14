@@ -57,6 +57,7 @@ def gpio_start():
     global GPIO 
     GPIO.setwarnings(False) # Ignore warning (TBD)
     GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
+    global i2c = board.I2C()  # uses board.SCL and board.SDA
 
 # GPIO classes: led & btn
 class led:
@@ -88,6 +89,12 @@ def test(comp_test):
 
     return res_test
 
+def test_shtc3():
+    # Connect SHTC3
+    import adafruit_shtc3
+    sht = adafruit_shtc3.SHTC3(i2c)
+    print(f"Read SHTC3: {str("Temperature: %0.1f C" % temperature)}, {str("Humidity: %0.1f %%" % relative_humidity)})
+
 def main():
     # Warm up GPIO
     gpio_start()
@@ -98,10 +105,10 @@ def main():
     terminal_menu = TerminalMenu(options)
     while not (exit_sel):
         menu_entry_index = terminal_menu.show()
-        test_good = test(options[menu_entry_index])
-        test_out = f"{bcolors.PASS}PASS{bcolors.TEXT}" if test_good else f"{bcolors.FAIL}FAIL{bcolors.TEXT}"
         exit_sel = (options[menu_entry_index] == "exit")
         if not (exit_sel): 
+            test_good = test(options[menu_entry_index])
+            test_out = f"{bcolors.PASS}PASS{bcolors.TEXT}" if test_good else f"{bcolors.FAIL}FAIL{bcolors.TEXT}"
             print(f"Testing {bcolors.HIGH}{options[menu_entry_index]}{bcolors.TEXT}: "+test_out)
 
 if __name__ == "__main__":
@@ -304,6 +311,7 @@ font = ImageFont.load_default()
 # Connect SHTC3
 i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
+temperature, relative_humidity = sht.measurements
 
 # Connect T6713
 ## T6713
