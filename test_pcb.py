@@ -84,6 +84,7 @@ def test(comp_test):
 def main():
     # Warm up GPIO
     gpio_start()
+    print(f"Starting {bcolors.HIGH}GPIO{bcolors.TEXT}: {bcolors.PASS}PASS{bcolors.TEXT}")
     # Start menu
     exit_sel = False
     options = ["entry 1", "entry 2", "entry 3","exit"]
