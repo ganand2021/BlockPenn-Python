@@ -6,14 +6,21 @@
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
 
-#GPIO setup 
-# Leds v2
-LED1_PIN = 23 # red 
-LED2_PIN = 22 # green
+# GPIO setup: un/comment based on PCB version 
+# PCB V2
+# LED1_PIN = 23 # red 
+# LED2_PIN = 22 # green
 
-LBTN_PIN = 27 # pull-down - Not working. Design connects it ground the RPI GPIO.
-MBTN_PIN = 17 # pull-down
-RBTN_PIN = 4  # pull-down
+# LBTN_PIN = 27 # pull-down - Not working. Design connects it ground the RPI GPIO.
+# MBTN_PIN = 17 # pull-down
+# RBTN_PIN = 4  # pull-down
+
+# PCB V1
+LED1_PIN = 22 # red 
+LED2_PIN = 23 # green
+
+LBTN_PIN = 4 # Bottom, pull-down
+RBTN_PIN = 27 # Into the center of the PCB, pull-down
 
 # Start logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
