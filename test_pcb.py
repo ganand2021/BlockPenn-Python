@@ -137,9 +137,9 @@ def test_sps30():
 
     print("1")
 
-    time.sleep(30)
+    time.sleep(5)
     sps.start_measurement()
-    time.sleep(30)
+    time.sleep(5)
 
     print("Measuring")
     sps30_pm1 = str("PM1.0: %0.1f µg/m3" % sps.dict_values['pm1p0'])
