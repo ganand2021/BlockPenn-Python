@@ -85,8 +85,10 @@ def test(comp_test):
     res_test = False
 
     if comp_test == "SHTC3":
-        test_shtc3()
-        print("SHTC3")
+        try: 
+            test_shtc3()
+            res_test = True
+        except: res_test = False
     else:
         print("Error: could not find component function")
 
