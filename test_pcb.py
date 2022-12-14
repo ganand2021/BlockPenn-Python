@@ -134,6 +134,8 @@ def test_sps30():
     else:
         print("SPS30: AUTO-CLEANING INTERVAL: " + str(sps.read_auto_cleaning_interval()))
 
+    print("1")
+
     time.sleep(5)
     sps.start_measurement()
     time.sleep(5)
