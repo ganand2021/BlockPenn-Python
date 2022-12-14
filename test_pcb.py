@@ -101,6 +101,7 @@ def test_shtc3():
     print("0")
     import adafruit_shtc3
     sht = adafruit_shtc3.SHTC3(i2c)
+    temperature, relative_humidity = sht.measurements
     print("1")
     sh_temp = str("Temperature: %0.1f C" % temperature)
     sh_humi = str("Humidity: %0.1f %%" % relative_humidity)
