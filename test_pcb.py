@@ -111,6 +111,13 @@ def test(comp_test):
             test_t6713()
             res_test = True
         except: res_test = False
+    elif comp_test == "OLED":
+        print("Testing OLED")
+        try: 
+            print("Running OLED")
+            test_oled()
+            res_test = True
+        except: res_test = False
     else:
         print("Error: could not find component function")
 
@@ -270,6 +277,44 @@ class T6713(object):
 
 # T6713 end
 
+def test_oled():
+	import Adafruit_SSD1306
+	from PIL import Image
+	from PIL import ImageDraw
+	from PIL import ImageFont
+
+	RST = None     # on the PiOLED this pin isnt used
+	# 128x64 display with hardware I2C:
+	disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
+	# Initialize library.
+	try:
+		disp.begin()
+	except Exception as e:
+		logging.exception("Main crashed during OLED setup. Error: %s", e)
+		
+	# Clear display.
+	disp.clear()
+	disp.display()
+
+	# Create blank image for drawing.
+	# Make sure to create image with mode '1' for 1-bit color.
+	width = disp.width
+	height = disp.height
+	image = Image.new('1', (width, height))
+
+	# Get drawing object to draw on image.
+	draw = ImageDraw.Draw(image)
+
+	# Draw a black filled box to clear the image.
+	draw.rectangle((0,0,width,height), outline=0, fill=0)
+
+	# Draw some shapes.
+	# First define some constants to allow easy resizing of shapes.
+	padding = -2
+	top = padding
+	bottom = height-padding
+	# Move left to right keeping track of the current x position for drawing shapes.
+	x = 0
 
 def main():
     # Warm up GPIO
