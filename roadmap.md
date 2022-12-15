@@ -37,3 +37,6 @@
 - Implement requirements.txt: `pip3 install -r requirements.txt`
 - To create the requirements.txt: `pip3 freeze > requirements.txt`
 - Consider using `sensors` (`sudo apt install lm-sensors`) to check the internal temperature
+- Add more graphics to OLED display
+- Allow ENV file to control the configuration 
+- Remove old scripts / put in a seperate folder
