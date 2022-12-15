@@ -93,28 +93,24 @@ def test(comp_test):
     if comp_test == "SHTC3":
         print("Testing SHTC3")
         try: 
-            print("Running SHTC3")
             test_shtc3()
             res_test = True
         except: res_test = False
     elif comp_test == "SPS30":
         print("Testing SPS30")
         try: 
-            print("Running SPS30")
             test_sps30()
             res_test = True
         except: res_test = False
     elif comp_test == "T6713":
         print("Testing T6713")
         try: 
-            print("Running T6713")
             test_t6713()
             res_test = True
         except: res_test = False
     elif comp_test == "OLED":
         print("Testing OLED")
         try: 
-            print("Running OLED")
             test_oled()
             res_test = True
         except: res_test = False
@@ -171,21 +167,21 @@ def test_sps30():
     sps30_nc4 = str("NC4.0: %0.1f 1/cm3" % sps.dict_values['nc4p0'])
     sps30_typ = str("Typical Particle: %0.1f µm" % sps.dict_values['typical'])
     print(f"SPS30 readouts:")
-    print(sps30_pm1)
-    print(sps30_pm2p5)
-    print(sps30_pm10)
-    print(sps30_nc1)
-    print(sps30_nc4)
-    print(sps30_typ)
+    print(sps30_pm1+" "+sps30_pm2p5+" "+sps30_pm10+" "+sps30_nc1+" "+sps30_nc4+" "+sps30_typ)
+    # print(sps30_pm2p5)
+    # print(sps30_pm10)
+    # print(sps30_nc1)
+    # print(sps30_nc4)
+    # print(sps30_typ)
 
 def test_t6713():
 	obj_6713 = T6713()
 	t6713_stt = str("T6713 status:"+str(bin(obj_6713.status())))
-	t6713_ppm = str("T6713 PPM: "+str(obj_6713.gasPPM()))
-	t6713_abc = str("T6713 ABC state: "+str(obj_6713.checkABC()))
-	print(t6713_stt)
-	print(t6713_ppm)
-	print(t6713_abc)
+	t6713_ppm = str(" PPM: "+str(obj_6713.gasPPM()))
+	t6713_abc = str(" ABC state: "+str(obj_6713.checkABC()))
+	print(t6713_stt+t6713_ppm+t6713_abc)
+	# print(t6713_ppm)
+	# print(t6713_abc)
 
 # T6713 start
 bus = 1
@@ -322,15 +318,22 @@ def main():
     print(f"Starting {bcolors.HIGH}GPIO{bcolors.TEXT}: {bcolors.PASS}PASS{bcolors.TEXT}")
     # Start menu
     exit_sel = False
-    options = ["SHTC3", "SPS30", "T6713", "OLED", "exit"]
+    options = ["SHTC3", "SPS30", "T6713", "OLED", "All", "exit"]
     terminal_menu = TerminalMenu(options)
     while not (exit_sel):
         menu_entry_index = terminal_menu.show()
         exit_sel = (options[menu_entry_index] == "exit")
+		test_all = (options[menu_entry_index] == "All")
         if not (exit_sel): 
-            test_good = test(options[menu_entry_index])
-            test_out = f"{bcolors.PASS}PASS{bcolors.TEXT}" if test_good else f"{bcolors.FAIL}FAIL{bcolors.TEXT}"
-            print(f"Testing {bcolors.HIGH}{options[menu_entry_index]}{bcolors.TEXT}: "+test_out)
+			if (test_all):
+				for i in ["SHTC3", "SPS30", "T6713", "OLED"]:
+					test_good = test(i)
+					test_out = f"{bcolors.PASS}PASS{bcolors.TEXT}" if test_good else f"{bcolors.FAIL}FAIL{bcolors.TEXT}"
+					print(f"Testing {bcolors.HIGH}{i}{bcolors.TEXT}: "+test_out)
+			else:
+				test_good = test(options[menu_entry_index])
+				test_out = f"{bcolors.PASS}PASS{bcolors.TEXT}" if test_good else f"{bcolors.FAIL}FAIL{bcolors.TEXT}"
+				print(f"Testing {bcolors.HIGH}{options[menu_entry_index]}{bcolors.TEXT}: "+test_out)
 
 if __name__ == "__main__":
 	try:
