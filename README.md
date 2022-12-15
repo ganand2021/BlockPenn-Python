@@ -7,32 +7,15 @@ See our [Documentation Website](https://liogl.github.io/BlockPenn-Python).
 Tested with Ubuntu 22.04 LTS Server 64 bit. 
 1. Complete deploying the docker image of blockpenn on the RPi. 
 2. Set up the environment.
-3. Run `sensor_start_w_sps` manually to test the setup.
-4. Set up crontab to auto start the script in reboot.
+3. (Optional) Use `test_pcb.py` to test the different components on the PCB. This will let you know if there are any issues with a specific component (e.g. sensor, OLED).
+4. Run `sensor_start_w_sps_v2.py` manually to test the setup.
+5. Set up crontab to auto start the script in reboot.
 
-### sensor_start_w_sps
+### sensor_start_w_sps_v2
 This is the Python code with all sensors (Air quality, CO2, Humidity & Temp) and OLED display.
-There are two ways to set up the environment: 
-1. Using a script (recommended)
-2. Manually
+This code is designed for the V2 of the SensorBoard. 
 
-#### Setting up the environment (Script)
-```sh
-sudo sh setup_pkg.sh
-sh setup_env.sh
-```
-Then run:
-```sh
-cd Adafruit_Python_SSD1306
-sudo pip3 install Adafruit_SSD1306
-sudo python3 setup.py install
-cd ..
-sudo pip3 install adafruit-circuitpython-shtc3
-sudo pip3 install smbus2
-sudo pip3 install influxdb
-```
-
-
+### Environment setup
 #### Setting up the environment (Manual)
 This is only needed if you didn't run the script to set up the environment.
 General:
@@ -54,6 +37,28 @@ cd ..
 sudo pip3 install adafruit-circuitpython-shtc3
 sudo pip3 install sps30
 sudo pip3 install smbus2
+```
+
+#### Setting up the environment (Script) 
+**Note: currently not working**
+
+There are two ways to set up the environment: 
+1. Using a script (recommended)
+2. Manually
+
+```sh
+sudo sh setup_pkg.sh
+sh setup_env.sh
+```
+Then run:
+```sh
+cd Adafruit_Python_SSD1306
+sudo pip3 install Adafruit_SSD1306
+sudo python3 setup.py install
+cd ..
+sudo pip3 install adafruit-circuitpython-shtc3
+sudo pip3 install smbus2
+sudo pip3 install influxdb
 ```
 
 ### Set up crontab to auto start the script in reboot
