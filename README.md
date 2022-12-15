@@ -16,6 +16,8 @@ This is the Python code with all sensors (Air quality, CO2, Humidity & Temp) and
 This code is designed for the V2 of the SensorBoard. 
 
 ### Environment setup
+This part covers how to set up the environment. 
+
 #### Setting up the environment (Manual)
 This is only needed if you didn't run the script to set up the environment.
 General:
