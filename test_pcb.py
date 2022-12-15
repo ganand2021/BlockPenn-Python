@@ -104,6 +104,13 @@ def test(comp_test):
             test_sps30()
             res_test = True
         except: res_test = False
+    elif comp_test == "T6713":
+        print("Testing T6713")
+        try: 
+            print("Running T6713")
+            test_t6713()
+            res_test = True
+        except: res_test = False
     else:
         print("Error: could not find component function")
 
@@ -163,6 +170,106 @@ def test_sps30():
     print(sps30_nc1)
     print(sps30_nc4)
     print(sps30_typ)
+
+def test_t6713():
+	obj_6713 = T6713()
+	t6713_stt = str("T6713 status:"+str(bin(obj_6713.status())))
+	t6713_ppm = str("T6713 PPM: "+str(obj_6713.gasPPM()))
+	t6713_abc = str("T6713 ABC state: "+str(obj_6713.checkABC()))
+	print(t6713_stt)
+	print(t6713_ppm)
+	print(t6713_abc)
+
+# T6713 start
+bus = 1
+addressT6713 = 0x15
+I2C_SLAVE=0x0703
+
+class i2c_6713(object):
+	def __init__(self, device, bus):
+
+		self.fr = io.open("/dev/i2c-"+str(bus), "rb", buffering=0)
+		self.fw = io.open("/dev/i2c-"+str(bus), "wb", buffering=0)
+
+		# set device address
+
+		fcntl.ioctl(self.fr, I2C_SLAVE, device)
+		fcntl.ioctl(self.fw, I2C_SLAVE, device)
+
+	def write(self, bytes):
+		self.fw.write(bytes)
+
+	def read(self, bytes):
+		return self.fr.read(bytes)
+
+	def close(self):
+		self.fw.close()
+		self.fr.close()
+
+class T6713(object):
+	def __init__(self):
+		self.dev = i2c_6713(addressT6713, bus)
+
+	def status(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
+		buffer = array.array('B', [0x04, 0x13, 0x8a, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		return buffer[2]*256+buffer[3]
+
+	def send_cmd(self, cmd):
+		buffer = array.array('B', cmd)
+		self.dev.write(buffer)
+		time.sleep(0.01) # Technically minimum delay is 10ms 
+		data = self.dev.read(5)
+		buffer = array.array('B', data)
+		return buffer
+
+	def reset(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
+		buffer = array.array('B', [0x04, 0x03, 0xe8, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.01)
+		data = self.dev.read(5)
+		buffer = array.array('B', data)
+		cmd_result = 1
+		if ((buffer[2] == 0xe8) & (buffer[3] == 0xff) & (buffer[4] == 0x00)): cmd_result = 0 
+		return buffer
+
+	def gasPPM(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
+		buffer = array.array('B', [0x04, 0x13, 0x8b, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		ret_value = int((((buffer[2] & 0x3F) << 8) | buffer[3]))
+		logging.info("Read gasPPM ("+str(ret_value)+")")
+		return ret_value
+		#return buffer[2]*256+buffer[3]
+
+	def checkABC(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
+		buffer = array.array('B', [0x04, 0x03, 0xee, 0x00, 0x01])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(4)
+		buffer = array.array('B', data)
+		return buffer[2]*256+buffer[3]
+
+	def calibrate(self):
+		logging.debug('Running function:'+inspect.stack()[0][3])
+		buffer = array.array('B', [0x05, 0x03, 0xec, 0xff, 0x00])
+		self.dev.write(buffer)
+		time.sleep(0.1)
+		data = self.dev.read(5)
+		buffer = array.array('B', data)
+		return buffer[3]*256+buffer[3]
+
+# T6713 end
+
 
 def main():
     # Warm up GPIO
