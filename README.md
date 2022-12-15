@@ -1,7 +1,7 @@
 # Blockpenn-python
 Python code for the RPi sensors.
 
-See our [Documentation Website](https://liogl.github.io/BlockPenn-Python).
+See our [Documentation Website](https://liogl.github.io/blockpenn-python/#/).
 
 ## Installation
 Tested with Ubuntu 22.04 LTS Server 64 bit. 
