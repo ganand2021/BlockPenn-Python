@@ -91,25 +91,21 @@ def test(comp_test):
 	res_test = False
 
 	if comp_test == "SHTC3":
-		print("Testing SHTC3")
 		try: 
 			test_shtc3()
 			res_test = True
 		except: res_test = False
 	elif comp_test == "SPS30":
-		print("Testing SPS30")
 		try: 
 			test_sps30()
 			res_test = True
 		except: res_test = False
 	elif comp_test == "T6713":
-		print("Testing T6713")
 		try: 
 			test_t6713()
 			res_test = True
 		except: res_test = False
 	elif comp_test == "OLED":
-		print("Testing OLED")
 		try: 
 			test_oled()
 			res_test = True
@@ -168,11 +164,6 @@ def test_sps30():
 	sps30_typ = str("Typical Particle: %0.1f µm" % sps.dict_values['typical'])
 	print(f"SPS30 readouts:")
 	print(sps30_pm1+" "+sps30_pm2p5+" "+sps30_pm10+" "+sps30_nc1+" "+sps30_nc4+" "+sps30_typ)
-	# print(sps30_pm2p5)
-	# print(sps30_pm10)
-	# print(sps30_nc1)
-	# print(sps30_nc4)
-	# print(sps30_typ)
 
 def test_t6713():
 	obj_6713 = T6713()
@@ -180,8 +171,6 @@ def test_t6713():
 	t6713_ppm = str(" PPM: "+str(obj_6713.gasPPM()))
 	t6713_abc = str(" ABC state: "+str(obj_6713.checkABC()))
 	print(t6713_stt+t6713_ppm+t6713_abc)
-	# print(t6713_ppm)
-	# print(t6713_abc)
 
 # T6713 start
 bus = 1
@@ -341,4 +330,3 @@ if __name__ == "__main__":
 	except Exception as e:
 		GPIO.cleanup()
 		logging.exception("main crashed. Error: %s", e)
-#    main()
