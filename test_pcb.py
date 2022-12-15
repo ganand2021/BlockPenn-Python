@@ -323,7 +323,7 @@ def main():
     while not (exit_sel):
         menu_entry_index = terminal_menu.show()
         exit_sel = (options[menu_entry_index] == "exit")
-		test_all = (options[menu_entry_index] == "All")
+        test_all = (options[menu_entry_index] == "All")
         if not (exit_sel): 
 			if (test_all):
 				for i in ["SHTC3", "SPS30", "T6713", "OLED"]:
