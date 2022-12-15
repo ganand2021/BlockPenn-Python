@@ -307,11 +307,11 @@ def main():
 	print(f"Starting {bcolors.HIGH}GPIO{bcolors.TEXT}: {bcolors.PASS}PASS{bcolors.TEXT}")
 	# Start menu
 	exit_sel = False
-	options = ["SHTC3", "SPS30", "T6713", "OLED", "All", "exit"]
+	options = ["SHTC3", "SPS30", "T6713", "OLED", "All", "Exit"]
 	terminal_menu = TerminalMenu(options)
 	while not (exit_sel):
 		menu_entry_index = terminal_menu.show()
-		exit_sel = (options[menu_entry_index] == "exit")
+		exit_sel = (options[menu_entry_index] == "Exit")
 		test_all = (options[menu_entry_index] == "All")
 		if not (exit_sel): 
 			if (test_all):
