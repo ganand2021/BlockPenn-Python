@@ -4,7 +4,7 @@ import smbus2
 SPS30_I2C_ADDR = 0x69
 
 # Create an SMBus object for interacting with the I2C bus
-bus = smbus2.SMBus(1)  # Use 1 for the Raspberry Pi 2 and 3, use 0 for the Raspberry Pi 1
+bus = smbus2.SMBus(0)  # Use 1 for the Raspberry Pi 2 and 3, use 0 for the Raspberry Pi 1
 
 # Send a command to the SPS30 to start measurements
 bus.write_i2c_block_data(SPS30_I2C_ADDR, 0x00, [0x10, 0x00])
