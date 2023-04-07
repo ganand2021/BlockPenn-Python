@@ -11,7 +11,8 @@
 from simple_term_menu import TerminalMenu
 import logging, os, inspect, logging.handlers
 import math, struct, array, time, io, fcntl
-import RPi.GPIO as GPIO # Import RPi.GPIO library
+import gpiod # Replaces GPIO
+#import RPi.GPIO as GPIO # Import RPi.GPIO library
 import board
 
 # GPIO setup: un/comment based on PCB version 
@@ -24,11 +25,14 @@ import board
 # RBTN_PIN = 4  # pull-down
 
 # PCB V1
-LED1_PIN = 22 # red 
-LED2_PIN = 23 # green
+LED1_PIN = 93 #Libre: 93 RPi: 22 # red 
+LED2_PIN = 10 #Libre: 10 RPi: 23 # green
+LED1_C = 'gpiochip1' # Libre: Chip ID
+LED2_C = 'gpiochip0' # Libre: Chip ID
 
-LBTN_PIN = 4 # Bottom, pull-down
-RBTN_PIN = 27 # Into the center of the PCB, pull-down
+LBTN_PIN = 96 #Libre: 96 RPi: 4 # Bottom, pull-down
+MBTN_PIN = 9 #Libre: 9 RPi: 17 # pull-down
+RBTN_PIN = 98 #Libre: 98 RPi: 27 # Into the center of the PCB, pull-down
 
 # Start logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
@@ -61,28 +65,48 @@ class bcolors:
 # Start the lgpio
 def gpio_start():
 	# for the leds and buttons
-	global GPIO 
-	GPIO.setwarnings(False) # Ignore warning (TBD)
-	GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
+#	global GPIO 
+#	GPIO.setwarnings(False) # Ignore warning (TBD) #Libre
+#	GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping #Libre
+    global CHIP0 #Libre
+    global CHIP1 #Libre   
 	global i2c 
 	i2c = board.I2C()  # uses board.SCL and board.SDA
 
 # GPIO classes: led & btn
 class led:
-	global GPIO
-	def __init__(self, led_pin, callback=None):
-		GPIO.setup(led_pin, GPIO.OUT)
-		self.led_pin = led_pin
+# 	global GPIO #Libre
+    global CHIP0 #Libre
+    global CHIP1 #Libre
+#	def __init__(self, led_pin, callback=None): #Libre
+	def __init__(self, led_pin, led_chip, callback=None):#Libre
+#		GPIO.setup(led_pin, GPIO.OUT)#Libre
+        self.led_line = led_chip.get_line(led_pin)
+        self.led_line.request(consumer="BP", type=gpiod.LINE_REQ_DIR_OUT)#Libre
 
 	def set_led(self, state):
-		GPIO.output(self.led_pin, state)
+#		GPIO.output(self.led_pin, state)#Libre
+		led_line.set_value(state)#Libre
 
 class btn:
-	global GPIO
-	def __init__(self, btn_pin, callback=None):
-		GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+# 	global GPIO #Libre
+    # Libre
+	# def __init__(self, btn_pin, callback=None):
+	# 	GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+	# 	GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
+	# 	self.btn_pin = btn_pin
+    # Libre
+	def __init__(self, btn_pin, btn_chip, callback=None):
+        self.btn_line = btn_chip.get_line(btn_pin)
+        btn_line.request(consumer="BP", type=gpiod.LINE_REQ_DIR_IN)
+
+		GPIO.setup(btn_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        line.request(consumer="bp", type=gpiod.LINE_REQ_DIR_IN) 
 		GPIO.add_event_detect(btn_pin,GPIO.FALLING,callback=callback) 
 		self.btn_pin = btn_pin
+# Todo: complete the changes to btn and led into the rest of the code.
+# Add async event detection loop (for data, buttons should be sync...)
+# Modify the rest and test it
 
 def button_callback(channel):
 	print("Button was pushed! (GPIO "+str(channel)+")")
@@ -328,5 +352,6 @@ if __name__ == "__main__":
 	try:
 		main()
 	except Exception as e:
-		GPIO.cleanup()
+		chip0.close()# Libre GPIO.cleanup()
+        chip1.close()# Libre
 		logging.exception("main crashed. Error: %s", e)
