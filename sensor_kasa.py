@@ -199,8 +199,8 @@ class T6713(object):
 
 # Kasa
 api_url = "https://wap.tplinkcloud.com"
-username = "blockpennplugs4@gmail.com"
-password = "BlockPenn2022"
+username = "username"
+password = "password"
 
 # Authenticate and get token
 kasaObj = kasa_api_test.Kasa()
