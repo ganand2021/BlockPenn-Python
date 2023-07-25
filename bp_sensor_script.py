@@ -7,7 +7,6 @@ import Adafruit_SSD1306
 ## SPS30
 import sps30
 ## SPS30
-import DBSETUP  # import the db setup
 import influxdb_utils
 
 from PIL import Image

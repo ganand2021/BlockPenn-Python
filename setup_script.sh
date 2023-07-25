@@ -30,6 +30,7 @@ sudo pip3 install sps30
 sudo pip3 install smbus2
 sudo pip3 install influxdb-client
 sudo pip3 install python-dotenv
+sudo pip3 install pandas
 
 # Clone and install Adafruit_Python_SSD1306
 git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
