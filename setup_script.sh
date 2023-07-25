@@ -18,6 +18,9 @@ sudo apt install -y python3-lgpio
 sudo apt-get install -y libgpiod2
 sudo apt install -y python3-rpi.gpio
 sudo apt install -y python3-pil
+sudo apt install net-tools
+sudo apt install i2c-tools
+sudo apt install linux-modules-extra-raspi
 
 # Install Python packages using pip
 sudo pip3 install influxdb
