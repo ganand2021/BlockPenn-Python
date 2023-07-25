@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /home/ubuntu
+
 # Update package lists
 sudo apt update
 
