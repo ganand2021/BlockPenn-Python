@@ -2,6 +2,15 @@
 import math, struct, array, time, io, fcntl
 import logging, os, inspect, logging.handlers
 import board
+#AWS Imports
+from awscrt import mqtt, http
+from awsiot import mqtt_connection_builder
+import sys
+import time
+import json
+import random
+from AWSHandler.functions import on_connection_interrupted, on_connection_resumed, on_resubscribe_complete, on_message_received, on_connection_success, on_connection_failure, on_connection_closed
+
 #Temperature and Humidity Sensor: SHTC3
 import adafruit_shtc3
 #Particulate MAtter Sensor: SPS30
@@ -177,39 +186,59 @@ obj_6713 = t6713.T6713()
 
 ##SPS30 Setup
 sps = SPS30_I2C(i2c)
-# print(f'SPS30 Firmware Version: {sps.firmware_version()}')
-# print(f'SPS30 Product Type: {sps.product_type()}')
-# print(f'SPS30 Device Serial: {sps.serial_number()}')
-# print(f"SPS30 Status Register: {sps.read_status_register()}")
-# print(f'SPS30 Auto cleaning Interval: {sps.read_auto_cleaning_interval()}')
-# sps.reset()
-# time.sleep(1)
-# sps.start_measurement()
+
+##AWS Setup
+# Create the proxy options if the data is present in cmdData
+proxy_options = None
+
+# Create a MQTT connection from the command line data
+mqtt_connection = mqtt_connection_builder.mtls_from_path(
+	endpoint="a3cp1px06xaavc-ats.iot.us-east-1.amazonaws.com",
+	cert_filepath="./Certificates/46e0386425345445ad0e0411ec0fdbdeedab55c5eb38c7386c88e5bab84e8091-certificate.pem.crt",
+	pri_key_filepath="./Certificates/46e0386425345445ad0e0411ec0fdbdeedab55c5eb38c7386c88e5bab84e8091-private.pem.key",
+	ca_filepath="./Certificates/AmazonRootCA1.pem",
+	on_connection_interrupted=on_connection_interrupted,
+	on_connection_resumed=on_connection_resumed,
+	client_id="test-client",
+	clean_session=False,
+	keep_alive_secs=30,
+	http_proxy_options=proxy_options,
+	on_connection_success=on_connection_success,
+	on_connection_failure=on_connection_failure,
+	on_connection_closed=on_connection_closed)
+
+connect_future = mqtt_connection.connect()
+# Future.result() waits until a result is available
+connect_future.result()
+print("Connected!")
 
 def getData():
-    print(sps.read())
             
     temperature, relative_humidity = sht.measurements
     data = {
         "Temperature" : float(temperature),
         "Humidity" : float(relative_humidity),
         "CO2 Concentration" : float(obj_6713.gasPPM()),
-        "CO2 ABC State" : float(obj_6713.checkABC()),
-        # "AQ_PM1.0" : float(sps_values['sensor_data']['mass_density']['pm1.0']),
-        # "AQ_PM2.5" : float(sps_values['sensor_data']['mass_density']['pm2.5']),
-        # "AQ_PM4" : float(sps_values['sensor_data']['mass_density']['pm4.0']),
-        # "AQ_PM10" : float(sps_values['sensor_data']['mass_density']['pm10']),
-        # "AQ_NC0_5" : float(sps_values['sensor_data']['particle_count']['pm0.5']),
-        # "AQ_NC1" : float(sps_values['sensor_data']['particle_count']['pm1.0']),
-        # "AQ_NC2_5" : float(sps_values['sensor_data']['particle_count']['pm2.5']),
-        # "AQ_NC4" : float(sps_values['sensor_data']['particle_count']['pm4.0']),
-        # "AQ_NC10" : float(sps_values['sensor_data']['particle_count']['pm10']),
-        # "AQ_NC0_TYPICAL" : float(sps_values['sensor_data']['particle_size'])
+        "CO2 ABC State" : float(obj_6713.checkABC())
     }
+    data.update(sps.read())
     return data
 
         
 if __name__ == "__main__":
-    while True:
-        data = getData()
-        print(data)
+	try:
+		while True:
+			data = getData()
+			message_json = json.dumps(data)
+			mqtt_connection.publish(
+				topic="data/measurement",
+				payload=message_json,
+				qos=mqtt.QoS.AT_LEAST_ONCE)
+			time.sleep(1)
+   
+	except:
+		# Disconnect
+		print("Disconnecting...")
+		disconnect_future = mqtt_connection.disconnect()
+		disconnect_future.result()
+		print("Disconnected!")
