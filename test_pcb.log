@@ -100,3 +100,1251 @@
 2023-07-25 03:23:54 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 2023-07-25 03:23:54 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 2023-07-25 03:23:54 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:25 [DEBUG   ] Script started
+2023-07-25 20:43:25 [DEBUG   ] Script started
+2023-07-25 20:43:27 [DEBUG   ] Running function:status
+2023-07-25 20:43:27 [DEBUG   ] Running function:gasPPM
+2023-07-25 20:43:27 [INFO    ] Read gasPPM (649)
+2023-07-25 20:43:27 [DEBUG   ] Running function:checkABC
+2023-07-25 20:43:27 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:27 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:43:40 [DEBUG   ] Script started
+2023-07-25 20:43:40 [DEBUG   ] Script started
+2023-07-25 20:43:41 [DEBUG   ] Running function:status
+2023-07-25 20:43:41 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:43:41 [ERROR   ] Main crashed during OLED setup. Error: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/home/ubuntu/blockpenn-python/test_pcb.py", line 276, in test_oled
+    disp.begin()
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 148, in begin
+    self._initialize()
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 247, in _initialize
+    self.command(SSD1306_DISPLAYOFF)                    # 0xAE
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 129, in command
+    self._i2c.write8(control, c)
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_GPIO/I2C.py", line 114, in write8
+    self._bus.write_byte_data(self._address, register, value)
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_PureIO/smbus.py", line 316, in write_byte_data
+    self._device.write(data)
+OSError: [Errno 121] Remote I/O error
+2023-07-25 20:43:43 [DEBUG   ] Running function:status
+2023-07-25 20:43:43 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:43:43 [ERROR   ] Main crashed during OLED setup. Error: [Errno 121] Remote I/O error
+Traceback (most recent call last):
+  File "/home/ubuntu/blockpenn-python/test_pcb.py", line 276, in test_oled
+    disp.begin()
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 148, in begin
+    self._initialize()
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 247, in _initialize
+    self.command(SSD1306_DISPLAYOFF)                    # 0xAE
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_SSD1306/SSD1306.py", line 129, in command
+    self._i2c.write8(control, c)
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_GPIO/I2C.py", line 114, in write8
+    self._bus.write_byte_data(self._address, register, value)
+  File "/usr/local/lib/python3.10/dist-packages/Adafruit_PureIO/smbus.py", line 316, in write_byte_data
+    self._device.write(data)
+OSError: [Errno 121] Remote I/O error
+2023-07-25 20:44:49 [DEBUG   ] Script started
+2023-07-25 20:44:49 [DEBUG   ] Script started
+2023-07-25 20:44:50 [DEBUG   ] Running function:status
+2023-07-25 20:44:50 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:50 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Running function:status
+2023-07-25 20:44:52 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:44:52 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Running function:status
+2023-07-25 20:45:00 [DEBUG   ] Running function:gasPPM
+2023-07-25 20:45:00 [INFO    ] Read gasPPM (494)
+2023-07-25 20:45:00 [DEBUG   ] Running function:checkABC
+2023-07-25 20:45:00 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:00 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:04 [DEBUG   ] Running function:status
+2023-07-25 20:45:05 [DEBUG   ] Running function:gasPPM
+2023-07-25 20:45:05 [INFO    ] Read gasPPM (496)
+2023-07-25 20:45:05 [DEBUG   ] Running function:checkABC
+2023-07-25 20:45:05 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:05 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:19 [DEBUG   ] Script started
+2023-07-25 20:45:19 [DEBUG   ] Script started
+2023-07-25 20:45:35 [DEBUG   ] Running function:status
+2023-07-25 20:45:35 [DEBUG   ] Running function:gasPPM
+2023-07-25 20:45:35 [INFO    ] Read gasPPM (671)
+2023-07-25 20:45:35 [DEBUG   ] Running function:checkABC
+2023-07-25 20:45:35 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 20:45:35 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:16 [DEBUG   ] Script started
+2023-07-25 21:10:16 [DEBUG   ] Script started
+2023-07-25 21:10:32 [DEBUG   ] Running function:status
+2023-07-25 21:10:32 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:10:32 [INFO    ] Read gasPPM (505)
+2023-07-25 21:10:32 [DEBUG   ] Running function:checkABC
+2023-07-25 21:10:33 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:33 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:10:51 [DEBUG   ] Script started
+2023-07-25 21:10:51 [DEBUG   ] Script started
+2023-07-25 21:11:07 [DEBUG   ] Running function:status
+2023-07-25 21:11:07 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:11:08 [INFO    ] Read gasPPM (650)
+2023-07-25 21:11:08 [DEBUG   ] Running function:checkABC
+2023-07-25 21:11:08 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:11:08 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:15:50 [DEBUG   ] Script started
+2023-07-25 21:15:50 [DEBUG   ] Script started
+2023-07-25 21:16:05 [DEBUG   ] Running function:status
+2023-07-25 21:16:06 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:16:06 [INFO    ] Read gasPPM (677)
+2023-07-25 21:16:06 [DEBUG   ] Running function:checkABC
+2023-07-25 21:16:06 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:06 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:12 [DEBUG   ] Script started
+2023-07-25 21:16:12 [DEBUG   ] Script started
+2023-07-25 21:16:28 [DEBUG   ] Running function:status
+2023-07-25 21:16:28 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:16:28 [INFO    ] Read gasPPM (662)
+2023-07-25 21:16:28 [DEBUG   ] Running function:checkABC
+2023-07-25 21:16:29 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:16:29 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:04 [DEBUG   ] Script started
+2023-07-25 21:19:04 [DEBUG   ] Script started
+2023-07-25 21:19:06 [DEBUG   ] Running function:status
+2023-07-25 21:19:06 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:19:06 [INFO    ] Read gasPPM (642)
+2023-07-25 21:19:06 [DEBUG   ] Running function:checkABC
+2023-07-25 21:19:06 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:06 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:07 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:16 [DEBUG   ] Script started
+2023-07-25 21:19:16 [DEBUG   ] Script started
+2023-07-25 21:19:17 [DEBUG   ] Running function:status
+2023-07-25 21:19:17 [DEBUG   ] Running function:gasPPM
+2023-07-25 21:19:17 [INFO    ] Read gasPPM (511)
+2023-07-25 21:19:17 [DEBUG   ] Running function:checkABC
+2023-07-25 21:19:17 [DEBUG   ] Using hardware I2C with platform I2C provider.
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xAE to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xD5 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x80 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xA8 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x3F to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xD3 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x8D to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x14 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x20 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xA1 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xC8 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xDA to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x12 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x81 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xCF to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xD9 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xF1 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xDB to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x40 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xA4 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xA6 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0xAF to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x21 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x7F to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x22 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x00 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote 0x07 to register 0x00
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2023-07-25 21:19:17 [DEBUG   ] Wrote to register 0x40: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
