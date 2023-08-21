@@ -1,5 +1,5 @@
 ##Imports
-import math, struct, array, time, io, fcntl
+import math, struct, array, time, io, fcntl, datetime
 import logging, os, inspect, logging.handlers
 import board
 #AWS Imports
@@ -32,6 +32,36 @@ LBTN_PIN = 27 # pull-down - Not working. Design connects it ground the RPI GPIO.
 MBTN_PIN = 17 # pull-down
 RBTN_PIN = 4  # pull-down
 
+DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD seconds
+
+# Device Data Fn
+def get_device_data():
+    
+    # Extract the IP address of the host
+	cmd = "hostname -I | cut -d\' \' -f1"
+	IP = subprocess.check_output(cmd, shell = True)
+	# Retrieves CPU load information using the top -bn1 command, filters the output to 
+	# include only lines with "load" using grep, and then uses awk to print the CPU load 
+	# value in a formatted manner.
+	cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+	CPU_load = subprocess.check_output(cmd, shell = True)
+	# Retrieves memory usage information using the free -m command, then processes 
+	# the output using awk to calculate and print the used memory, total memory, and usage percentage
+	cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+	memory_usage = subprocess.check_output(cmd, shell = True)
+	# Retrieves disk usage information using the df -h command and then processes the 
+ 	# output using awk to print the used and total disk space along with the usage percentage
+	cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+	disk_usage = subprocess.check_output(cmd, shell = True)
+ 
+	device_data = {
+		"IP Address": IP.decode('utf-8')[:-2], 
+        "CPU Load": CPU_load.decode('utf-8').split(': ')[1],
+        "Memory Usage": memory_usage.decode('utf-8').split(': ')[1],
+        "Disk Usage": disk_usage.decode('utf-8').split(': ')[1]
+	}
+	
+	return device_data
 
 ##Logging Init
 # Start logging
@@ -120,33 +150,33 @@ disp.display()
 
 def showPanel(panel_id):
 	try:
+		data = getData()
 		draw.text((x, top    ), "- "+str(panel_id)+" -", font=font, fill=255)
 		if (panel_id == 0):
 			draw.text((x, top+8*1), "SYSTEM STATS",  font=font, fill=255)
-			draw.text((x, top+8*2), "IP: " + str(IP.decode('utf-8')),  font=font, fill=255)
-			draw.text((x, top+8*3), str(CPU.decode('utf-8')), font=font, fill=255)
-			draw.text((x, top+8*4), str(MemUsage.decode('utf-8')),  font=font, fill=255)
-			draw.text((x, top+8*5), str(Disk.decode('utf-8')),  font=font, fill=255)
+			draw.text((x, top+8*2), "IP: " + str(data["IP Address"]),  font=font, fill=255)
+			draw.text((x, top+8*3), str(data["CPU Load"]), font=font, fill=255)
+			draw.text((x, top+8*4), str(data["Memory Usage"]),  font=font, fill=255)
+			draw.text((x, top+8*5), str(data["Disk Usage"]),  font=font, fill=255)
 		if (panel_id == 1):
 			draw.text((x, top+8*1), "SENSORS: Tmp, Hum, CO2",  font=font, fill=255)
 			draw.text((x, top+8*2), "SHTC3",  font=font, fill=255)
-			draw.text((x, top+8*3), str("Temperature: %0.1f C" % temperature),  font=font, fill=255)
-			draw.text((x, top+8*4), str("Humidity: %0.1f %%" % relative_humidity),  font=font, fill=255)
+			draw.text((x, top+8*3), str("Temperature: %0.1f C" % data["Temperature"]),  font=font, fill=255)
+			draw.text((x, top+8*4), str("Humidity: %0.1f %%" % data["Humidity"]),  font=font, fill=255)
 ## T6713
-			draw.text((x, top+8*5), "T6713 (Status:"+str(bin(obj_6713.status())+")"),  font=font, fill=255)
-			draw.text((x, top+8*6), str("PPM: "+str(obj_6713.gasPPM())),  font=font, fill=255)
-			draw.text((x, top+8*7), str("ABC State: "+str(obj_6713.checkABC())),  font=font, fill=255)
+			draw.text((x, top+8*5), "T6713 (Status:"+str(data["CO2 Sensor Status"])+")",  font=font, fill=255)
+			draw.text((x, top+8*6), str("PPM: "+str(data["CO2 Concentration"])),  font=font, fill=255)
+			draw.text((x, top+8*7), str("ABC State: "+str(data["CO2 ABC State"])),  font=font, fill=255)
 ## T6713
 		if (panel_id == 2):
 			draw.text((x, top+8*1), "SENSORS: Air Quality",  font=font, fill=255)
-			sps_values = json.dumps(sps.get_measurement(), indent=2)
 ## SPS30	
-			draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % sps_values['sensor_data']['mass_density']['pm1.0']),  font=font, fill=255)
-			draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % sps_values['sensor_data']['mass_density']['pm2.5']),  font=font, fill=255)
-			draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % sps_values['sensor_data']['mass_density']['pm10']),  font=font, fill=255)
-			draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % sps_values['sensor_data']['particle_count']['pm1.0']),  font=font, fill=255)
-			draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % sps_values['sensor_data']['particle_count']['pm4.0']),  font=font, fill=255)
-			draw.text((x, top+8*7), str("Typical Particle Size: %0.1f µm" % sps_values['sensor_data']['particle_size']),  font=font, fill=255)
+			draw.text((x, top+8*2), str("PM1.0: %0.1f µg/m3" % data["pm10 standard"]),  font=font, fill=255)
+			draw.text((x, top+8*3), str("PM2.5: %0.1f µg/m3" % data["pm25 standard"]),  font=font, fill=255)
+			draw.text((x, top+8*4), str("PM10 : %0.1f µg/m3" % data["pm100 standard"]),  font=font, fill=255)
+			draw.text((x, top+8*5), str("NC1.0: %0.1f 1/cm3" % data["particles 10um"]),  font=font, fill=255)
+			draw.text((x, top+8*6), str("NC4.0: %0.1f 1/cm3" % data["particles 40um"]),  font=font, fill=255)
+			draw.text((x, top+8*7), str("Typical Particle Size: %0.1f µm" % data["tps"]),  font=font, fill=255)
 ## SPS30
 	except Exception as e:
 		green_led.set_led(0)
@@ -191,15 +221,31 @@ sps = SPS30_I2C(i2c)
 # Create the proxy options if the data is present in cmdData
 proxy_options = None
 
+##Certificates Directory - Find Keys
+# auth_paths[0] : Thing Certificate
+# auth_paths[1] : Private Key
+# auth_paths[2] : CA1 General Certificate 
+# auth_paths[3] : Thing Identifier
+certificates_path = "../Certificates"
+auth_paths = [None]*4
+for file_path in os.listdir(certificates_path):
+    if file_path.endswith("-certificate.pem.crt"):
+        auth_paths[0] = os.path.join(certificates_path, file_path)
+    elif file_path.endswith("-private.pem.key"):
+        auth_paths[1] = os.path.join(certificates_path, file_path)
+        auth_paths[3] = file_path.split("-")[0]
+    elif file_path.endswith("CA1.pem"):
+        auth_paths[2] = os.path.join(certificates_path, file_path)
+
 # Create a MQTT connection from the command line data
 mqtt_connection = mqtt_connection_builder.mtls_from_path(
 	endpoint="a3cp1px06xaavc-ats.iot.us-east-1.amazonaws.com",
-	cert_filepath="./Certificates/46e0386425345445ad0e0411ec0fdbdeedab55c5eb38c7386c88e5bab84e8091-certificate.pem.crt",
-	pri_key_filepath="./Certificates/46e0386425345445ad0e0411ec0fdbdeedab55c5eb38c7386c88e5bab84e8091-private.pem.key",
-	ca_filepath="./Certificates/AmazonRootCA1.pem",
+	cert_filepath = auth_paths[0],
+	pri_key_filepath = auth_paths[1],
+	ca_filepath = auth_paths[2],
 	on_connection_interrupted=on_connection_interrupted,
 	on_connection_resumed=on_connection_resumed,
-	client_id="test-client",
+	client_id=auth_paths[3],
 	clean_session=False,
 	keep_alive_secs=30,
 	http_proxy_options=proxy_options,
@@ -213,30 +259,61 @@ connect_future.result()
 print("Connected!")
 
 def getData():
-            
-    temperature, relative_humidity = sht.measurements
-    data = {
+     
+	device_data = get_device_data()
+	temperature, relative_humidity = sht.measurements
+	data = {
+		"Timestamp": datetime.datetime.now().timestamp(),
+		"RPI Identifier": auth_paths[3],
         "Temperature" : float(temperature),
         "Humidity" : float(relative_humidity),
+        "CO2 Sensor Status" : str(obj_6713.status()),
         "CO2 Concentration" : float(obj_6713.gasPPM()),
         "CO2 ABC State" : float(obj_6713.checkABC())
     }
-    data.update(sps.read())
-    return data
+	data.update(sps.read())
+	data.update(device_data)
+	return data
+
+def publishData():
+    data = getData()
+    message_json = json.dumps(data)
+    mqtt_connection.publish(
+		topic="data/measurement",
+		payload=message_json,
+		qos=mqtt.QoS.AT_LEAST_ONCE)
 
         
 if __name__ == "__main__":
 	try:
+		green_led_status = 1
+		db_sample_start = time.time()
+		oled_panel_start = time.time()
+		print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(oled_panel_start))}: main started")
+		draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+
 		while True:
-			data = getData()
-			message_json = json.dumps(data)
-			mqtt_connection.publish(
-				topic="data/measurement",
-				payload=message_json,
-				qos=mqtt.QoS.AT_LEAST_ONCE)
+			green_led_status ^= 1
+			logging.debug(f'green_led_status{green_led_status}')
+			green_led.set_led(green_led_status)
+			draw.rectangle((0,0,width,height), outline=0, fill=0)
+			if time.time() - oled_panel_start > PANEL_DELAY:
+				cur_panel = (cur_panel + 1) % PANEL_NUM
+				oled_panel_start = time.time()
+			showPanel(cur_panel)
+        
+			if time.time() - db_sample_start > DB_SAMPLE_PERIOD:
+				logging.debug('Writing samples to the DB')
+				publishData()
+				db_sample_start = time.time()
+
+			disp.image(image)
+			disp.display()
 			time.sleep(1)
-   
-	except:
+
+	except Exception as e: 
+		print(e)
 		# Disconnect
 		print("Disconnecting...")
 		disconnect_future = mqtt_connection.disconnect()
