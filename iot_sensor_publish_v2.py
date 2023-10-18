@@ -13,6 +13,7 @@ from AWSHandler.functions import on_connection_interrupted, on_connection_resume
 
 #Power and Energy Readings: Kasa
 from Kasa import KasaHandler
+from dotenv import load_dotenv
 #Temperature and Humidity Sensor: SHTC3
 import adafruit_shtc3
 #Particulate MAtter Sensor: SPS30
@@ -27,6 +28,9 @@ from PIL import ImageDraw
 from PIL import ImageFont
 import subprocess
 import RPi.GPIO as GPIO
+
+load_dotenv("../Certificates/Kasa.env")
+
 LED1_PIN = 23 # red 
 LED2_PIN = 22 # green
 
@@ -220,8 +224,8 @@ obj_6713 = t6713.T6713()
 sps = SPS30_I2C(i2c)
 
 ##Kasa Setup
-kasa_username = ""
-kasa_password = ""
+kasa_username = os.environ.get("USERNAME")
+kasa_password = os.environ.get("PASSWORD")
 kasaObject = KasaHandler.Kasa()
 uuid = kasaObject.create_random_uuid()
 response_code = kasaObject.set_auth_token(uuid, kasa_username, kasa_password)
