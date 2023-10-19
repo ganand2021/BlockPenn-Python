@@ -55,7 +55,7 @@ def get_device_data():
 	disk_usage = subprocess.check_output(cmd, shell = True)
  
 	device_data = {
-		"IP Address": IP.decode('utf-8')[:-2], 
+		"IP Address": IP.decode('utf-8'), 
         "CPU Load": CPU_load.decode('utf-8').split(': ')[1],
         "Memory Usage": memory_usage.decode('utf-8').split(': ')[1],
         "Disk Usage": disk_usage.decode('utf-8').split(': ')[1]
