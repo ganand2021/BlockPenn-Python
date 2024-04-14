@@ -6,6 +6,7 @@ After=multi-user.target
 Type=simple
 Restart=always
 WorkingDirectory=/home/ubuntu/blockpenn-python
+Environment="OPENSSL_CONF=/home/ubuntu/blockpenn-python/openssl.cnf"
 ExecStart=/home/ubuntu/bpenv/bin/python3 /home/ubuntu/blockpenn-python/iot_sensor_publish_v2.py
 
 [Install]
