@@ -29,6 +29,8 @@ from PIL import ImageFont
 import subprocess
 import RPi.GPIO as GPIO
 
+os.environ['OPENSSL_CONF'] = "./openssl.conf"
+
 load_dotenv("../Certificates/Kasa.env")
 
 LED1_PIN = 23 # red 
@@ -302,37 +304,36 @@ def publishData():
 
         
 if __name__ == "__main__":
-	try:
-		green_led_status = 1
-		db_sample_start = time.time()
-		oled_panel_start = time.time()
-		print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(oled_panel_start))}: main started")
-		draw.rectangle((0, 0, width, height), outline=0, fill=0)
+    try:
+        green_led_status = 1
+        db_sample_start = time.time()
+        oled_panel_start = time.time()
+        logger.debug(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(oled_panel_start))}: main started")
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
+        while True:
+            green_led_status ^= 1
+            logger.debug(f'green_led_status{green_led_status}')
+            green_led.set_led(green_led_status)
+            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            if time.time() - oled_panel_start > PANEL_DELAY:
+                cur_panel = (cur_panel + 1) % PANEL_NUM
+                oled_panel_start = time.time()
+            showPanel(cur_panel)
 
-		while True:
-			green_led_status ^= 1
-			logging.debug(f'green_led_status{green_led_status}')
-			green_led.set_led(green_led_status)
-			draw.rectangle((0,0,width,height), outline=0, fill=0)
-			if time.time() - oled_panel_start > PANEL_DELAY:
-				cur_panel = (cur_panel + 1) % PANEL_NUM
-				oled_panel_start = time.time()
-			showPanel(cur_panel)
-        
-			if time.time() - db_sample_start > DB_SAMPLE_PERIOD:
-				logging.debug('Writing samples to the DB')
-				publishData()
-				db_sample_start = time.time()
+            if time.time() - db_sample_start > DB_SAMPLE_PERIOD:
+                logger.debug('Writing samples to the DB')
+                publishData()
+                db_sample_start = time.time()
 
-			disp.image(image)
-			disp.display()
-			time.sleep(1)
+            disp.image(image)
+            disp.display()
+            time.sleep(1)
 
-	except Exception as e: 
-		print(e)
-		# Disconnect
-		print("Disconnecting...")
-		disconnect_future = mqtt_connection.disconnect()
-		disconnect_future.result()
-		print("Disconnected!")
+    except Exception as e:
+        logger.exception("Unhandled exception occurred: %s", e)
+        # Disconnect
+        logger.info("Disconnecting...")
+        disconnect_future = mqtt_connection.disconnect()
+        disconnect_future.result()
+        logger.info("Disconnected!")
