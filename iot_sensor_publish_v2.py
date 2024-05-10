@@ -1,104 +1,60 @@
-##Imports
-import math, struct, array, time, io, fcntl, datetime
-import logging, os, inspect, logging.handlers
-import board
-#AWS Imports
-from awscrt import mqtt, http
-from awsiot import mqtt_connection_builder
+# Standard library imports
+import datetime
+import json
+import logging
+import logging.handlers
+import os
 import sys
 import time
-import json
-import random
-from AWSHandler.functions import on_connection_interrupted, on_connection_resumed, on_resubscribe_complete, on_message_received, on_connection_success, on_connection_failure, on_connection_closed
-
-#Power and Energy Readings: Kasa
-from Kasa import KasaHandler
 from dotenv import load_dotenv
-#Temperature and Humidity Sensor: SHTC3
+import random
+
+# Third-party library imports
+from PIL import Image, ImageDraw, ImageFont
 import adafruit_shtc3
-#Particulate MAtter Sensor: SPS30
-from SPS30.i2c import SPS30_I2C
-#CO2 Sensor: T6713
-from T6713 import t6713
-#OLED: SSD1306
-import Adafruit_SSD1306
-#OLED Utils
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-import subprocess
+import board
 import RPi.GPIO as GPIO
+from awscrt import mqtt
+from awsiot import mqtt_connection_builder
 
-os.environ['OPENSSL_CONF'] = "./openssl.conf"
+# Local module imports
+from AWSHandler.functions import (
+    on_connection_interrupted, on_connection_resumed, on_message_received,
+    on_connection_success, on_connection_failure, on_connection_closed
+)
+from config import *
+from device_info import get_device_data
+from Kasa import KasaDevices
+from SPS30.i2c import SPS30_I2C
+from T6713 import t6713
+import Adafruit_SSD1306
 
+# Load environment variables and set constants
 load_dotenv("../Certificates/Kasa.env")
+os.environ['OPENSSL_CONF'] = OPENSSL_CONF
 
-LED1_PIN = 23 # red 
-LED2_PIN = 22 # green
 
-LBTN_PIN = 27 # pull-down - Not working. Design connects it ground the RPI GPIO.
-MBTN_PIN = 17 # pull-down
-RBTN_PIN = 4  # pull-down
-
-DB_SAMPLE_PERIOD = 10 # Write the samples to the DB every DB_SAMPLE_PERIOD seconds
-
-# Device Data Fn
-def get_device_data():
-    
-    # Extract the IP address of the host
-	cmd = "hostname -I | cut -d\' \' -f1"
-	IP = subprocess.check_output(cmd, shell = True)
-	# Retrieves CPU load information using the top -bn1 command, filters the output to 
-	# include only lines with "load" using grep, and then uses awk to print the CPU load 
-	# value in a formatted manner.
-	cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
-	CPU_load = subprocess.check_output(cmd, shell = True)
-	# Retrieves memory usage information using the free -m command, then processes 
-	# the output using awk to calculate and print the used memory, total memory, and usage percentage
-	cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
-	memory_usage = subprocess.check_output(cmd, shell = True)
-	# Retrieves disk usage information using the df -h command and then processes the 
- 	# output using awk to print the used and total disk space along with the usage percentage
-	cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
-	disk_usage = subprocess.check_output(cmd, shell = True)
- 
-	device_data = {
-		"IP Address": str(IP.decode('utf-8')), 
-        "CPU Load": CPU_load.decode('utf-8').split(': ')[1],
-        "Memory Usage": memory_usage.decode('utf-8').split(': ')[1],
-        "Disk Usage": disk_usage.decode('utf-8').split(': ')[1]
-	}
-	
-	return device_data
-
-##Logging Init
-# Start logging
+# Configure logging
 log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
-log_level = logging.DEBUG
-
 logger = logging.getLogger('MyLogger')
-logger.setLevel(log_level)
-
-# Adding rotating log
+logger.setLevel(logging.DEBUG)
 log_handler = logging.handlers.RotatingFileHandler(
 	log_fname,
-	maxBytes=200000, 
-	backupCount=5)
+	maxBytes=LOG_MAX_BYTES, 
+	backupCount=LOG_BACKUP_COUNT
+ )
 logger.addHandler(log_handler)
-
 logging.basicConfig(
 	handlers=[log_handler],
 	format='%(asctime)s [%(levelname)-8s] %(message)s',
-	level=log_level,
+	level=logging.DEBUG,
 	datefmt='%Y-%m-%d %H:%M:%S')
 logger.debug('Script started')
 
 #GPIO Setup
-# Start the lgpio
 GPIO.setwarnings(False) # Ignore warning (TBD)
 GPIO.setmode(GPIO.BCM) # Use BCM instead of physical mapping
-
-# GPIO classes: led & btn
+# GPIO classes Definition: led & btn
 class led:
 	global GPIO
 	def __init__(self, led_pin, callback=None):
@@ -124,25 +80,22 @@ def button_callback(channel):
 		else : cur_panel = PANEL_NUM - 1
 	if channel == RBTN_PIN: cur_panel = (cur_panel+1) % PANEL_NUM
 
-logging.info('Setting leds and buttons')
+logging.info('LED and BTN Setup: Started')
 red_led = led(LED1_PIN, 0)
 green_led = led(LED2_PIN, 0)
 l_btn = btn(LBTN_PIN, callback=button_callback)
 r_btn = btn(RBTN_PIN, callback=button_callback)
-logging.info('Completed setting leds and buttons')
+logging.info('LED and BTN Setup: Completed Successfully')
 green_led.set_led(1)
-
 red_led.set_led(1)
 time.sleep(1)
 red_led.set_led(0)
 
 ##OLED Setup
 # Panels
-PANEL_NUM = 3
-PANEL_DELAY = 30 # In seconds
 cur_panel = 1
 # Raspberry Pi pin configuration:
-logging.debug('OLED set up')
+logging.debug('OLED Setup: Started')
 RST = None     # on the PiOLED this pin isnt used
 # 128x64 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
@@ -193,48 +146,52 @@ def showPanel(panel_id):
 
 # Create blank image for drawing.
 # Make sure to create image with mode '1' for 1-bit color.
-width = disp.width
-height = disp.height
-image = Image.new('1', (width, height))
-
+image = Image.new('1', (disp.width, disp.height))
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
-
 # Draw a black filled box to clear the image.
-draw.rectangle((0,0,width,height), outline=0, fill=0)
-
+draw.rectangle((0, 0, disp.width, disp.height), outline=0, fill=0)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
 padding = -2
 top = padding
-bottom = height-padding
+bottom = disp.height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-
 # Load default font.
 font = ImageFont.load_default()
+logging.debug('OLED Setup: Completed Successfully')
 
 ##SHTC3 Setup
 # Connect SHTC3
+logging.debug('SHTC3 Setup: Started')
 i2c = board.I2C()  # uses board.SCL and board.SDA
 sht = adafruit_shtc3.SHTC3(i2c)
+logging.debug('SHTC3 Setup: Completed Successfully')
 
 ##T6713 Setup
+logging.debug('T6713 Setup: Started')
 obj_6713 = t6713.T6713()
+logging.debug('T6713 Setup: Completed Successfully')
 
 ##SPS30 Setup
+logging.debug('SPS30 Setup: Started')
 sps = SPS30_I2C(i2c)
+logging.debug('SPS30 Setup: Completed Successfully')
 
 ##Kasa Setup
+logging.debug('Kasa Setup: Started')
 kasa_username = os.environ.get("USERNAME")
 kasa_password = os.environ.get("PASSWORD")
-kasaObject = KasaHandler.Kasa()
+kasaObject = KasaDevices.SmartPlugs()
 uuid = kasaObject.create_random_uuid()
 response_code = kasaObject.set_auth_token(uuid, kasa_username, kasa_password)
 [response_code, err_code, dev_list] = kasaObject.get_set_dev_list()
 response_code = kasaObject.handle_devices(2)
+logging.debug('Kasa Setup: Completed Successfully')
 
 ##AWS Setup
+logging.debug('AWS Setup: Started')
 # Create the proxy options if the data is present in cmdData
 proxy_options = None
 
@@ -256,7 +213,7 @@ for file_path in os.listdir(certificates_path):
 
 # Create a MQTT connection from the command line data
 mqtt_connection = mqtt_connection_builder.mtls_from_path(
-	endpoint="a3cp1px06xaavc-ats.iot.us-east-1.amazonaws.com",
+	endpoint=MQTT_ENDPOINT,
 	cert_filepath = auth_paths[0],
 	pri_key_filepath = auth_paths[1],
 	ca_filepath = auth_paths[2],
@@ -264,7 +221,7 @@ mqtt_connection = mqtt_connection_builder.mtls_from_path(
 	on_connection_resumed=on_connection_resumed,
 	client_id=auth_paths[3],
 	clean_session=False,
-	keep_alive_secs=30,
+	keep_alive_secs=MQTT_KEEP_ALIVE_SECS,
 	http_proxy_options=proxy_options,
 	on_connection_success=on_connection_success,
 	on_connection_failure=on_connection_failure,
@@ -274,9 +231,9 @@ connect_future = mqtt_connection.connect()
 # Future.result() waits until a result is available
 connect_future.result()
 print("Connected!")
+logging.debug('AWS Setup: Completed Successfully')
 
 def getData():
-     
 	device_data = get_device_data()
 	temperature, relative_humidity = sht.measurements
 	data = {
@@ -293,15 +250,6 @@ def getData():
 	data.update(sps.read())
 	data.update(device_data)
 	return data
-
-def publishData():
-    data = getData()
-    message_json = json.dumps(data)
-    mqtt_connection.publish(
-		topic="data/measurement",
-		payload=message_json,
-		qos=mqtt.QoS.AT_LEAST_ONCE)
-
         
 if __name__ == "__main__":
     try:
@@ -309,13 +257,13 @@ if __name__ == "__main__":
         db_sample_start = time.time()
         oled_panel_start = time.time()
         logger.debug(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(oled_panel_start))}: main started")
-        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.rectangle((0, 0, disp.width, disp.height), outline=0, fill=0)
 
         while True:
             green_led_status ^= 1
-            logger.debug(f'green_led_status{green_led_status}')
+            logger.debug(f'green_led_status: {green_led_status}')
             green_led.set_led(green_led_status)
-            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            draw.rectangle((0, 0, disp.width, disp.height), outline=0, fill=0)
             if time.time() - oled_panel_start > PANEL_DELAY:
                 cur_panel = (cur_panel + 1) % PANEL_NUM
                 oled_panel_start = time.time()
@@ -323,7 +271,12 @@ if __name__ == "__main__":
 
             if time.time() - db_sample_start > DB_SAMPLE_PERIOD:
                 logger.debug('Writing samples to the DB')
-                publishData()
+                mqtt_connection.publish(
+					topic="data/measurement",
+					payload=json.dumps(getData()),
+					qos=mqtt.QoS.AT_LEAST_ONCE
+     			)
+                logger.debug('Samples Written to DB Successfully')
                 db_sample_start = time.time()
 
             disp.image(image)

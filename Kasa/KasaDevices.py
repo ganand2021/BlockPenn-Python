@@ -9,7 +9,7 @@ class CustomSslContextHttpAdapter(HTTPAdapter):
         ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
         self.poolmanager = urllib3.PoolManager(num_pools=connections, maxsize=maxsize, block=block, ssl_context=ctx)
 
-class Kasa(object):
+class SmartPlugs(object):
     def __init__(self):
         self.api_url = "https://wap.tplinkcloud.com"
         self.devices = None
