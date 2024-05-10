@@ -186,8 +186,8 @@ kasa_password = os.environ.get("PASSWORD")
 kasaObject = KasaDevices.SmartPlugs()
 uuid = kasaObject.create_random_uuid()
 response_code = kasaObject.set_auth_token(uuid, kasa_username, kasa_password)
-[response_code, err_code, dev_list] = kasaObject.get_set_dev_list()
-response_code = kasaObject.handle_devices(2)
+[response_code, err_code, dev_list, n_kasa_devices] = kasaObject.get_set_dev_list()
+response_code = kasaObject.handle_devices()
 logging.debug('Kasa Setup: Completed Successfully')
 
 ##AWS Setup
@@ -245,8 +245,9 @@ def getData():
         "CO2 Concentration" : float(obj_6713.gasPPM()),
         "CO2 ABC State" : float(obj_6713.checkABC())
     }
-	kasa_data = kasaObject.get_power_energy_data()
-	{data.update(plug_data) for _, plug_data in kasa_data.items()}
+	if n_kasa_devices != 0:
+		kasa_data = kasaObject.get_power_energy_data()
+		{data.update(plug_data) for _, plug_data in kasa_data.items()}
 	data.update(sps.read())
 	data.update(device_data)
 	return data

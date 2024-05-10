@@ -1,4 +1,7 @@
-import requests, secrets, json, urllib3
+import requests
+import secrets
+import json
+import urllib3
 from urllib3.util.ssl_ import create_urllib3_context
 from requests.adapters import HTTPAdapter
 
@@ -53,7 +56,7 @@ class SmartPlugs(object):
         dev_obj = {"method": "getDeviceList"}
         response = self.session.post(f"{self.api_url}?token={self.kasa_token}", json=dev_obj)
         self.devices = response.json()["result"]["deviceList"]
-        return response.status_code, response.json()["error_code"], self.devices
+        return response.status_code, response.json()["error_code"], self.devices, len(self.devices)
 
     def set_dev_state(self, sel_device_id, sel_device_state):
         set_obj = {
@@ -77,9 +80,9 @@ class SmartPlugs(object):
         response = self.session.post(f"{self.api_url}?token={self.kasa_token}", json=set_obj)
         return response.status_code, response.json()["error_code"], response.json()
 
-    def handle_devices(self, n=1):
+    def handle_devices(self):
         responses = []
-        for device in self.devices[:n]:
+        for device in self.devices:
             device_id = device["deviceId"]
             device_state = 1  # Assuming we are turning the device on
             self.set_dev_state(device_id, device_state)
