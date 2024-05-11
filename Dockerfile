@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install Git
 RUN apt-get update && \
-    apt-get install -y git && \
+    apt-get install -y git net-tools i2c-tools python3-pip python3-lgpio libgpiod2 python3-rpi.gpio python3-pil && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

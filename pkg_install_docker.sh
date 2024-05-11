@@ -12,7 +12,7 @@ fi
 # apt-get update && apt-get upgrade -y
 
 # Install required packages
-apt-get install -y net-tools i2c-tools python3-pip python3-lgpio libgpiod2 python3-rpi.gpio python3-pil
+# apt-get install -y net-tools i2c-tools python3-pip python3-lgpio libgpiod2 python3-rpi.gpio python3-pil
 
 # pip3 install virtualenv
 
