@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  blockpenn-deploy:
+    image: ganand2021/blockpenn:latest
+    volumes:
+      - ~/Certificates:/app/Certificates
+    privileged: true
+    container_name: blockpenn-deploy
+    restart: always
