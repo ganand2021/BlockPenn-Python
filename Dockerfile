@@ -9,6 +9,8 @@ WORKDIR /app
 #     apt-get clean && \
 #     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y git
+
 # Clone your Git repository
 RUN git clone --branch dev https://github.com/ganand2021/blockpenn-python.git
 
