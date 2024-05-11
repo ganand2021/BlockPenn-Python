@@ -4,6 +4,7 @@ services:
     image: ganand2021/blockpenn:latest
     volumes:
       - ~/Certificates:/app/Certificates
+      - ~/Logs:/app/Logs
     privileged: true
     container_name: blockpenn-deploy
     restart: always

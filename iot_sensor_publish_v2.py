@@ -35,7 +35,7 @@ os.environ['OPENSSL_CONF'] = OPENSSL_CONF
 
 
 # Configure logging
-log_fname = os.path.splitext(os.path.basename(__file__))[0]+".log"
+log_fname = os.path.join(LOG_DIR, os.path.splitext(os.path.basename(__file__))[0]+".log")
 logger = logging.getLogger('MyLogger')
 logger.setLevel(logging.DEBUG)
 log_handler = logging.handlers.RotatingFileHandler(
