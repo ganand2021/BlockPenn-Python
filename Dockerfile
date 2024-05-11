@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone your Git repository
-RUN git clone --branch docker-dev https://github.com/ganand2021/blockpenn-python.git
+RUN git clone --branch dev https://github.com/ganand2021/blockpenn-python.git
 
 WORKDIR /app/blockpenn-python
 
