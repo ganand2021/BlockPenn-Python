@@ -14,12 +14,12 @@ apt-get update && apt-get upgrade -y
 # Install required packages
 apt-get install -y net-tools i2c-tools python3-pip python3-lgpio libgpiod2 python3-rpi.gpio python3-pil
 
-pip3 install virtualenv
+# pip3 install virtualenv
 
 # Assuming python3.10 is available and correct
 # If python3.10-venv was successfully installed, python3 should be recognized.
 # Set up a virtual environment. Ensure python3.10-venv is installed or use the appropriate version
-virtualenv bpenv
+python3 -m venv bpenv
 
 # Activate the virtual environment
 source bpenv/bin/activate
