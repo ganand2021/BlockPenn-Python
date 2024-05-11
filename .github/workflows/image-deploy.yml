@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image to Docker Hub
 on:
   push:
     branches:
-      - docker-dev
+      - dev
 
 jobs:
   build-and-push:
