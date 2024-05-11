@@ -4,12 +4,10 @@ FROM --platform=linux/arm64/v8 ubuntu:latest
 WORKDIR /app
 
 # Install Git
-# RUN apt-get update && \
-#     apt-get install -y git && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y git
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Clone your Git repository
 RUN git clone --branch dev https://github.com/ganand2021/blockpenn-python.git
